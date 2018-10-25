@@ -1,6 +1,6 @@
 import React from 'react'
-import { graphql } from "gatsby"
-
+import { Link, graphql } from "gatsby"
+import PostIcons from "../components/PostIcons"
 import Layout from '../components/layout'
 
 class IndexPage extends React.Component {
@@ -14,8 +14,10 @@ class IndexPage extends React.Component {
 	      <h4>Posts</h4>
 	      {data.allWordpressPost.edges.map(({ node }) => (
 	        <div key={node.id}>
-	          <p>{node.title}</p>
-	          <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+	        	<Link to={node.slug}>
+		        	<p>{node.title}</p>
+		        	<div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+		    	</Link>
 	        </div>
 	      ))}
 	    </div>
@@ -37,6 +39,7 @@ export const pageQuery = graphql`
           	title
           	excerpt
           	slug
+          	...PostIcons
         }
       }
     }
