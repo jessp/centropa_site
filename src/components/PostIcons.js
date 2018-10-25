@@ -21,7 +21,14 @@ export default ({ node, className = `` }) => (
           {category.name}
         </span>
       ))}
-    
+    {node.tags &&
+      node.tags.map(tag => (
+        <span key={tag.name}>
+          <TagIcon size={14} style={{ position: `relative`, bottom: 1 }} />
+          {` `}
+          {tag.name}
+        </span>
+      ))}
   </div>
 )
 
@@ -30,6 +37,9 @@ export const query = graphql`
     date(formatString: "MMMM DD, YYYY")
     
     categories {
+      name
+    }
+    tags{
       name
     }
   }
