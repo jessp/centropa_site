@@ -8,7 +8,7 @@ class IndexPage extends React.Component {
   render() {
   	const data = this.props.data;
   	return(
-	  <Layout home={true}>
+	  <Layout>
 	    <div>
 	      <h1>My WordPress Blog</h1>
 	      <h4>Posts</h4>

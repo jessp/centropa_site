@@ -1,6 +1,8 @@
 import React, { Component } from "react"
 import { graphql } from "gatsby"
 import PostIcons from "../components/PostIcons"
+import Layout from '../layouts/layout'
+
 
 import { rhythm } from "../utils/typography"
 
@@ -9,11 +11,13 @@ class PageTemplate extends Component {
     const currentPage = this.props.data.wordpressPage
 
     return (
-      <div>
-        <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
-        <PostIcons node={currentPage} css={{ marginBottom: rhythm(1 / 2) }} />
-        <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
-      </div>
+      <Layout>
+        <div>
+          <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
+          <PostIcons node={currentPage} css={{ marginBottom: rhythm(1 / 2) }} />
+          <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
+        </div>
+      </Layout>
     )
   }
 }

@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
+import Layout from '../layouts/layout'
+
 
 import { rhythm } from "../utils/typography"
 
@@ -10,10 +12,12 @@ class PostTemplate extends Component {
     const post = this.props.data.wordpressPost
 
     return (
-      <div>
-        <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-        <div dangerouslySetInnerHTML={{ __html: post.content }} />
-      </div>
+      <Layout>
+        <div>
+          <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
+          <div dangerouslySetInnerHTML={{ __html: post.content }} />
+        </div>
+      </Layout>
     )
   }
 }
