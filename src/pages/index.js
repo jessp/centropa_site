@@ -10,6 +10,7 @@ class IndexPage extends React.Component {
 
   render() {
   	const data = this.props.data;
+    console.log(data);
   	return(
 	  <Layout home={true}>
       <div className={"container"}>
@@ -25,33 +26,17 @@ class IndexPage extends React.Component {
 export default IndexPage
 
 
-export const pageQuery = graphql`
+export const featuredQuery = graphql`
   query {
-    allWordpressPost(sort: { fields: [date] }) {
-      edges {
-        node {
-        	id
-          	title
-          	excerpt
-          	slug
-          	...PostIcons
+          wordpressPost(
+            tags:
+              {elemMatch: 
+                {name:
+                  {eq: "limited feature"}
+                }
+              }
+            ) {
+          content
         }
       }
-    }
-  }
 `
-
-/*
- <div>
-        <h1>My WordPress Blog</h1>
-        <h4>Posts</h4>
-        {data.allWordpressPost.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link to={node.slug}>
-              <p>{node.title}</p>
-              <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-          </Link>
-          </div>
-        ))}
-      </div>
-*/
