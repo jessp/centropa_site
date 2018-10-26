@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, graphql } from "gatsby"
-import PostIcons from "../components/PostIcons"
 import Layout from '../layouts/layout'
 
 import '../css/index.css'
@@ -37,6 +36,13 @@ export const featuredQuery = graphql`
               }
             ) {
           content
+          acf {
+            author_name
+            country_name
+            author_photo {
+              source_url
+            }
+          }
         }
       }
 `

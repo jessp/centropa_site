@@ -26,16 +26,7 @@ module.exports = {
         hostingWPCOM: false,
         // If useACF is true, then the source plugin will try to import the Wordpress ACF Plugin contents.
         // This feature is untested for sites hosted on Wordpress.com
-        useACF: true,
-        includedRoutes: [
-        "/*/*/categories",
-        "/*/*/posts",
-        "/*/*/pages",
-        "/*/*/media",
-        "/*/*/tags",
-        "/*/*/taxonomies",
-        "/*/*/users",
-        ]
+        useACF: true
       },
     },
     `gatsby-transformer-sharp`,
