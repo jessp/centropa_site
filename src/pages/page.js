@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link, graphql } from "gatsby"
-import PostIcons from "../components/PostIcons"
 import Layout from '../layouts/layout'
 
 class IndexPage extends React.Component {
@@ -39,7 +38,6 @@ export const pageQuery = graphql`
           	title
           	excerpt
           	slug
-          	...PostIcons
         }
       }
     }

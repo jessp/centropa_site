@@ -1,5 +1,5 @@
 html {
-	background-color: #ccc;
+	background-color: #f6f3db;
 }
 
 .container {
@@ -9,9 +9,20 @@ html {
 }
 
 .image_clip {
-	width: 100%;
+	margin-left:50%;
+	width: 50%;
 	height: 100%;
 	background-color: #fff;
-	-webkit-clip-path: polygon(100% 25%, 45% 100%, 100% 100%);
-	clip-path: polygon(100% 25%, 45% 100%, 100% 100%);
+	-webkit-clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%);
+	clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%);
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.info_holder{
+	position: absolute;
+	width: 50%;
+	margin: 5% 0px 0px 5%;
 }

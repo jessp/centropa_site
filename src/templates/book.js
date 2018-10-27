@@ -4,9 +4,6 @@ import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import Layout from '../layouts/layout'
 
-
-import { rhythm } from "../utils/typography"
-
 class PostTemplate extends Component {
   render() {
     const post = this.props.data.wordpressPost
