@@ -17,6 +17,8 @@ const Layout = ({ home, children }) => (
         }
       }
     `}
+
+
     render={data => (
       <>
         <Helmet
@@ -29,12 +31,12 @@ const Layout = ({ home, children }) => (
           <html lang="en" />
         </Helmet>
         <div>
-          {!home && <Header siteTitle={data.site.siteMetadata.title} />}
+          <Header siteTitle={data.site.siteMetadata.title} />
         </div>
         <div
           style={{
             margin: '0 auto',
-            padding: '0px',
+            padding: '20px',
             paddingTop: 0,
           }}
         >

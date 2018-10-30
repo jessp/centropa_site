@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql } from "gatsby"
 import {capitalizeFirstLetter} from "../utils/helpers"
+import Layout from '../layouts/layout'
+import MenuEntry from '../components/MenuEntry'
 
 
 class Menu extends React.Component {
@@ -27,10 +29,12 @@ class Menu extends React.Component {
           {
             items.map(function(item, index){
               return (
-                <div key = {index}>
-                  <h3>{item.node.title + " " + item.node.acf.price}</h3>
-                  <p>{item.node.acf.description}</p>
-                </div>
+                <MenuEntry
+                  key = {index}
+                  item_name = {item.node.title}
+                  price = {item.node.acf.price}
+                  description = {item.node.acf.description}
+                />
               )
             })
           }
@@ -44,11 +48,13 @@ class Menu extends React.Component {
       let menu_items = this.props.data.allWordpressPost.edges;
 
       return (
-        <div>
+        <Layout>
           <h1>{"Menu"}</h1>
-          {this.render_cat("drinks", menu_items)}
+          <div style ={{"width": "100%", padding:"0px", margin: "0px"}}>
+            {this.render_cat("drinks", menu_items)}
+          </div>
           {this.render_cat("sandwiches", menu_items)}
-        </div>
+        </Layout>
       )
   }
 

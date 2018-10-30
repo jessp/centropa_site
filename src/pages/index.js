@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql } from "gatsby"
-import Layout from '../layouts/layout'
+import Layout from '../layouts/Layout'
 import ButtonLink from '../components/ButtonLink'
 
 import '../css/index.css'
@@ -12,7 +12,7 @@ class IndexPage extends React.Component {
   	const featuredData = this.props.data.wordpressPost;
     console.log(featuredData);
   	return(
-	  <Layout home={true}>
+	  <div>
       <div className={"container"}>
          <div className={"info_holder"}>
             <h1>Centropa</h1>
@@ -28,7 +28,7 @@ class IndexPage extends React.Component {
             }>
          </div>
       </div>
-	  </Layout>
+	  </div>
 	)
   }
 

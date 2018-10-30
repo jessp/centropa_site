@@ -1,0 +1,23 @@
+.menuEntry {
+	width: 50%;
+	float: left;
+}
+
+.menuItemHeading h3{
+	margin-bottom: 10px;
+}
+
+.menuItemName {
+	display: inline-block;
+	float: left;
+}
+
+.menuItemPrice {
+	display: inline-block;
+	float: right;
+	margin-right: 75px;
+}
+
+.clearer {
+	clear: both;
+}
