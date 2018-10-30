@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, graphql } from "gatsby"
-import Layout from '../layouts/layout'
+import Layout from '../layouts/Layout'
 
 class IndexPage extends React.Component {
 

@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from '../components/header'
-import './layout.css'
+import './main.css'
 
 const Layout = ({ home, children }) => (
   <StaticQuery
@@ -36,7 +36,7 @@ const Layout = ({ home, children }) => (
         <div
           style={{
             margin: '0 auto',
-            padding: '20px',
+            padding: '0px',
             paddingTop: 0,
           }}
         >

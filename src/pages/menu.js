@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from "gatsby"
 import {capitalizeFirstLetter} from "../utils/helpers"
-import Layout from '../layouts/layout'
+import Layout from '../layouts/Layout'
 import MenuEntry from '../components/MenuEntry'
 
 

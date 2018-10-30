@@ -1,0 +1,8 @@
+.bookHolder{
+	columns: 2;
+	column-gap: 0px;
+	max-height: 500px;
+	overflow: hidden;
+	padding: 0px;
+	margin:0px;
+}
