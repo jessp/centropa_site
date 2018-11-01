@@ -15,6 +15,8 @@ class PostTemplate extends Component {
     this.state = {
       pageNum: 0
     }
+
+    this.columnGap = 45;
   }
 
   componentDidMount(){
@@ -24,15 +26,12 @@ class PostTemplate extends Component {
 
   componentDidUpdate(){
     //take into account column gap
-      let theLeft = this.refs.bookHolder.getBoundingClientRect().width * this.state.pageNum;
-      // console.log(theLeft);
+      let theLeft = (this.refs.bookHolder.getBoundingClientRect().width + this.columnGap) * this.state.pageNum;
       this.refs.bookHolder.scrollLeft = theLeft;
   }
 
   scrollBehaviour(){
     this.setState({pageNum: (this.state.pageNum + 1)})
-    // this.setState({"scrollOffset": (this.state.scrollOffset += this.refs.bookHolder.offsetWidth)})
-    console.log(this.refs.bookHolder.getBoundingClientRect().width, this.refs.bookHolder.offsetWidth);
   }
 
   render() {
@@ -43,6 +42,7 @@ class PostTemplate extends Component {
         <div>
           <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
           <div className={"bookHolder"} 
+               style={{"columnGap": this.columnGap}}
                ref={"bookHolder"} 
                onClick={() => this.scrollBehaviour()}
                >
