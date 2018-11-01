@@ -6,11 +6,11 @@ class ButtonLink extends React.Component {
 
   render() {
   	return(
-  		<div className={"buttonLink"}>
-	  		<Link to={this.props.to}>
-	  			{this.props.text}
-	  		</Link>
-  		</div>
+  			<div style={{"display": "block", "margin": "10px"}}>
+		  		<Link className={"buttonLink"} to={this.props.to}>
+			  		{this.props.text}
+		  		</Link>
+		  	</div>
   	)
   }
 }

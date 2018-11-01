@@ -18,7 +18,7 @@ html, body {
 
 .bookHolder{
 	columns: 2;
-	max-height: 500px;
+	height: calc(100% - 60px);
 	overflow: hidden;
 	padding: 0px;
 	margin:0px;
@@ -26,5 +26,6 @@ html, body {
 
 .pageHolder {
 	width: 50%;
+	height: 30px;
 }
 

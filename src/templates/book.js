@@ -48,7 +48,7 @@ class PostTemplate extends Component {
       <Layout>
         <div style={{"width": "100%", "height": "100%", "position": "relative"}}>
           <PageTurner left={true} doClick={() => this.scrollBehaviour(false)}/>
-          <div style={{"width":"calc(100% - 80px)", "float": "left"}}>
+          <div style={{"width":"calc(100% - 80px)", "height": "100%", "float": "left", "overflow": "hidden"}}>
             <div className={"pageHolder"} 
                   style={{"float": "left"}}>
               <h6 dangerouslySetInnerHTML={{ __html: post.title }} className={"centerText"} />

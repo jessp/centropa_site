@@ -1,44 +1,41 @@
-import React from 'react'
-import { Link, graphql } from "gatsby"
-import Layout from '../layouts/Layout'
+import React, { Component } from "react"
+import { graphql } from "gatsby"
+import PostIcons from "../components/PostIcons"
+import Layout from '../layouts/layout'
 
-class IndexPage extends React.Component {
 
+import { rhythm } from "../utils/typography"
+
+class PageTemplate extends Component {
   render() {
-  	const data = this.props.data;
-  	return(
-	  <Layout>
-	    <div>
-	      <h1>My WordPress Blog</h1>
-	      <h4>Posts</h4>
-	      {data.allWordpressPost.edges.map(({ node }) => (
-	        <div key={node.id}>
-	        	<Link to={node.slug}>
-		        	<p>{node.title}</p>
-		        	<div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
-		    	</Link>
-	        </div>
-	      ))}
-	    </div>
-	  </Layout>
-	)
-  }
+    const currentPage = this.props.data.wordpressPage
 
+    return (
+      <Layout>
+        <div>
+          <h1 dangerouslySetInnerHTML={{ __html: currentPage.title }} />
+          <PostIcons node={currentPage} css={{ marginBottom: rhythm(1 / 2) }} />
+          <div dangerouslySetInnerHTML={{ __html: currentPage.content }} />
+        </div>
+      </Layout>
+    )
+  }
 }
 
-export default IndexPage
-
+export default PageTemplate
 
 export const pageQuery = graphql`
-  query {
-    allWordpressPost(sort: { fields: [date] }) {
-      edges {
-        node {
-        	id
-          	title
-          	excerpt
-          	slug
-        }
+  query($id: String!) {
+    wordpressPage(id: { eq: $id }) {
+      title
+      content
+      date(formatString: "MMMM DD, YYYY")
+    }
+    site {
+      id
+      siteMetadata {
+        title
+        subtitle
       }
     }
   }
