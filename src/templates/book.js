@@ -17,17 +17,17 @@ class PostTemplate extends Component {
     }
 
     this.columnGap = 45;
+    this.totalPages = 0;
   }
 
   componentDidMount(){
-    console.log(this.refs.bookHolder.scrollWidth);
-    console.log(this.refs.bookHolder.offsetWidth);
+    this.totalPages = Math.ceil(this.refs.bookHolder.scrollWidth/(this.refs.bookHolder.getBoundingClientRect().width + this.columnGap)) * 2;
   }
 
   componentDidUpdate(){
     //take into account column gap
-      let theLeft = (this.refs.bookHolder.getBoundingClientRect().width + this.columnGap) * this.state.pageNum;
-      this.refs.bookHolder.scrollLeft = theLeft;
+    let theLeft = (this.refs.bookHolder.getBoundingClientRect().width + this.columnGap) * this.state.pageNum;
+    this.refs.bookHolder.scrollLeft = theLeft;
   }
 
   scrollBehaviour(){
@@ -36,17 +36,34 @@ class PostTemplate extends Component {
 
   render() {
     const post = this.props.data.wordpressPost
-
     return (
       <Layout>
         <div>
-          <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
-          <div className={"bookHolder"} 
-               style={{"columnGap": this.columnGap}}
-               ref={"bookHolder"} 
-               onClick={() => this.scrollBehaviour()}
-               >
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div style={{"margin":"50px"}}>
+            <div className={"pageHolder"} 
+                  style={{"float": "left"}}>
+              <h6 dangerouslySetInnerHTML={{ __html: post.title }} className={"centerText"} />
+            </div>
+            <div className={"pageHolder"} 
+                  style={{"float": "right"}}>
+              <h6 dangerouslySetInnerHTML={{ __html: post.acf.author_name }} className={"centerText"} />
+            </div>
+            <div className={"clearer"}/>
+            <div className={"bookHolder"} 
+                 style={{"columnGap": this.columnGap}}
+                 ref={"bookHolder"} 
+                 onClick={() => this.scrollBehaviour()}
+                 >
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            </div>
+            <div className={"pageHolder"} 
+                  style={{"float": "left"}}>
+              <h6 dangerouslySetInnerHTML={{ __html: (this.state.pageNum * 2 + 1) }} />
+            </div>
+            <div className={"pageHolder"} 
+                  style={{"float": "right"}}>
+              <h6 dangerouslySetInnerHTML={{ __html: (this.state.pageNum * 2 + 2) }} className={"rightText"} />
+            </div>
           </div>
         </div>
       </Layout>
@@ -66,6 +83,9 @@ export const pageQuery = graphql`
     wordpressPost(id: { eq: $id }) {
       title
       content
+      acf {
+        author_name
+      }
     }
     site {
       siteMetadata {
