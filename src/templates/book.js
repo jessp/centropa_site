@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import Layout from '../layouts/Layout'
 import '../css/BookLayout.css'
-
+import PageTurner from '../components/PageTurner'
 
 class PostTemplate extends Component {
 
@@ -30,16 +30,25 @@ class PostTemplate extends Component {
     this.refs.bookHolder.scrollLeft = theLeft;
   }
 
-  scrollBehaviour(){
-    this.setState({pageNum: (this.state.pageNum + 1)})
+  scrollBehaviour(isForward){
+    if (isForward){
+      if (((this.state.pageNum + 1) * 2) < this.totalPages) {
+        this.setState({pageNum: (this.state.pageNum + 1)})
+      }
+    } else {
+      if (this.state.pageNum > 0) {
+        this.setState({pageNum: (this.state.pageNum - 1)})
+      }
+    }
   }
 
   render() {
     const post = this.props.data.wordpressPost
     return (
       <Layout>
-        <div>
-          <div style={{"margin":"50px"}}>
+        <div style={{"width": "100%", "height": "100%", "position": "relative"}}>
+          <PageTurner left={true} doClick={() => this.scrollBehaviour(false)}/>
+          <div style={{"width":"calc(100% - 80px)", "float": "left"}}>
             <div className={"pageHolder"} 
                   style={{"float": "left"}}>
               <h6 dangerouslySetInnerHTML={{ __html: post.title }} className={"centerText"} />
@@ -52,7 +61,6 @@ class PostTemplate extends Component {
             <div className={"bookHolder"} 
                  style={{"columnGap": this.columnGap}}
                  ref={"bookHolder"} 
-                 onClick={() => this.scrollBehaviour()}
                  >
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
@@ -65,6 +73,7 @@ class PostTemplate extends Component {
               <h6 dangerouslySetInnerHTML={{ __html: (this.state.pageNum * 2 + 2) }} className={"rightText"} />
             </div>
           </div>
+          <PageTurner doClick={() => this.scrollBehaviour(true)}/>
         </div>
       </Layout>
     )
