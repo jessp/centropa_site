@@ -1,0 +1,50 @@
+.bookHolder {
+	display: inline-block; 
+	width: 25%;
+	height: 100%;
+	padding-top: 20px;
+	position: relative;
+}
+
+.book {
+	margin: 0 auto;
+    width: 65%;
+    height: calc(100% - 20px);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position: absolute;
+	left: 17.5%;
+}
+
+.bookBand {
+	width: 100%;
+	background-color: green;
+	text-align: center;
+	padding: 5px 0px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.bookBand h1, .bookBand h2, .bookBand h3 {
+	color:#fff;
+	margin: 0px;
+}
+
+.bookBand h1 {
+	font-size: 0.75em;
+	padding-bottom: 4px;
+}
+
+.bookBand h2 {
+	font-size: 0.65em;
+	padding-bottom: 2px;
+	font-weight: normal;
+}
+
+.bookBand h3 {
+	font-size: 0.45em;
+	font-weight: normal;
+}

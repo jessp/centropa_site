@@ -1,0 +1,8 @@
+.shelf {
+	width: 70%;
+	min-width: 700px;
+	height: 33%;
+	border-bottom: 5px solid red;
+	margin: 0 auto;
+	position: relative;
+}

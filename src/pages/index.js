@@ -20,11 +20,7 @@ class IndexPage extends React.Component {
             <ButtonLink to={"/menu"} text={"Menu"}/> 
             <ButtonLink to={"/12x"} text={"12x Project"}/> 
          </div>
-  	     <div 
-            className={"image_clip"}
-            style={
-              {"backgroundImage": "url(" + featuredData.acf.author_photo.source_url + ")"}
-            }>
+  	     <div className={"image_clip"}>
          </div>
       </div>
 	  </div>
@@ -44,9 +40,15 @@ export const featuredQuery = graphql`
                 {name:
                   {eq: "limited feature"}
                 }
+              },
+            categories:
+              {elemMatch: 
+                {name:
+                  {eq: "contributor"}
+                }
               }
             ) {
-          content
+          title
           acf {
             author_name
             country_name
