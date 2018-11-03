@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from "gatsby"
+import { graphql} from "gatsby"
 import Layout from '../layouts/Layout'
 import BookShelf from '../components/BookShelf'
 import Book from '../components/Book'
@@ -20,13 +20,13 @@ class TwelveX extends React.Component {
         {
           books.map(function(book, idx){
             return (
-              <Book
-                key={idx}
-                title={book.node.title}
-                author={book.node.acf.author_name}
-                country={book.node.acf.country_name}
-                photo={book.node.acf.location_photo.source_url}
-              />
+                <Book key={idx}
+                  title={book.node.title}
+                  author={book.node.acf.author_name}
+                  country={book.node.acf.country_name}
+                  photo={book.node.acf.location_photo.source_url}
+                  slug={book.node.slug}
+                />
             )
           })
         }
@@ -93,6 +93,7 @@ export const contributorQuery = graphql`
                 name
               }
               title
+              slug
               acf{
                 author_name,
                 country_name,
