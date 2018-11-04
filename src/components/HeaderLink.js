@@ -6,8 +6,10 @@ class HeaderLink extends React.Component {
 
   render() {
   	return(
-	  		<Link to={this.props.to}>
-		  		{this.props.text}
+	  		<Link to={this.props.to} activeClassName={"activeHeaderLink"}>
+	  			<span>
+		  			{this.props.text}
+		  		</span>
 	  		</Link>
   	)
   }

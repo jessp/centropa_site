@@ -1,3 +1,53 @@
 .headerContainer {
 	height: 40px;
+	padding-top: 3px;
+}
+
+.headerContainer a {
+	margin-left: 15px;
+	padding-top: 5px;
+	color: #0d3e32;
+	position: relative;
+	overflow: hidden;
+	padding-bottom: 0px;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.headerContainer a span {
+	display: inline-block;
+}
+
+.headerContainer a:hover span:after,
+.headerContainer a:focus span:after,
+.headerContainer a:active span:after,
+.headerContainer .activeHeaderLink span:after{
+  transform: translate3d(0, 0, 0);
+  background-color:#0d3e32;
+}
+
+.headerContainer a span{
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0px;
+  display: inline-block;
+}
+
+.headerContainer a span:after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  transform: translate3d(-100%, 0, 0);
+  background-color:#0d3e32;
+  transition: transform .2s ease-in, background-color .2s;
+}
+
+.headerContainer a span:after{
+  background-color: #efc731;
 }

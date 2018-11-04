@@ -9,7 +9,7 @@ class IndexPage extends React.Component {
 
   render() {
   	const featuredData = this.props.data.wordpressPost;
-    console.log(featuredData);
+    console.log(featuredData.acf);
   	return(
 	  <div>
       <div className={"container"}>
@@ -20,7 +20,8 @@ class IndexPage extends React.Component {
             <ButtonLink to={"/menu"} text={"Menu"}/> 
             <ButtonLink to={"/12x"} text={"12x Project"}/> 
          </div>
-  	     <div className={"image_clip"}>
+  	     <div className={"image_clip"} 
+          style={{"backgroundImage" : "url('" + featuredData.acf.author_photo.source_url + "')"}}>
          </div>
       </div>
 	  </div>

@@ -5,12 +5,10 @@ import "./../css/Header.css"
 
 const Header = ({ siteTitle }) => (
   <div className={"headerContainer"}>
-    <div>
       <HeaderLink to={"/"} text={"Home"}/>
-      <HeaderLink to={"/"} text={"Menu"}/>
+      <HeaderLink to={"/menu"} text={"Menu"}/>
       <HeaderLink to={"/"} text={"About"}/>
-      <HeaderLink to={"/"} text={"12x"}/>
-    </div>
+      <HeaderLink to={"/12x"} text={"12x"}/>
   </div>
 )
 

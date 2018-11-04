@@ -21,13 +21,13 @@ class PostTemplate extends Component {
   }
 
   componentDidMount(){
-    this.totalPages = Math.ceil(this.refs.bookHolder.scrollWidth/(this.refs.bookHolder.getBoundingClientRect().width + this.columnGap)) * 2;
+    this.totalPages = Math.ceil(this.refs.spreadHolder.scrollWidth/(this.refs.spreadHolder.getBoundingClientRect().width + this.columnGap)) * 2;
   }
 
   componentDidUpdate(){
     //take into account column gap
-    let theLeft = (this.refs.bookHolder.getBoundingClientRect().width + this.columnGap) * this.state.pageNum;
-    this.refs.bookHolder.scrollLeft = theLeft;
+    let theLeft = (this.refs.spreadHolder.getBoundingClientRect().width + this.columnGap) * this.state.pageNum;
+    this.refs.spreadHolder.scrollLeft = theLeft;
   }
 
   scrollBehaviour(isForward){
@@ -58,9 +58,9 @@ class PostTemplate extends Component {
               <h6 dangerouslySetInnerHTML={{ __html: post.acf.author_name }} className={"centerText"} />
             </div>
             <div className={"clearer"}/>
-            <div className={"bookHolder"} 
+            <div className={"spreadHolder"} 
                  style={{"columnGap": this.columnGap}}
-                 ref={"bookHolder"} 
+                 ref={"spreadHolder"} 
                  >
               <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>

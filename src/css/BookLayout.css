@@ -16,7 +16,7 @@ html, body {
 	position: relative;
 }
 
-.bookHolder{
+.spreadHolder{
 	columns: 2;
 	height: calc(100% - 60px);
 	overflow: hidden;
