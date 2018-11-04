@@ -23,9 +23,9 @@ class Menu extends React.Component {
       });
 
     return (
-      <div>
+      <div className={"menuSection"}>
         <h2>{capitalizeFirstLetter(cat_name)}</h2>
-        <div>
+        <div className={"menuItemGroups"}>
           {
             items.map(function(item, index){
               return (
