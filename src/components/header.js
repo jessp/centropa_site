@@ -7,7 +7,7 @@ const Header = ({ siteTitle }) => (
   <div className={"headerContainer"}>
       <HeaderLink to={"/"} text={"Home"}/>
       <HeaderLink to={"/menu"} text={"Menu"}/>
-      <HeaderLink to={"/"} text={"About"}/>
+      <HeaderLink to={"/about"} text={"About"}/>
       <HeaderLink to={"/12x"} text={"12x"}/>
   </div>
 )

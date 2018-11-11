@@ -1,6 +1,7 @@
 .menuEntry {
 	width: 50%;
 	float: left;
+	height: 120px;
 }
 
 .menuItemHeading h3{
@@ -33,4 +34,22 @@
   content: "";
   display: table;
   clear: both;
+}
+
+.menuDescription {
+	margin-bottom: 0.1rem;
+}
+
+.menuTags {
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+
+
+@media (max-width: 850px) {
+	.menuEntry {
+		width: 100%;
+	}
+
 }

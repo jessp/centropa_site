@@ -625,6 +625,8 @@ pre tt:after {
   }
 }
 
+/*my additions below*/
+
 .clearer {
   clear: both;
 }
@@ -635,4 +637,13 @@ pre tt:after {
 
 .rightText {
   text-align: right;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1200px;
+  min-width: 200px;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
 }

@@ -5,6 +5,7 @@ import '../css/MenuItem.css'
 class MenuEntry extends React.Component {
 
   render() {
+    let tagString = this.props.tags.join(", ");
   	return(
   		<div className={"menuEntry"}>
   			<div className={"menuItemHeading"}>
@@ -12,7 +13,8 @@ class MenuEntry extends React.Component {
 	  			<h3 className={"menuItemPrice"}>{this.props.price + "–"}</h3>
 	  			<div className={"clearer"}></div>
   			</div>
-  			<p>{this.props.description}</p>
+  			<p className={"menuDescription"}>{this.props.description}</p>
+        <p className={"menuTags"}>{tagString}</p>
   		</div>
   	)
 

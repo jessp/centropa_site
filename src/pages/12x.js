@@ -14,7 +14,6 @@ class TwelveX extends React.Component {
   }
 
   render_shelf(books){
-    console.log(books);
     return (
       <BookShelf>
         {
@@ -60,11 +59,13 @@ class TwelveX extends React.Component {
 
       return (
         <Layout>
-          <h1>{"Books"}</h1>
-          <div style={{"height": "calc(100% - 100px)", "position": "relative"}}>
-            {this.render_shelf(other_contributors.slice(0,4))}
-            {this.render_shelf(other_contributors.slice(5,9))}
-            {this.render_shelf(other_contributors.slice(10,13).concat(special_guest))}
+          <div className = {"wrapper"}>
+            <h1>{"Books"}</h1>
+            <div style={{"height": "calc(100% - 100px)", "position": "relative"}}>
+              {this.render_shelf(other_contributors.slice(0,4))}
+              {this.render_shelf(other_contributors.slice(4,8))}
+              {this.render_shelf(other_contributors.slice(8,12).concat(special_guest))}
+            </div>
           </div>
         </Layout>
       )

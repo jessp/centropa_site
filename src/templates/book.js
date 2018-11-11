@@ -13,26 +13,34 @@ class PostTemplate extends Component {
     this.scrollBehaviour = this.scrollBehaviour.bind(this);
 
     this.state = {
-      pageNum: 0
+      pageNum: 0,
+      totalPages: 0
     }
 
     this.columnGap = 45;
-    this.totalPages = 0;
   }
 
   componentDidMount(){
-    this.totalPages = Math.ceil(this.refs.spreadHolder.scrollWidth/(this.refs.spreadHolder.getBoundingClientRect().width + this.columnGap)) * 2;
+    let totalPages = Math.ceil(this.refs.spreadHolder.scrollWidth/(this.refs.spreadHolder.getBoundingClientRect().width + this.columnGap)) * 2;
+    this.setState({"totalPages": totalPages});
   }
 
-  componentDidUpdate(){
+  componentDidUpdate(prevProps, prevState){
     //take into account column gap
     let theLeft = (this.refs.spreadHolder.getBoundingClientRect().width + this.columnGap) * this.state.pageNum;
     this.refs.spreadHolder.scrollLeft = theLeft;
+    let totalPages = Math.ceil(this.refs.spreadHolder.scrollWidth/(this.refs.spreadHolder.getBoundingClientRect().width + this.columnGap)) * 2;
+    
+    if (totalPages !== prevState.totalPages){
+          this.setState({"totalPages": totalPages});
+    }
+
   }
+
 
   scrollBehaviour(isForward){
     if (isForward){
-      if (((this.state.pageNum + 1) * 2) < this.totalPages) {
+      if (((this.state.pageNum + 1) * 2) < this.state.totalPages) {
         this.setState({pageNum: (this.state.pageNum + 1)})
       }
     } else {
@@ -47,7 +55,7 @@ class PostTemplate extends Component {
     return (
       <Layout>
         <div style={{"width": "100%", "height": "100%", "position": "relative"}}>
-          <PageTurner left={true} doClick={() => this.scrollBehaviour(false)}/>
+          <PageTurner left={true} doClick={() => this.scrollBehaviour(false)} disabled={(this.state.pageNum <= 0)}/>
           <div style={{"width":"calc(100% - 80px)", "height": "100%", "float": "left", "overflow": "hidden"}}>
             <div className={"pageHolder"} 
                   style={{"float": "left"}}>
@@ -73,7 +81,7 @@ class PostTemplate extends Component {
               <h6 dangerouslySetInnerHTML={{ __html: (this.state.pageNum * 2 + 2) }} className={"rightText"} />
             </div>
           </div>
-          <PageTurner doClick={() => this.scrollBehaviour(true)}/>
+          <PageTurner doClick={() => this.scrollBehaviour(true)} disabled={((this.state.pageNum * 2 + 2) >= this.state.totalPages)}/>
         </div>
       </Layout>
     )

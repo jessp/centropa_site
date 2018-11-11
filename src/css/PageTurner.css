@@ -12,3 +12,9 @@
 	transform: translate(-50%, -40%);
 	cursor: pointer;
 }
+
+.childIcon.inactive{
+	color:blue;
+	cursor: default;
+	color:#aaa;
+}

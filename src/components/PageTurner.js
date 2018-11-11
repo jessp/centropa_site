@@ -13,14 +13,14 @@ class PageTurner extends React.Component {
   			   <FaRegArrowAltCircleLeft
               size={20} 
               style={{ position: `relative`, bottom: 1 }} 
-              className={"childIcon"}
+              className={"childIcon " + (this.props.disabled ? "inactive" : "") }
               onClick={this.props.doClick} />
         }
         {!this.props.left && 
            <FaRegArrowAltCircleRight
               size={20} 
               style={{ position: `relative`, bottom: 1 }} 
-              className={"childIcon"}
+              className={"childIcon " + (this.props.disabled ? "inactive" : "") }
               onClick={this.props.doClick} />
         }
 

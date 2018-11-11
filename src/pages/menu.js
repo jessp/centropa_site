@@ -23,23 +23,30 @@ class Menu extends React.Component {
       });
 
     return (
-      <div className={"menuSection"}>
-        <h2>{capitalizeFirstLetter(cat_name)}</h2>
-        <div className={"menuItemGroups"}>
-          {
-            items.map(function(item, index){
-              return (
-                <MenuEntry
-                  key = {index}
-                  item_name = {item.node.title}
-                  price = {item.node.acf.price}
-                  description = {item.node.acf.description}
-                />
-              )
-            })
-          }
+        <div className = {"menuSection"}>
+          <h2>{capitalizeFirstLetter(cat_name)}</h2>
+          <div className={"menuItemGroups"}>
+            {
+              items.map(function(item, index){
+                let tags = [];
+                if (item.node.tags !== null){
+                  tags = item.node.tags.map(function(e){
+                    return Object.values(e)[0]
+                  })
+                }
+                return (
+                  <MenuEntry
+                    key = {index}
+                    item_name = {item.node.title}
+                    price = {item.node.acf.price}
+                    description = {item.node.acf.description}
+                    tags = {tags}
+                  />
+                )
+              })
+            }
+          </div>
         </div>
-      </div>
     )
 
   }
@@ -49,11 +56,13 @@ class Menu extends React.Component {
 
       return (
         <Layout>
-          <h1>{"Menu"}</h1>
-          <div style ={{"width": "100%", padding:"0px", margin: "0px"}}>
-            {this.render_cat("drinks", menu_items)}
+          <div className={"wrapper"}>
+            <h1>{"Menu"}</h1>
+            <div style ={{"width": "100%", padding:"0px", margin: "0px"}}>
+              {this.render_cat("drinks", menu_items)}
+            </div>
+            {this.render_cat("sandwiches", menu_items)}
           </div>
-          {this.render_cat("sandwiches", menu_items)}
         </Layout>
       )
   }
