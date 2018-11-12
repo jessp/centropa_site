@@ -1,12 +1,27 @@
 .headerContainer {
-	height: 40px;
+	height: 150px;
 	padding-top: 3px;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
+  clip-path: polygon(0 0, 0 100%, 100% 0);
+  background-color: #0d3e32;
+  position: fixed;
+  top:0px;
+  width: 100%;
+  left: 0px;
+  z-index: 0;
+}
+
+.headerContainer.minimalHeader {
+  -webkit-clip-path: none;
+  clip-path: none;
+  height:40px;
+  position: relative;
 }
 
 .headerContainer a {
 	margin-left: 15px;
 	padding-top: 5px;
-	color: #0d3e32;
+	color: #fff;
 	position: relative;
 	overflow: hidden;
 	padding-bottom: 0px;
@@ -23,7 +38,7 @@
 .headerContainer a:active span:after,
 .headerContainer .activeHeaderLink span:after{
   transform: translate3d(0, 0, 0);
-  background-color:#0d3e32;
+  background-color:#fff;
 }
 
 .headerContainer a span{
@@ -43,11 +58,16 @@
   left: 0;
   bottom: 0;
 
-  transform: translate3d(-100%, 0, 0);
-  background-color:#0d3e32;
+  transform: translate3d(-105%, 0, 0);
+  background-color:#fff;
   transition: transform .2s ease-in, background-color .2s;
 }
 
 .headerContainer a span:after{
   background-color: #efc731;
+}
+
+.pageName {
+  color: #fff;
+  margin-left: 10%;
 }

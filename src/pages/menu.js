@@ -55,9 +55,8 @@ class Menu extends React.Component {
       let menu_items = this.props.data.allWordpressPost.edges;
 
       return (
-        <Layout>
+        <Layout pageName={"Menu"}>
           <div className={"wrapper"}>
-            <h1>{"Menu"}</h1>
             <div style ={{"width": "100%", padding:"0px", margin: "0px"}}>
               {this.render_cat("drinks", menu_items)}
             </div>

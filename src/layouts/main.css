@@ -644,6 +644,7 @@ pre tt:after {
   max-width: 1200px;
   min-width: 200px;
   margin: 0 auto;
-  height: 100%;
+  height: calc(100% - 145px);
   position: relative;
+  margin-top: 145px;
 }

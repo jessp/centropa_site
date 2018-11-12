@@ -9,7 +9,7 @@ class AboutPage extends React.Component {
 
   render() {
   	return(
-	  <Layout>
+	  <Layout pageName={"About"}>
 	      <div className = {"wrapper"}>
 	        <h1>{"hihihihih"}</h1>
 	      </div>

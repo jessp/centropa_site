@@ -1,19 +1,23 @@
 html, body {
 	width: 100%;
 	height: 100%;
-	position: relative;
+	position: absolute;
+	top: 0px;
 }
+
 
 #___gatsby {
 	width: 100%;
 	height: 100%;
-	position: relative;
+	position: absolute;
+	top: 0px;
 }
 
 #___gatsby > div {
 	width: 100%;
 	height: 100%;
-	position: relative;
+	position: absolute;
+	top: 0px;
 }
 
 .spreadHolder{

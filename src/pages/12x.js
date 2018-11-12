@@ -58,10 +58,9 @@ class TwelveX extends React.Component {
 
 
       return (
-        <Layout>
+        <Layout pageName={"Books"}>
           <div className = {"wrapper"}>
-            <h1>{"Books"}</h1>
-            <div style={{"height": "calc(100% - 100px)", "position": "relative"}}>
+            <div style={{"height": "100%", "position": "relative"}}>
               {this.render_shelf(other_contributors.slice(0,4))}
               {this.render_shelf(other_contributors.slice(4,8))}
               {this.render_shelf(other_contributors.slice(8,12).concat(special_guest))}
