@@ -3,8 +3,8 @@ import { graphql } from "gatsby"
 import PropTypes from "prop-types"
 import Layout from '../layouts/Layout'
 import Header from '../components/header';
-import '../css/BookLayout.css'
 import PageTurner from '../components/PageTurner'
+import '../css/BookLayout.css'
 
 class PostTemplate extends Component {
 
@@ -72,7 +72,9 @@ class PostTemplate extends Component {
                    style={{"columnGap": this.columnGap}}
                    ref={"spreadHolder"} 
                    >
-                <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                <div  dangerouslySetInnerHTML={{ __html: post.content }} 
+                      style={{"height":"100%", "width":"100%", "position": "relative"}}
+                       />
               </div>
               <div className={"pageHolder"} 
                     style={{"float": "left"}}>

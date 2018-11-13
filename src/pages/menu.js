@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from "gatsby"
 import {capitalizeFirstLetter} from "../utils/helpers"
+import he from "he"
 import Layout from '../layouts/Layout'
 import MenuEntry from '../components/MenuEntry'
-
 
 class Menu extends React.Component {
 
@@ -37,9 +37,9 @@ class Menu extends React.Component {
                 return (
                   <MenuEntry
                     key = {index}
-                    item_name = {item.node.title}
+                    item_name = {he.decode(item.node.title)}
                     price = {item.node.acf.price}
-                    description = {item.node.acf.description}
+                    description = {he.decode(item.node.acf.description)}
                     tags = {tags}
                   />
                 )
@@ -57,10 +57,12 @@ class Menu extends React.Component {
       return (
         <Layout pageName={"Menu"}>
           <div className={"wrapper"}>
-            <div style ={{"width": "100%", padding:"0px", margin: "0px"}}>
-              {this.render_cat("drinks", menu_items)}
-            </div>
+            {this.render_cat("drinks", menu_items)}
+            {this.render_cat("snacks", menu_items)}
             {this.render_cat("sandwiches", menu_items)}
+            {this.render_cat("mains", menu_items)}
+            {this.render_cat("desserts", menu_items)}
+            {this.render_cat("alcohol", menu_items)}
           </div>
         </Layout>
       )

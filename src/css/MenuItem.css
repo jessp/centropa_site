@@ -30,6 +30,12 @@
 	clear: both;
 }
 
+.menuSection h2 {
+	text-align: center;
+	border-bottom: 3px solid #0d3e32;
+	color: #0d3e32;
+}
+
 .menuItemGroups:after {
   content: "";
   display: table;

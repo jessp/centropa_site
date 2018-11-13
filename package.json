@@ -18,6 +18,7 @@
     "gatsby-source-wordpress": "^3.0.9",
     "gatsby-transformer-sharp": "^2.1.5",
     "glamor": "^2.20.40",
+    "he": "^1.2.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
