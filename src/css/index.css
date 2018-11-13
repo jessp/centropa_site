@@ -21,8 +21,46 @@ html {
     background-size: cover;
 }
 
+.image_clip:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(to bottom right,rgba(239, 199, 49, 0.55),rgba(0, 0, 0, 0.8));
+}
+
 .info_holder{
 	position: absolute;
 	width: 50%;
-	margin: 5% 0px 0px 5%;
+	color: #0d3e32;
+	top: 50%;
+    transform: translateY(-50%);
+    margin-left: 5%;
+}
+
+.info_holder p {
+	font-style: italic;
+}
+
+.centropaLogo {
+	margin-bottom: 0px;
+}
+
+.authorInfoHolder {
+	position: absolute;
+	right:0px;
+	z-index: 2;
+	bottom: 5%;
+	right: 10px;
+	width: 40%;
+	text-align: right;
+}
+
+.authorInfoHolder p{
+	margin-bottom: 0px;
+	padding: 0px 10px;
+	color: #fff;
+	font-size: 0.8em;
 }

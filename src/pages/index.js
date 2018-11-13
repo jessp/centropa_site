@@ -1,6 +1,9 @@
 import React from 'react'
 import { graphql } from "gatsby"
-import ButtonLink from '../components/ButtonLink'
+import logo from "../images/logo-11.svg"
+import Header from '../components/header';
+
+
 
 import '../css/index.css'
 
@@ -8,22 +11,33 @@ import '../css/index.css'
 class IndexPage extends React.Component {
 
   render() {
-  	const featuredData = this.props.data.wordpressPost;
-    console.log(featuredData.acf);
+  	const featuredData = this.props.data.author;
+    const description = this.props.data.sandwich.acf.description.toLowerCase();
   	return(
 	  <div>
       <div className={"container"}>
          <div className={"info_holder"}>
-            <h1>Centropa</h1>
+            <img className={"centropaLogo"} src={logo}/>
+            <h2>{"Welcome home!"}</h2>
             <p>A quick, succint summary of Centropa's charms, likely ending by saying that it's in the Bjorvika Deichman branch.</p>
-            <ButtonLink to={"/about"} text={"About"}/> 
-            <ButtonLink to={"/menu"} text={"Menu"}/> 
-            <ButtonLink to={"/12x"} text={"12x Project"}/> 
          </div>
   	     <div className={"image_clip"} 
           style={{"backgroundImage" : "url('" + featuredData.acf.author_photo.source_url + "')"}}>
          </div>
+         <div className={"authorInfoHolder"}>
+            <p>{featuredData.acf.author_name + " is this month's featured author."}</p>
+            <p>
+              <span>{"Check out his work “"}</span>
+              <span>{featuredData.title}</span>
+              <span>{",” commissioned as part of the 12x project, or order our "}</span>
+              <span>{description}</span>
+              <span>{" smørbrød inspired by his musings on "}</span>
+              <span>{featuredData.acf.country_name}</span>
+              <span>{"."}</span>
+            </p>
+          </div>
       </div>
+      <Header/>
 	  </div>
 	)
   }
@@ -35,7 +49,7 @@ export default IndexPage
 
 export const featuredQuery = graphql`
   query {
-          wordpressPost(
+          author: wordpressPost(
             tags:
               {elemMatch: 
                 {name:
@@ -57,6 +71,31 @@ export const featuredQuery = graphql`
               source_url
             }
           }
-        }
+    }
+     sandwich: wordpressPost(
+          tags: {
+            elemMatch:
+            {name:
+              {eq: "limited feature"}
+            }
+          },
+            categories:
+              {elemMatch: 
+                {name:
+                  {eq: "menu"}
+                }
+            
+          }
+        )
+    {
+      title
+      acf {
+        description
       }
+    }
+        
+      }
+
+  
 `
+

@@ -6,7 +6,7 @@
   background-color: #0d3e32;
   position: fixed;
   top:0px;
-  width: 100%;
+  width: 67%;
   left: 0px;
   z-index: 0;
 }
@@ -16,6 +16,7 @@
   clip-path: none;
   height:40px;
   position: relative;
+  width:100%;
 }
 
 .headerContainer a {
