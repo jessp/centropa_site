@@ -48,3 +48,16 @@
 	font-size: 0.45em;
 	font-weight: normal;
 }
+
+.spGuestBook .bookBand {
+	background-color: #efc731;
+}
+
+.spGuestBook .bookBand h1, .spGuestBook .bookBand h2, .spGuestBook .bookBand h3 {
+	color: #0d3e32;
+}
+
+.spGuestBook .spGuTag {
+	font-family: "Alegreya";
+	font-style: italic;
+}

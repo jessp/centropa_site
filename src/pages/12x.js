@@ -18,6 +18,10 @@ class TwelveX extends React.Component {
       <BookShelf>
         {
           books.map(function(book, idx){
+            let tag_names = [];
+            if (book.node.tags){
+              tag_names = book.node.tags.map(node => node.name);
+            }
             return (
                 <Book key={idx}
                   title={book.node.title}
@@ -25,6 +29,7 @@ class TwelveX extends React.Component {
                   country={book.node.acf.country_name}
                   photo={book.node.acf.location_photo.source_url}
                   slug={book.node.slug}
+                  special_guest={tag_names.indexOf("limited feature") > -1}
                 />
             )
           })
@@ -36,34 +41,13 @@ class TwelveX extends React.Component {
   render() {
       let contributors = this.props.data.allWordpressPost.edges;
 
-      let special_guest = contributors.filter(function(d){
-        if (d.node.tags){
-          let tag_names = d.node.tags.map(node => node.name);
-          if (tag_names.indexOf("limited feature") > -1) {
-            return true
-          }
-        }
-        return false;
-      });
-
-      let other_contributors = contributors.filter(function(d){
-        if (d.node.tags){
-          let tag_names = d.node.tags.map(node => node.name);
-          if (tag_names.indexOf("limited feature") > -1) {
-            return false
-          }
-        }
-        return true;
-      });
-
-
       return (
         <Layout pageName={"Books"}>
           <div className = {"wrapper"}>
             <div style={{"height": "100%", "position": "relative"}}>
-              {this.render_shelf(other_contributors.slice(0,4))}
-              {this.render_shelf(other_contributors.slice(4,8))}
-              {this.render_shelf(other_contributors.slice(8,12).concat(special_guest))}
+              {this.render_shelf(contributors.slice(0,4))}
+              {this.render_shelf(contributors.slice(4,8))}
+              {this.render_shelf(contributors.slice(8,13))}
             </div>
           </div>
         </Layout>
