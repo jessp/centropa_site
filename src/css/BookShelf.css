@@ -2,7 +2,14 @@
 	width: 70%;
 	min-width: 700px;
 	height: 33%;
-	border-bottom: 5px solid #0d3e32;
 	margin: 0 auto;
+	position: relative;
+	padding-bottom: 20px;
+}
+
+.innerShelf {
+	width: 100%;
+	height: 100%;
+	border-bottom: 5px solid #0d3e32;
 	position: relative;
 }

@@ -2,14 +2,13 @@
 	display: inline-block; 
 	width: 25%;
 	height: 100%;
-	padding-top: 20px;
 	position: relative;
 }
 
 .book {
 	margin: 0 auto;
     width: 65%;
-    height: calc(100% - 20px);
+    height: 100%;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;

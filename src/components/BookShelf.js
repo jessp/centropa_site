@@ -7,7 +7,9 @@ class BookShelf extends React.Component {
   render() {
   	return(
   		<div className={"shelf"}>
-        {this.props.children}
+  			<div className={"innerShelf"}>
+        		{this.props.children}
+        	</div>
   		</div>
   	)
 
