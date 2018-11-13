@@ -1,9 +1,7 @@
 import React from 'react'
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import logo from "../images/logo-11.svg"
 import Header from '../components/header';
-
-
 
 import '../css/index.css'
 
@@ -28,9 +26,9 @@ class IndexPage extends React.Component {
             <p>{featuredData.acf.author_name + " is this month's featured author."}</p>
             <p>
               <span>{"Check out his work “"}</span>
-              <span>{featuredData.title}</span>
+              <Link to={featuredData.slug}><span>{featuredData.title}</span></Link>
               <span>{",” commissioned as part of the 12x project, or order our "}</span>
-              <span>{description}</span>
+              <Link to={"/menu"}><span>{description}</span></Link>
               <span>{" smørbrød inspired by his musings on "}</span>
               <span>{featuredData.acf.country_name}</span>
               <span>{"."}</span>
@@ -64,6 +62,7 @@ export const featuredQuery = graphql`
               }
             ) {
           title
+          slug
           acf {
             author_name
             country_name

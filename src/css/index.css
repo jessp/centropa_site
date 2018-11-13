@@ -64,3 +64,10 @@ html {
 	color: #fff;
 	font-size: 0.8em;
 }
+
+.authorInfoHolder a {
+	font-weight: bold;
+	color: #efc731;
+	display: inline-block;
+}
+

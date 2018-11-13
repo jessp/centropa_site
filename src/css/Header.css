@@ -39,7 +39,7 @@
 .headerContainer a:active span:after,
 .headerContainer .activeHeaderLink span:after{
   transform: translate3d(0, 0, 0);
-  background-color:#fff;
+  background-color:  #efc731;
 }
 
 .headerContainer a span{
@@ -62,10 +62,6 @@
   transform: translate3d(-105%, 0, 0);
   background-color:#fff;
   transition: transform .2s ease-in, background-color .2s;
-}
-
-.headerContainer a span:after{
-  background-color: #efc731;
 }
 
 .pageName {
