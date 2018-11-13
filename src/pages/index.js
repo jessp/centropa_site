@@ -15,6 +15,7 @@ class IndexPage extends React.Component {
   render() {
   	const featuredData = this.props.data.author;
     const description = this.props.data.sandwich.acf.description.toLowerCase();
+    console.log(featuredData);
   	return(
 	  <div>
       <div className={"container"}>
@@ -29,11 +30,11 @@ class IndexPage extends React.Component {
          <div className={"authorInfoHolder"}>
             <p>{featuredData.acf.author_name + " is this month's featured author."}</p>
             <p>
-              <span>{"Check out his work “"}</span>
+              <span>{"Check out " + featuredData.acf.author_pronoun + " work “"}</span>
               <Link to={featuredData.slug}><span>{featuredData.title}</span></Link>
               <span>{",” commissioned as part of the 12x project, or order our "}</span>
               <Link to={"/menu"}><span>{description}</span></Link>
-              <span>{" smørbrød inspired by his musings on "}</span>
+              <span>{" smørbrød inspired by " + featuredData.acf.author_pronoun + " musings on "}</span>
               <span>{featuredData.acf.country_name}</span>
               <span>{"."}</span>
             </p>
@@ -79,6 +80,7 @@ export const featuredQuery = graphql`
           slug
           acf {
             author_name
+            author_pronoun
             country_name
             author_photo {
               source_url
@@ -107,7 +109,7 @@ export const featuredQuery = graphql`
       }
     }
         
-      }
+  }
 
   
 `
