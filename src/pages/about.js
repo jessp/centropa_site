@@ -2,17 +2,18 @@ import React from 'react'
 import { graphql } from "gatsby"
 import Layout from '../layouts/Layout'
 
-import '../css/index.css'
+import '../css/about.css'
 
 
 class AboutPage extends React.Component {
 
+
+
   render() {
+  	console.log(this.props.data.wordpressPage.content);
   	return(
 	  <Layout pageName={"About"}>
-	      <div className = {"wrapper"}>
-	        <h1>{"hihihihih"}</h1>
-	      </div>
+	  	<div className = {"wrapper aboutPage"} dangerouslySetInnerHTML={{__html: this.props.data.wordpressPage.content}}/>
 	  </Layout>
 	)
   }
@@ -20,3 +21,12 @@ class AboutPage extends React.Component {
 }
 
 export default AboutPage
+
+
+export const featuredQuery = graphql`
+	query {
+		wordpressPage(title: {eq: "About"}) {
+			content
+		}
+		
+	}`

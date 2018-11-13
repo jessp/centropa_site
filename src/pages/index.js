@@ -15,7 +15,6 @@ class IndexPage extends React.Component {
   render() {
   	const featuredData = this.props.data.author;
     const description = this.props.data.sandwich.acf.description.toLowerCase();
-    console.log(featuredData);
   	return(
 	  <div>
       <div className={"container"}>
