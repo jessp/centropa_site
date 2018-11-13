@@ -52,7 +52,7 @@ html {
 	position: absolute;
 	right:0px;
 	z-index: 2;
-	bottom: 5%;
+	bottom: 0px;
 	right: 10px;
 	width: 40%;
 	text-align: right;
@@ -71,3 +71,14 @@ html {
 	display: inline-block;
 }
 
+.footerHolder {
+	position: absolute;
+	bottom: 0px;
+	left: 10px;
+	color: #0d3e32;
+	font-size: 0.7em;
+}
+
+.footerHolder p {
+	margin-bottom: 0px;
+}

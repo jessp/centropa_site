@@ -1,7 +1,11 @@
 import React from 'react'
 import { graphql, Link } from "gatsby"
 import logo from "../images/logo-11.svg"
-import Header from '../components/header';
+import Header from '../components/header'
+import { IoIosPin } from 'react-icons/io'
+import { FaInstagram, FaFacebook } from 'react-icons/fa'
+
+
 
 import '../css/index.css'
 
@@ -32,6 +36,16 @@ class IndexPage extends React.Component {
               <span>{" smørbrød inspired by his musings on "}</span>
               <span>{featuredData.acf.country_name}</span>
               <span>{"."}</span>
+            </p>
+          </div>
+          <div className={"footerHolder"}>
+            <p>
+              <IoIosPin/>
+              {"Find us at Dronning Eufemias gate 4, 0154 Oslo."}
+            </p>
+            <p style={{"fontSize": "1.5em"}}>
+              <FaInstagram style={{"marginRight": "3px"}}/>
+              <FaFacebook/>
             </p>
           </div>
       </div>
