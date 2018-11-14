@@ -38,7 +38,7 @@ html, body {
 	height: 30px;
 }
 
-.bookContentHolder img{
+.spreadHolder img{
 	break-inside: avoid;
     display: block;
     max-height: 100%
