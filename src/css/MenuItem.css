@@ -3,9 +3,7 @@ html{
 }
 
 .menuEntry {
-	width: 50%;
-	float: left;
-	height: 120px;
+	width: 100%;
 }
 
 .menuItemHeading h3{
@@ -15,12 +13,14 @@ html{
 .menuItemName {
 	display: inline-block;
 	float: left;
+	width: calc(100% - 100px)
 }
 
 .menuItemPrice {
 	display: inline-block;
 	float: right;
-	margin-right: 75px;
+	width: 100px;
+	text-align: right;
 }
 
 .menuSection {
@@ -35,7 +35,6 @@ html{
 }
 
 .menuSection h2 {
-	text-align: center;
 	border-bottom: 3px solid #0d3e32;
 	color: #0d3e32;
 }
@@ -54,6 +53,7 @@ html{
 	font-size: 0.8em;
 	font-style: italic;
 }
+
 
 
 

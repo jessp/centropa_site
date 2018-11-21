@@ -55,14 +55,18 @@ class Menu extends React.Component {
       let menu_items = this.props.data.allWordpressPost.edges;
 
       return (
-        <Layout pageName={"Menu"}>
-          <div className={"wrapper"}>
-            {this.render_cat("drinks", menu_items)}
+        <Layout pageName={""}>
+          <div className={"controlColumn menuColumn"}/>
+          <div className={"foodColumn menuColumn"}>
+            {/*this.render_cat("drinks", menu_items)*/}
             {this.render_cat("snacks", menu_items)}
             {this.render_cat("sandwiches", menu_items)}
             {this.render_cat("mains", menu_items)}
             {this.render_cat("desserts", menu_items)}
-            {this.render_cat("alcohol", menu_items)}
+            {/*this.render_cat("alcohol", menu_items)*/}
+          </div>
+          <div className={"mediaColumn"}>
+            <div className={"mediaBg"} style={{"backgroundImage": "url(http://placekitten.com/400/600)"}}/>
           </div>
         </Layout>
       )
