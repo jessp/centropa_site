@@ -1,5 +1,36 @@
 html {
 	background-color: #f8f0d6;
+	background-repeat: no-repeat;
+    background-origin: content-box;
+    background-position: top;
+    background-size: 100% 400%;
+}
+
+.indexBg{
+	background-image: url("../images/home_page/bg.svg");
+	background-repeat: no-repeat;
+    background-origin: content-box;
+    background-position: top;
+    background-size: 100% 100%;
+    position: absolute;
+    width: 100%;
+    height: 400%;
+    top:0px;
+    left: 0px;
+}
+
+.bgOverlay{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0px;
+	left: 0px;
+	background-image: url("../images/home_page/bg_overlay.svg");
+	background-repeat: no-repeat;
+    background-origin: content-box;
+    background-position: top;
+    background-size: 100% 108.59375%;
+    pointer-events: none;
 }
 
 .image_clip {
@@ -29,13 +60,15 @@ html {
 	position: absolute;
 	width: 50%;
 	color: #0d3e32;
-	top: 50%;
+	top: 40%;
     transform: translateY(-50%);
     margin-left: 5%;
 }
 
 .info_holder p {
-	font-style: italic;
+	margin-left: 20%;
+	line-height: 1.2em;
+
 }
 
 .centropaLogo {
@@ -44,12 +77,11 @@ html {
 
 .authorInfoHolder {
 	position: absolute;
-	right:0px;
-	z-index: 2;
-	bottom: 0px;
-	right: 10px;
-	width: 40%;
-	text-align: right;
+    z-index: 2;
+    bottom: 15%;
+    right: 10px;
+    width: 45%;
+    text-align: right;
 }
 
 .authorInfoHolder p{

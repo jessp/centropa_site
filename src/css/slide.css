@@ -1,6 +1,6 @@
 .slide {
   width: 100%;
-  height: 50%;
+  height: 100%;
   position: relative;
 }
 
@@ -9,6 +9,7 @@
 	height: auto;
 	margin: 0 auto;
 	position: relative;
+
 }
 
 .indexCardImg {
@@ -24,19 +25,22 @@
 }
 
 .indexCardInfo {
-	width: calc(100% - 200px);
+	width: calc(100% - 300px);
 	height: 100%;
 	position: relative;
 	float: right;
-	padding: 0px 0px 0px 40px;
+	padding: 25px 0px 0px 25px;
 }
 
-.slideHolder div:nth-of-type(2n) .indexCard .indexCardImg {
-	float: right;
-	background-color: red;
+.indexCardInfo h1 {
+	color: #0D3E32;
 }
 
-.slideHolder div:nth-of-type(2n) .indexCard .indexCardInfo {
-	float: left;
-	padding: 0px 20px 0px 0px;
+.indexCardInfo p {
+	font-size: 1.25em;
+	line-height: initial;
+}
+
+.slideSketch{
+	width:300px;
 }

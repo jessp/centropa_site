@@ -1,9 +1,9 @@
 .headerContainer {
 	height: 150px;
 	padding-top: 3px;
-  -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
+/*  -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
   clip-path: polygon(0 0, 0 100%, 100% 0);
-  background-color: #0d3e32;
+  background-color: #0d3e32;*/
   position: fixed;
   top:0px;
   width: 67%;
@@ -22,7 +22,8 @@
 .headerContainer a {
 	margin-left: 15px;
 	padding-top: 5px;
-	color: #fff;
+	/*color: #fff;*/
+  color: #0d3e32;
 	position: relative;
 	overflow: hidden;
 	padding-bottom: 0px;
@@ -40,6 +41,10 @@
 .headerContainer .activeHeaderLink span:after{
   transform: translate3d(0, 0, 0);
   background-color:  #efc731;
+}
+
+.activeHeaderLink {
+  font-weight: bold;
 }
 
 .headerContainer a span{

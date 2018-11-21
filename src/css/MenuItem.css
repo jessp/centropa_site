@@ -1,3 +1,7 @@
+html{
+	/*background-image: none;*/
+}
+
 .menuEntry {
 	width: 50%;
 	float: left;
