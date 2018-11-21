@@ -2,12 +2,6 @@ html {
 	background-color: #f8f0d6;
 }
 
-.container {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-}
-
 .image_clip {
 	margin-left:50%;
 	width: 50%;

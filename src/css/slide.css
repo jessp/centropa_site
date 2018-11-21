@@ -1,0 +1,42 @@
+.slide {
+  width: 100%;
+  height: 50%;
+  position: relative;
+}
+
+.indexCard {
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+	position: relative;
+}
+
+.indexCardImg {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	float: left;
+	clip-path: circle(50% at center);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.indexCardInfo {
+	width: calc(100% - 200px);
+	height: 100%;
+	position: relative;
+	float: right;
+	padding: 0px 0px 0px 40px;
+}
+
+.slideHolder div:nth-of-type(2n) .indexCard .indexCardImg {
+	float: right;
+	background-color: red;
+}
+
+.slideHolder div:nth-of-type(2n) .indexCard .indexCardInfo {
+	float: left;
+	padding: 0px 20px 0px 0px;
+}

@@ -4,6 +4,7 @@ import logo from "../images/logo-11.svg"
 import Header from '../components/header'
 import { IoIosPin } from 'react-icons/io'
 import { FaInstagram, FaFacebook } from 'react-icons/fa'
+import Slide from '../components/slide'
 
 
 
@@ -16,8 +17,9 @@ class IndexPage extends React.Component {
   	const featuredData = this.props.data.author;
     const description = this.props.data.sandwich.acf.description.toLowerCase();
   	return(
-	  <div>
+	  <div style={{"width":"100%", "height":"100%", "position":"relative"}}>
       <div className={"container"}>
+        {/*
          <div className={"info_holder"}>
             <img className={"centropaLogo"} src={logo}/>
             <h2>{"Welcome home!"}</h2>
@@ -48,7 +50,38 @@ class IndexPage extends React.Component {
               <FaFacebook/>
             </p>
           </div>
+        */}
       </div>
+      <div className={"slideHolder"} style={{"height": "100%"}}>
+        <Slide
+          imgSrc={"http://placekitten.com/300/300"}
+          header={"In the heart of Bjørvika"}
+          body={"Centrally located in the great new city centre. " +
+                "More text and text, this is text, more text. " +
+                "This is a lot of text, don't worry about reading it." + 
+                "This is some more text, but maybe it will be the same amount of text, who knows."}/>
+        <Slide
+          imgSrc={"http://placekitten.com/400/400"}
+          header={"Simple ingredients, expertly prepared"}
+          body={"We focus on sourcing the freshest ingredients." +
+                "More text and text, this is text, more text. " +
+                "This is a lot of text, don't worry about reading it." + 
+                "This is some more text, but maybe it will be the same amount of text, who knows."}/>
+        <Slide
+          imgSrc={"http://placekitten.com/350/350"}
+          header={"The 12x Project"}
+          body={"A rotating menu inspired by flavours from arount the world." +
+                "More text and text, this is text, more text. " +
+                "This is a lot of text, don't worry about reading it." + 
+                "This is some more text, but maybe it will be the same amount of text, who knows."}/>
+        <Slide
+          imgSrc={"http://placekitten.com/450/450"}
+          header={"This month's feature"}
+          body={"A delicious sandwich from this month." +
+                "More text and text, this is text, more text. " +
+                "This is a lot of text, don't worry about reading it." + 
+                "This is some more text, but maybe it will be the same amount of text, who knows."}/>
+        </div>
       <Header/>
 	  </div>
 	)

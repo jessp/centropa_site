@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "animate.css": "^3.7.0",
     "bluebird": "^3.5.2",
     "gatsby": "^2.0.31",
     "gatsby-image": "^2.0.15",
@@ -20,6 +21,7 @@
     "glamor": "^2.20.40",
     "he": "^1.2.0",
     "react": "^16.5.1",
+    "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-icons": "^3.2.2",
