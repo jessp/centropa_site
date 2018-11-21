@@ -26,6 +26,8 @@ html{
 .menuSection {
 	width: 100%;
 	margin-bottom: 50px;
+	width:100%;
+	margin-top: 50px;
 }
 
 .menuSection .menuEntry:last-of-type {

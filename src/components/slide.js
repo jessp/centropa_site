@@ -15,7 +15,6 @@ class Slide extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
     new Vivus('sandwich-svg', {duration: 200, file: this.props.sketch});
   }
 

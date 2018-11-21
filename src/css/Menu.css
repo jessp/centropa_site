@@ -4,17 +4,23 @@
 }
 
 .foodColumn {
-	width:40%;
-	position: absolute;
-	margin-left: 20%;
+	width:60%;
+	margin-left: 0%;
 	padding-right: 15px;
+	float: left;
 }
 
 .mediaColumn {
 	width:40%;
-	margin-left: 60%;
 	height: 100%;
-	position: fixed;
+	position: sticky;
+	top:-1px;
+	float: right;
+}
+
+.mediaColumn img{
+	height: auto;
+	width: 100%;
 }
 
 .menuColumn {
