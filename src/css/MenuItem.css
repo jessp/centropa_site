@@ -4,6 +4,7 @@ html{
 
 .menuEntry {
 	width: 100%;
+	margin-bottom: 1.45em;
 }
 
 .menuItemHeading h3{
@@ -54,6 +55,16 @@ html{
 .menuTags {
 	font-size: 0.8em;
 	font-style: italic;
+	margin-bottom: 0px;
+}
+
+.menuIcon {
+	cursor: pointer;
+	opacity:0.5;
+}
+
+.menuIcon.activeImageIcon {
+	opacity:1;
 }
 
 

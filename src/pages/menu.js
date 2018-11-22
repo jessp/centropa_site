@@ -7,6 +7,17 @@ class Menu extends React.Component {
 
   constructor(props){
     super(props);
+
+    this.filterItems = this.filterItems.bind(this);
+  }
+
+  filterItems(menu_items, cat_name){
+    return menu_items.filter(function(d){
+        let item_exists = d.node.categories.filter(function(e){
+          return e.name === cat_name;
+        })
+        return item_exists.length > 0;
+      });
   }
 
   
@@ -18,10 +29,10 @@ class Menu extends React.Component {
         <Layout pageName={""}>
           <div className={"controlColumn menuColumn"}/>
           <div style={{"width": "80%", "marginLeft":"20%", "position":"relative"}}>
-            <MenuCat cat_name={"snacks"} menu_items={menu_items}/>
-            <MenuCat cat_name={"sandwiches"} menu_items={menu_items}/>
-            <MenuCat cat_name={"mains"} menu_items={menu_items}/>
-            <MenuCat cat_name={"desserts"} menu_items={menu_items}/>
+            <MenuCat cat_name={"snacks"} menu_items={this.filterItems(menu_items, "snacks")}/>
+            <MenuCat cat_name={"sandwiches"} menu_items={this.filterItems(menu_items, "sandwiches")}/>
+            <MenuCat cat_name={"mains"} menu_items={this.filterItems(menu_items, "mains")}/>
+            <MenuCat cat_name={"desserts"} menu_items={this.filterItems(menu_items, "desserts")}/>
           </div>
           
         </Layout>
@@ -56,7 +67,7 @@ export const menuQuery = graphql`
                 description
                 country
                 food_photo {
-                  link
+                  source_url
                 }
               }
             }

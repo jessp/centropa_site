@@ -4,25 +4,35 @@ import he from "he"
 import MenuEntry from '../components/MenuEntry'
 
 
-
-
-
 class MenuCat extends React.Component {
 
   constructor(props){
     super(props);
+
+    this.changeImg = this.changeImg.bind(this);
+
+    let start_image = this.props.menu_items.find(function(element) {
+      return element.node.acf.food_photo;
+    });
+
+    if (start_image){
+      start_image = {"title": start_image.node.title, "img": start_image.node.acf.food_photo.source_url}
+    }
+
+    this.state = {
+      "currentImage": start_image
+    }
+  }
+
+  changeImg(item){
+    this.setState({"currentImage": item});
   }
 
   render(){
     let cat_name = this.props.cat_name;
-    let menu_items = this.props.menu_items;
-
-    let items = menu_items.filter(function(d){
-        let item_exists = d.node.categories.filter(function(e){
-          return e.name === cat_name;
-        })
-        return item_exists.length > 0;
-      });
+    let items = this.props.menu_items;
+    let changeImg = this.changeImg;
+    let currentImage = this.state.currentImage;
 
     return (
         <div className={"menuSection"}>
@@ -44,6 +54,9 @@ class MenuCat extends React.Component {
                       price = {item.node.acf.price}
                       description = {he.decode(item.node.acf.description)}
                       tags = {tags}
+                      image = {item.node.acf.food_photo ? item.node.acf.food_photo.source_url : null}
+                      changeImg = {changeImg}
+                      isActive = {currentImage ? currentImage.title == he.decode(item.node.title) : false}
                     />
                   )
                 })
@@ -51,9 +64,11 @@ class MenuCat extends React.Component {
             </div>
             
           </div>
+            {this.state.currentImage &&
             <div className={"mediaColumn"}>
-              <img className={"mediaBg"} src={"http://placekitten.com/400/600"}/>
+              <img className={"mediaBg"} src={this.state.currentImage.img}/>
             </div>
+            }
             <div className={"clearer"}/>
         </div>
     )
