@@ -1,0 +1,31 @@
+.menuLocationPanel a {
+	width: 100%;
+	display: inline-block;
+	padding-left: 25px;
+	color: #0d3e32;
+	transition: padding-left 0.5s;
+}
+
+.menuLocationPanel a:hover{
+	text-decoration: none;
+	color: #0d3e32;
+	padding-left: 30px;
+	transition: padding-left 0.5s;
+}
+
+.menuLocationPanel a:before{
+	content: "";
+	width: 20px;
+	border-bottom: 2px solid;
+	position: absolute;
+	margin-left: -25px;
+	padding-top: 0.65em;
+	transition: width 0.5s, margin-left 0.5s;
+}
+
+
+.menuLocationPanel a:hover:before{
+	width: 25px;
+	margin-left: -30px;
+	transition: width 0.5s, margin-left 0.5s;
+}

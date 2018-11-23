@@ -6,6 +6,7 @@ import MenuLocation from '../components/MenuLocation'
 import FilterPanel from '../components/FilterPanel'
 
 
+
 class Menu extends React.Component {
 
   constructor(props){
@@ -33,7 +34,7 @@ class Menu extends React.Component {
 
           <div className={"menuColumns"}>
             <div className={"controlColumn menuColumn"}>
-              <MenuLocation/>
+              <MenuLocation categories={["snacks", "sandwiches", "mains", "desserts"]}/>
               <FilterPanel/>
             </div>
             <div style={{"width": "80%", "marginLeft":"20%", "position":"relative"}}>
@@ -43,7 +44,7 @@ class Menu extends React.Component {
               <MenuCat cat_name={"desserts"} menu_items={this.filterItems(menu_items, "desserts")}/>
             </div>
           </div>
-          
+
         </Layout>
       )
   }

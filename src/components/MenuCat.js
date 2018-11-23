@@ -2,6 +2,10 @@ import React from 'react'
 import {capitalizeFirstLetter} from "../utils/helpers"
 import he from "he"
 import MenuEntry from '../components/MenuEntry'
+import ScrollableAnchor from 'react-scrollable-anchor'
+import { configureAnchors } from 'react-scrollable-anchor'
+
+
 
 
 class MenuCat extends React.Component {
@@ -22,6 +26,8 @@ class MenuCat extends React.Component {
     this.state = {
       "currentImage": start_image
     }
+
+    configureAnchors({keepLastAnchorHash: true})
   }
 
   changeImg(item){
@@ -37,7 +43,9 @@ class MenuCat extends React.Component {
     return (
         <div className={"menuSection"}>
           <div  className = {"foodColumn"}> 
-            <h2>{capitalizeFirstLetter(cat_name)}</h2>
+            <ScrollableAnchor id={cat_name}>
+              <h2>{capitalizeFirstLetter(cat_name)}</h2>
+            </ScrollableAnchor>
             <div className={"menuItemGroups"}>
               {
                 items.map(function(item, index){
