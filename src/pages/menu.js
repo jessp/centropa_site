@@ -2,6 +2,9 @@ import React from 'react'
 import { graphql } from "gatsby"
 import Layout from '../layouts/Layout'
 import MenuCat from '../components/MenuCat'
+import MenuLocation from '../components/MenuLocation'
+import FilterPanel from '../components/FilterPanel'
+
 
 class Menu extends React.Component {
 
@@ -27,12 +30,18 @@ class Menu extends React.Component {
 
       return (
         <Layout pageName={""}>
-          <div className={"controlColumn menuColumn"}/>
-          <div style={{"width": "80%", "marginLeft":"20%", "position":"relative"}}>
-            <MenuCat cat_name={"snacks"} menu_items={this.filterItems(menu_items, "snacks")}/>
-            <MenuCat cat_name={"sandwiches"} menu_items={this.filterItems(menu_items, "sandwiches")}/>
-            <MenuCat cat_name={"mains"} menu_items={this.filterItems(menu_items, "mains")}/>
-            <MenuCat cat_name={"desserts"} menu_items={this.filterItems(menu_items, "desserts")}/>
+
+          <div className={"menuColumns"}>
+            <div className={"controlColumn menuColumn"}>
+              <MenuLocation/>
+              <FilterPanel/>
+            </div>
+            <div style={{"width": "80%", "marginLeft":"20%", "position":"relative"}}>
+              <MenuCat cat_name={"snacks"} menu_items={this.filterItems(menu_items, "snacks")}/>
+              <MenuCat cat_name={"sandwiches"} menu_items={this.filterItems(menu_items, "sandwiches")}/>
+              <MenuCat cat_name={"mains"} menu_items={this.filterItems(menu_items, "mains")}/>
+              <MenuCat cat_name={"desserts"} menu_items={this.filterItems(menu_items, "desserts")}/>
+            </div>
           </div>
           
         </Layout>

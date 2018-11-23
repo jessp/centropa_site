@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, Link } from "gatsby"
+import Vivus from 'vivus';
 import logo from "../images/logo-11.svg"
 import Header from '../components/header'
 import { IoIosPin } from 'react-icons/io'
@@ -8,14 +9,23 @@ import Slide from '../components/slide'
 import sandwich_sketch from '../images/home_page/sandwich_sketch.svg';
 import sandwich_photo from '../images/home_page/sandwich_photo.jpg';
 
+import bjor_sketch from '../images/home_page/bjor_sketch.svg';
+import bjor_photo from '../images/home_page/bjor_photo.png';
 
-
-
+import scroll_down from '../images/home_page/scroll_down.svg';
+import globe_img from '../images/home_page/globe_img.svg';
+import text_img from '../images/home_page/text_img.svg';
 
 import '../css/index.css'
 
 
 class IndexPage extends React.Component {
+
+  componentDidMount() {
+    new Vivus('scroll_down', {duration: 100, file: scroll_down});
+    new Vivus('globe_img', {duration: 100, file: globe_img});
+  }
+
 
   render() {
   	const featuredData = this.props.data.author;
@@ -25,7 +35,11 @@ class IndexPage extends React.Component {
         <div className = {"indexBg"}/>
         <div className={"container"}>
            <div className={"info_holder"}>
-              <img className={"centropaLogo"} src={logo}/>
+              <div className={"logo_holder"} style={{"height":"140px"}}>
+                <div id={"globe_img"}/>
+                <img src={text_img} className={"text_img"}/>
+                <div className={"clearer"}/>
+              </div>
               <p>A quick, succint summary of Centropa's charms, likely ending by saying that it's in the Bjorvika Deichman branch.</p>
            </div>
     	     <div className={"image_clip"} 
@@ -43,6 +57,7 @@ class IndexPage extends React.Component {
                 <span>{"."}</span>
               </p>
             </div>
+          {/*
             <div className={"footerHolder"}>
               <p>
                 <IoIosPin/>
@@ -53,31 +68,41 @@ class IndexPage extends React.Component {
                 <FaFacebook/>
               </p>
             </div>
+          */}
+
         </div>
-          <Slide
+
+          
+           <Slide
             id={"sandwich-svg"}
             photoSrc={sandwich_photo}
             header={"Simple ingredients, expertly prepared"}
+            sketch={sandwich_sketch}
             body={"Centrally located in the great new city centre. " +
                   "More text and text, this is text, more text. " +
                   "This is a lot of text, don't worry about reading it. " + 
-                  "This is some more text, but maybe it will be the same amount of text, who knows."}>
-            <object id="sandwich-svg" className={"slideSketch"} type="image/svg+xml" data={sandwich_sketch}></object>
-          </Slide>
+                  "This is some more text, but maybe it will be the same amount of text, who knows."}/>
           <Slide
-            imgSrc={"http://placekitten.com/400/400"}
+            id={"bjor-svg"}
+            photoSrc={bjor_photo}
             header={"In the heart of Bjørvika"}
+            sketch={bjor_sketch}
             body={"We focus on sourcing the freshest ingredients." +
                   "More text and text, this is text, more text. " +
                   "This is a lot of text, don't worry about reading it. " + 
                   "This is some more text, but maybe it will be the same amount of text, who knows."}/>
+         
+          {/*
           <Slide
             imgSrc={"http://placekitten.com/350/350"}
             header={"The 12x Project"}
-            body={"A rotating menu inspired by flavours from arount the world." +
+            body={"A rotating menu inspired by flavours from arount the world. " +
                   "More text and text, this is text, more text. " +
                   "This is a lot of text, don't worry about reading it. " + 
-                  "This is some more text, but maybe it will be the same amount of text, who knows."}/>
+                  "This is some more text, but maybe it will be the same amount of text, who knows."}/>*/}
+          <div style={{"position": "absolute", "bottom":"10px", "textAlign": "center", "zIndex": 3, "width": "100%"}}>
+            <div id="scroll_down" style={{"width": "50px", "margin": "0 auto"}}/>
+          </div>
           <div className={"bgOverlay"}/>
         <Header/>
   	  </div>

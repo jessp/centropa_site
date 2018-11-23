@@ -1,6 +1,8 @@
 .controlColumn {
 	width:20%;
 	position: fixed;
+	padding-left: 15px;
+	padding-right: 15px;
 }
 
 .foodColumn {
@@ -23,13 +25,19 @@
 	width: 100%;
 }
 
-.menuColumn {
-	margin-top: 35px;
-}
-
 .mediaBg {
 	width: 100%;
-	height: 100%;
+	height: 500px;
 	background-size: cover;
 	background-repeat: no-repeat;
+}
+
+.menuColumns h2 {
+	border-bottom: 3px solid #0d3e32;
+	color: #0d3e32;
+}
+
+.controlColumn h2 {
+	font-size: 1.25em;
+	line-height: 1.45em;
 }

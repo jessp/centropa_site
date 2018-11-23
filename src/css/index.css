@@ -71,10 +71,6 @@ html {
 
 }
 
-.centropaLogo {
-	margin-bottom: 0px;
-}
-
 .authorInfoHolder {
 	position: absolute;
     z-index: 2;
@@ -107,4 +103,19 @@ html {
 
 .footerHolder p {
 	margin-bottom: 0px;
+}
+
+#globe_img {
+	width: 20%;
+	float: left;
+}
+
+#globe_img svg {
+	width: 100%;
+}
+
+.text_img {
+	float: right;
+	width: 80%;
+	margin-bottom:0px;
 }

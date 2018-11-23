@@ -66,7 +66,7 @@ class MenuCat extends React.Component {
           </div>
             {this.state.currentImage &&
             <div className={"mediaColumn"}>
-              <img className={"mediaBg"} src={this.state.currentImage.img}/>
+              <div className={"mediaBg"} style={{"backgroundImage": "url(" + this.state.currentImage.img + ")"}}/>
             </div>
             }
             <div className={"clearer"}/>

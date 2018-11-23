@@ -8,6 +8,7 @@ import Vivus from 'vivus';
 
 
 
+
 class Slide extends React.Component {
 
   constructor(props){
@@ -15,7 +16,7 @@ class Slide extends React.Component {
   }
 
   componentDidMount() {
-    new Vivus('sandwich-svg', {duration: 200, file: this.props.sketch});
+    new Vivus(this.props.id, {duration: 200, file: this.props.sketch});
   }
 
   render() {
@@ -23,12 +24,14 @@ class Slide extends React.Component {
   		<div className={"slide"}>
         <div className={"child"}>
         <ScrollAnimation animateIn='fadeIn' duration={2}  animateOnce={true} className={"indexCard"}>
+            <div className={"slideImg"}>
               <div style={{position: "absolute"}} className={"slideSketch"}>
                 <img src={this.props.photoSrc} style={{"opacity":"0.5"}}/>
               </div>
               <div style={{position: "absolute"}}>
-                {this.props.children}
+                <div id={this.props.id}/>
               </div>
+            </div>
             <div className={"indexCardInfo"}>
               <h1>{this.props.header}</h1>
               <p>{this.props.body}</p>
