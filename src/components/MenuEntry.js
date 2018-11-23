@@ -9,7 +9,6 @@ class MenuEntry extends React.Component {
 
   render() {
     let tagString = this.props.tags.join(", ");
-    console.log(this.props.isActive);
   	return(
   		<div className={"menuEntry"}>
   			<div className={"menuItemHeading"}>

@@ -13,6 +13,11 @@ class Menu extends React.Component {
     super(props);
 
     this.filterItems = this.filterItems.bind(this);
+    this.setActiveCat = this.setActiveCat.bind(this);
+
+    this.state ={
+      "activeCat": "snacks"
+    }
   }
 
   filterItems(menu_items, cat_name){
@@ -22,6 +27,10 @@ class Menu extends React.Component {
         })
         return item_exists.length > 0;
       });
+  }
+
+  setActiveCat(cat){
+    this.setState({"activeCat": cat});
   }
 
   
@@ -34,14 +43,14 @@ class Menu extends React.Component {
 
           <div className={"menuColumns"}>
             <div className={"controlColumn menuColumn"}>
-              <MenuLocation categories={["snacks", "sandwiches", "mains", "desserts"]}/>
+              <MenuLocation categories={["snacks", "sandwiches", "mains", "desserts"]} active={this.state.activeCat}/>
               <FilterPanel/>
             </div>
             <div style={{"width": "80%", "marginLeft":"20%", "position":"relative"}}>
-              <MenuCat cat_name={"snacks"} menu_items={this.filterItems(menu_items, "snacks")}/>
-              <MenuCat cat_name={"sandwiches"} menu_items={this.filterItems(menu_items, "sandwiches")}/>
-              <MenuCat cat_name={"mains"} menu_items={this.filterItems(menu_items, "mains")}/>
-              <MenuCat cat_name={"desserts"} menu_items={this.filterItems(menu_items, "desserts")}/>
+              <MenuCat cat_name={"snacks"} menu_items={this.filterItems(menu_items, "snacks")} setActiveCat={this.setActiveCat}/>
+              <MenuCat cat_name={"sandwiches"} menu_items={this.filterItems(menu_items, "sandwiches")} setActiveCat={this.setActiveCat}/>
+              <MenuCat cat_name={"mains"} menu_items={this.filterItems(menu_items, "mains")} setActiveCat={this.setActiveCat}/>
+              <MenuCat cat_name={"desserts"} menu_items={this.filterItems(menu_items, "desserts")} setActiveCat={this.setActiveCat}/>
             </div>
           </div>
 

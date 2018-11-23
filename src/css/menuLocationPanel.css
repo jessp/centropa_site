@@ -23,9 +23,20 @@
 	transition: width 0.5s, margin-left 0.5s;
 }
 
-
 .menuLocationPanel a:hover:before{
 	width: 25px;
 	margin-left: -30px;
 	transition: width 0.5s, margin-left 0.5s;
+}
+
+.menuLocationPanel a.activeMenu {
+	font-weight: bold;
+	padding-left: 35px;
+}
+
+.menuLocationPanel a.activeMenu:before{
+	content: "";
+	border-bottom: 3px solid;
+	margin-left: -35px;
+	width: 30px;
 }

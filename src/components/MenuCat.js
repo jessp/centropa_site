@@ -14,7 +14,10 @@ class MenuCat extends React.Component {
     super(props);
 
     this.changeImg = this.changeImg.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
 
+    //start image is the initial image shown on section load.
+    //it's set from the first element in the section with an associated element
     let start_image = this.props.menu_items.find(function(element) {
       return element.node.acf.food_photo;
     });
@@ -24,14 +27,52 @@ class MenuCat extends React.Component {
     }
 
     this.state = {
-      "currentImage": start_image
+      "currentImage": start_image,
+      "isInView": false,
+      "windowHeight": 0
     }
 
     configureAnchors({keepLastAnchorHash: true})
+
+  }
+
+  componentDidMount(){
+    this.updateWindowDimensions();
+    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('resize', this.updateWindowDimensions);
+
+    if ((this.refs.thisSection.offsetTop - 10) < (window.scrollY + window.innerHeight) && (this.refs.thisSection.offsetTop + 75)  > window.scrollY){
+      this.props.setActiveCat(this.props.cat_name);
+      this.setState({"isInView": true});
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  handleScroll(event) {
+
+    if ((this.refs.thisSection.offsetTop - 10) < (window.scrollY + window.innerHeight) &&
+       (this.refs.thisSection.offsetTop + 75)  > window.scrollY) {
+      if (this.state.isInView === false) {
+        this.props.setActiveCat(this.props.cat_name);
+        this.setState({"isInView": true});
+      }
+    } else {
+      if (this.state.isInView === true) {
+        this.setState({"isInView": false});
+      }
+    }
   }
 
   changeImg(item){
     this.setState({"currentImage": item});
+  }
+
+  updateWindowDimensions() {
+    this.setState({ windowHeight: window.innerHeight });
   }
 
   render(){
@@ -41,7 +82,7 @@ class MenuCat extends React.Component {
     let currentImage = this.state.currentImage;
 
     return (
-        <div className={"menuSection"}>
+        <div className={"menuSection"} ref={"thisSection"}>
           <div  className = {"foodColumn"}> 
             <ScrollableAnchor id={cat_name}>
               <h2>{capitalizeFirstLetter(cat_name)}</h2>
