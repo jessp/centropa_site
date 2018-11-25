@@ -62,6 +62,7 @@
 	margin-top: 50px;
     margin-bottom: 0px;
     cursor: pointer;
+    color: #0d3e32;
 }
 
 .authorGrid {
@@ -79,4 +80,10 @@
 .scrollIndicator img{
 	margin-top: -5px;
     width: 45px;
+}
+
+.readMoreButton a{
+	margin-left: 0px;
+	font-family: Lato;
+    font-weight: bold;
 }

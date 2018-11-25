@@ -43,10 +43,11 @@ class TwelveX extends React.Component {
               <p>
                 {"“" + "The customers who come in, settle themselves down, and unfold a newspaper without saying a word, just a jerk of the head in the guise of a hello, and then they receive, in silent ceremony, their first glass." + "”"}
               </p>
-
-              <Link to={"/" + featuredAuthor.slug}>
-                <h5>{"Read More"}</h5>
-              </Link>
+              <div className={"underlineLink readMoreButton"}>
+                <Link to={"/" + featuredAuthor.slug}>
+                  <span>{"Read More"}</span>
+                </Link>
+              </div>
             </div>
             <div className={"authorGrid"}>
               <AuthorGrid authors={gridAuthors} setAuthor={this.setActiveAuthor} featuredAuthor={featuredAuthor.acf.author_name}/>

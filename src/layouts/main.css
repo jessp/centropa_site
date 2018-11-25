@@ -652,3 +652,52 @@ pre tt:after {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.underlineLink a {
+  margin-left: 15px;
+  padding-top: 5px;
+  color: #0d3e32;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.underlineLink a span {
+  display: inline-block;
+}
+
+.underlineLink a:hover span:after,
+.underlineLink a:focus span:after,
+.underlineLink a:active span:after,
+.underlineLink .activeUnderlineLink span:after{
+  transform: translate3d(0, 0, 0);
+  background-color:  #efc731;
+}
+
+.activeUnderlineLink {
+  font-weight: bold;
+}
+
+.underlineLink a span{
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0px;
+  display: inline-block;
+}
+
+.underlineLink a span:after{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  transform: translate3d(-105%, 0, 0);
+  background-color:#fff;
+  transition: transform 0.2s ease-in, background-color 0.2s;
+}

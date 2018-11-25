@@ -19,7 +19,7 @@ class AuthorArchive extends React.Component {
 
 	render(){
 
-		let sorting = ["Alphabetical", "Country", "Year"];
+		let sorting = ["Alphabetical", "Country", "Date"];
 		let active = this.state.activeSort;
 		let setAct = this.setActive;
 		let setAuthor = this.props.setAuthor;
@@ -38,18 +38,40 @@ class AuthorArchive extends React.Component {
 			 	return cats;
 			}, {});
 		} else if (active === "Country"){
-
-		} else if (active === "Year"){
-
+			cats = this.props.allAuthors.reduce((cats, name) => {
+				let country = name.node.acf.country_name;
+			 	if (country in cats){
+			 		cats[country].push(name);
+			 	} 
+			  	else {
+			  		cats[country] = [name];
+			  	}   
+			 	return cats;
+			}, {});
+		} else if (active === "Date"){
+			cats = this.props.allAuthors.reduce((cats, name) => {
+				let time = new Date(new Date(name.node.date).getFullYear(), new Date(name.node.date).getMonth());
+			 	if (time in cats){
+			 		cats[time].push(name);
+			 	} 
+			  	else {
+			  		cats[time] = [name];
+			  	}   
+			 	return cats;
+			}, {});
 		}
+
+		let months = 
+		["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+		
 
 		return (
 			<div className={"authorListHolder"}>
-				<div className={"authorSorting headerContainer"} style={{"position": "relative", "width": "100%"}}>
+				<div className={"authorSorting underlineLink"} style={{"position": "relative", "width": "100%"}}>
 					{
 						sorting.map(function(sort, idx){
 							return (
-								<a key={idx} className={sort === active ? "activeHeaderLink" : ""}
+								<a key={idx} className={sort === active ? "activeUnderlineLink" : ""}
 									onClick={() => setAct(sort)}>
 									<span>{sort}</span>
 								</a>
@@ -59,10 +81,34 @@ class AuthorArchive extends React.Component {
 				</div>
 				<h2>{"Archive of All Authors"}</h2>
 					<div className={"authorColumns"}>
-						{
-							this.state.activeSort === "Alphabetical" &&
+
 							<div>
-								{
+								{active === "Date" &&
+									Object.keys(cats).sort().map(function(cat){
+										return (
+											<div key={cat}>
+												<h3>
+													{months[new Date(cat).getMonth()] + " " + new Date(cat).getFullYear()}
+												</h3>
+												<ul>
+													{cats[cat].sort(function(a, b){
+														return new Date(b.node.date) - new Date(a.node.date);
+													}).map(function(author, idx){
+														return (
+															<li key={author.node.acf.author_name}
+																onClick={() => setAuthor(author.node)}>
+																<span className={author.node.acf.author_name === activeAuthor ? "activeAuthorSpan" : ""}>
+																	{author.node.acf.author_name}
+																</span>
+															</li>
+														)
+													})}
+												</ul>
+											</div>
+										)
+									})
+								}
+								{active !== "Date" &&
 									Object.keys(cats).sort().map(function(cat){
 										return (
 											<div key={cat}>
@@ -86,19 +132,6 @@ class AuthorArchive extends React.Component {
 									})
 								}
 							</div>
-						}
-						{
-							this.state.activeSort === "Country" &&
-							<div>
-								{"country"}
-							</div>
-						}
-						{
-							this.state.activeSort === "Year" &&
-							<div>
-								{"year"}
-							</div>
-						}
 					</div>
 
 
