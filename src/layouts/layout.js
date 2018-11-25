@@ -34,8 +34,8 @@ const Layout = ({ home, children, pageName }) => (
           style={{
             margin: '0 auto',
             padding: '0px',
-            paddingTop: 0,
-            height: '100%',
+            marginTop: "35px",
+            height: 'calc(100% - 35px)',
             position: 'relative'
           }}
         >

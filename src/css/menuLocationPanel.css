@@ -1,3 +1,7 @@
+.menuLocationPanel {
+	margin-bottom: 25px;
+}
+
 .menuLocationPanel a {
 	width: 100%;
 	display: inline-block;

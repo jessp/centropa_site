@@ -1,8 +1,11 @@
 import React from 'react'
-import { graphql} from "gatsby"
+import { graphql, Link} from "gatsby"
 import Layout from '../layouts/Layout'
-import BookShelf from '../components/BookShelf'
-import Book from '../components/Book'
+import AuthorGrid from '../components/AuthorGrid'
+import AuthorArchive from '../components/AuthorArchive'
+import "./../css/12x.css"
+import ScrollDown from "../images/home_page/scroll_down.svg";
+
 
 
 class TwelveX extends React.Component {
@@ -10,46 +13,52 @@ class TwelveX extends React.Component {
   constructor(props){
     super(props);
 
-    this.render_shelf = this.render_shelf.bind(this);
+    this.state = {
+      "featuredAuthor": this.props.data.featured.edges[0].node
+    }
+
+    this.setActiveAuthor = this.setActiveAuthor.bind(this);
   }
 
-  render_shelf(books){
-    return (
-      <BookShelf>
-        {
-          books.map(function(book, idx){
-            let tag_names = [];
-            if (book.node.tags){
-              tag_names = book.node.tags.map(node => node.name);
-            }
-            return (
-                <Book key={idx}
-                  title={book.node.title}
-                  author={book.node.acf.author_name}
-                  country={book.node.acf.country_name}
-                  photo={book.node.acf.location_photo.source_url}
-                  slug={book.node.slug}
-                  special_guest={tag_names.indexOf("limited feature") > -1}
-                />
-            )
-          })
-        }
-      </BookShelf>
-    )
+  setActiveAuthor(authorNode){
+    this.setState({"featuredAuthor": authorNode});
   }
 
   render() {
-      let contributors = this.props.data.allWordpressPost.edges;
+    let featuredAuthor = this.state.featuredAuthor;
+    let gridAuthors = [this.props.data.featured.edges[0]].concat(this.props.data.nonFeatured.edges);
 
       return (
-        <Layout pageName={"Books"}>
-          <div className = {"wrapper"}>
-            <div style={{"height": "100%", "position": "relative"}}>
-              {this.render_shelf(contributors.slice(0,4))}
-              {this.render_shelf(contributors.slice(4,8))}
-              {this.render_shelf(contributors.slice(8,13))}
+        <Layout pageName={""}>
+          <div className={"twelveXWrapper"}>
+            <div className={"twelveXIntro"}>
+              {"In the 12x project, we bring together a roster of twelve Norwegian authors and encourage them to write about the food culture of a given country. We, in turn, are inspired by their writing to create a special sandwich as part of our rotating sandwich menu. We change one of our authors every few weeks, and change our sandwich feature to match. We hope their wisdom inspires you too."}
+            </div>
+            <div className={"authorPhoto"} 
+                  style={{"backgroundImage": "url('" + featuredAuthor.acf.author_photo.source_url + "')"}}/>
+            <div className={"storyInfo"}>
+              <h3>{featuredAuthor.acf.author_name}</h3>
+              <h2>{featuredAuthor.title}</h2>
+              <h4>{"Inspired by " + featuredAuthor.acf.country_name}</h4>
+              <p>
+                {"“" + "The customers who come in, settle themselves down, and unfold a newspaper without saying a word, just a jerk of the head in the guise of a hello, and then they receive, in silent ceremony, their first glass." + "”"}
+              </p>
+
+              <Link to={"/" + featuredAuthor.slug}>
+                <h5>{"Read More"}</h5>
+              </Link>
+            </div>
+            <div className={"authorGrid"}>
+              <AuthorGrid authors={gridAuthors} setAuthor={this.setActiveAuthor} featuredAuthor={featuredAuthor.acf.author_name}/>
+            </div>
+            <div className={"scrollIndicator"}>
+              <img src={ScrollDown}/>
             </div>
           </div>
+          <AuthorArchive 
+            allAuthors={this.props.data.allContributors.edges} 
+            setAuthor={this.setActiveAuthor}
+            featuredAuthor={featuredAuthor.acf.author_name} />
         </Layout>
       )
   }
@@ -60,16 +69,17 @@ export default TwelveX
 
 export const contributorQuery = graphql`
   query {
-          allWordpressPost(filter:{
+          allContributors: allWordpressPost(filter:{
             categories:
               {elemMatch: 
                 {name:
                   {eq: "contributor"}
                 }
               }
-          }) {
+          } sort: { fields: [date], order: ASC }) {
           edges {
             node {
+              date
               categories {
                 name
               }
@@ -81,6 +91,84 @@ export const contributorQuery = graphql`
               acf{
                 author_name,
                 country_name,
+                author_photo {
+                  source_url
+                },
+                location_photo {
+                  source_url
+                }
+              }
+            }
+          }
+        }
+          nonFeatured: allWordpressPost(filter:{
+            categories:
+              {elemMatch: 
+                {name:
+                  {eq: "contributor"}
+                }
+              }
+            tags: {elemMatch: 
+                {name:
+                  {nin: "limited feature"}
+                }
+            }
+          } sort: { fields: [date], order: ASC }
+          limit: 11) {
+          edges {
+            node {
+              date
+              categories {
+                name
+              }
+              tags {
+                name
+              }
+              title
+              slug
+              acf{
+                author_name,
+                country_name,
+                author_photo {
+                  source_url
+                },
+                location_photo {
+                  source_url
+                }
+              }
+            }
+          }
+        }
+        featured: allWordpressPost(filter:{
+            categories:
+              {elemMatch: 
+                {name:
+                  {eq: "contributor"}
+                }
+              }
+            tags: {elemMatch: 
+                {name:
+                  {eq: "limited feature"}
+                }
+            }
+          } sort: { fields: [date], order: ASC }) {
+          edges {
+            node {
+              date
+              categories {
+                name
+              }
+              tags {
+                name
+              }
+              title
+              slug
+              acf{
+                author_name,
+                country_name,
+                author_photo {
+                  source_url
+                },
                 location_photo {
                   source_url
                 }
@@ -89,4 +177,5 @@ export const contributorQuery = graphql`
           }
         }
       }
+      
 `

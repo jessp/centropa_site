@@ -44,7 +44,7 @@ class Menu extends React.Component {
           <div className={"menuColumns"}>
             <div className={"controlColumn menuColumn"}>
               <MenuLocation categories={["snacks", "sandwiches", "mains", "desserts"]} active={this.state.activeCat}/>
-              <FilterPanel/>
+              {/*<FilterPanel/>*/}
             </div>
             <div style={{"width": "80%", "marginLeft":"20%", "position":"relative"}}>
               <MenuCat cat_name={"snacks"} menu_items={this.filterItems(menu_items, "snacks")} setActiveCat={this.setActiveCat}/>

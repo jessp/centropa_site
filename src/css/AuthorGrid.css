@@ -1,0 +1,46 @@
+.authorGridContainer{
+	padding: 15px 15px 0px 15px;
+	display: grid;
+	grid-gap: 0px 15px;
+	grid-template-columns: 33% 33% auto;
+  	grid-template-rows: 25% 25% 25% 25%;
+  	width: calc(100% - 30px);
+  	height: 100%;
+}
+
+.authorThumbnail {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+    height: 70%;
+    overflow: hidden;
+}
+
+.featuredButton .authorThumbnail {
+	border:2px solid #fff;	
+}
+
+.authorButton {
+	cursor: pointer;
+	opacity: 0.65;
+}
+
+.authorButton.featuredButton {
+	opacity: 1;
+}
+
+.authorButton p {
+	font-size: 0.78em;
+	line-height: 1em;
+	margin: 3px 0px 0px 0px;
+}
+
+.authorSorting {
+	background-color: #0d3e32;
+}
+
+.authorSorting a {
+	color: #fff;
+	cursor: pointer;
+}

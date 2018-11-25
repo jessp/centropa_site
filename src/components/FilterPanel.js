@@ -7,6 +7,7 @@ class FilterPanel extends React.Component {
   	return(
   		<div>
   			<h2>{"Diet Filters"}</h2>
+  			
   		</div>
   	)
 

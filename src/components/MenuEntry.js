@@ -18,9 +18,13 @@ class MenuEntry extends React.Component {
   			<p className={"menuDescription"}>{this.props.description}</p>
         <p className={"menuTags"}>{tagString}</p>
         {this.props.image &&
-          <FaEye 
-            className={"menuIcon " + (this.props.isActive ? "activeImageIcon" : "")}
-            onClick={() => this.props.changeImg({"title": this.props.item_name, "img": this.props.image})}/>
+          <div onClick={() => this.props.changeImg({"title": this.props.item_name, "img": this.props.image})}
+          className={"menuIcon " + (this.props.isActive ? "activeImageIcon" : "")}>
+            <FaEye />
+            {!this.props.isActive &&
+              <span className = {"previewIcon"}>{"Take a look"}</span>
+            }
+          </div>
         }
   		</div>
   	)

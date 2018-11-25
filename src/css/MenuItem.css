@@ -63,6 +63,15 @@ html{
 	opacity:1;
 }
 
+.previewIcon {
+    font-size: 0.7em;
+    line-height: 1.6em;
+    padding-top: -5px;
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 5px;
+}
+
 
 
 
