@@ -701,3 +701,19 @@ pre tt:after {
   background-color:#fff;
   transition: transform 0.2s ease-in, background-color 0.2s;
 }
+
+.bgShapes {
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color: #edcc53;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bgShapeOne {
+  -webkit-clip-path: polygon(0 25%, 100% 70%, 100% 100%);
+  clip-path: polygon(0 25%, 100% 70%, 100% 100%);
+}

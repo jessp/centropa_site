@@ -6,15 +6,21 @@ import Header from '../components/header'
 import { IoIosPin } from 'react-icons/io'
 import { FaInstagram, FaFacebook } from 'react-icons/fa'
 import Slide from '../components/slide'
+
 import sandwich_sketch from '../images/home_page/sandwich_sketch.svg';
 import sandwich_photo from '../images/home_page/sandwich_photo.jpg';
 
 import bjor_sketch from '../images/home_page/bjor_sketch.svg';
 import bjor_photo from '../images/home_page/bjor_photo.png';
 
-import scroll_down from '../images/home_page/scroll_down.svg';
+import eating_sketch from '../images/home_page/eating_sketch.svg';
+import eating_photo from '../images/home_page/eating_photo.jpg';
+
 import globe_img from '../images/home_page/globe_img.svg';
 import text_img from '../images/home_page/text_img.svg';
+
+import scroll_down from '../images/scroll_down.svg';
+
 
 import '../css/index.css'
 
@@ -57,18 +63,6 @@ class IndexPage extends React.Component {
                 <span>{"."}</span>
               </p>
             </div>
-          {/*
-            <div className={"footerHolder"}>
-              <p>
-                <IoIosPin/>
-                {"Find us at Dronning Eufemias gate 4, 0154 Oslo."}
-              </p>
-              <p style={{"fontSize": "1.5em"}}>
-                <FaInstagram style={{"marginRight": "3px"}}/>
-                <FaFacebook/>
-              </p>
-            </div>
-          */}
 
         </div>
 
@@ -91,19 +85,29 @@ class IndexPage extends React.Component {
                   "More text and text, this is text, more text. " +
                   "This is a lot of text, don't worry about reading it. " + 
                   "This is some more text, but maybe it will be the same amount of text, who knows."}/>
-         
-          {/*
-          <Slide
-            imgSrc={"http://placekitten.com/350/350"}
-            header={"The 12x Project"}
-            body={"A rotating menu inspired by flavours from arount the world. " +
+         <Slide
+            id={"eating-svg"}
+            photoSrc={eating_photo}
+            header={"Inspired by Literature"}
+            sketch={eating_sketch}
+            body={"We focus on sourcing the freshest ingredients." +
                   "More text and text, this is text, more text. " +
                   "This is a lot of text, don't worry about reading it. " + 
-                  "This is some more text, but maybe it will be the same amount of text, who knows."}/>*/}
+                  "This is some more text, but maybe it will be the same amount of text, who knows."}/>
           <div style={{"position": "absolute", "bottom":"10px", "textAlign": "center", "zIndex": 3, "width": "100%"}}>
             <div id="scroll_down" style={{"width": "50px", "margin": "0 auto"}}/>
           </div>
           <div className={"bgOverlay"}/>
+          <div className={"footerHolder"}>
+            <p>
+              <IoIosPin/>
+              {"Find us at Dronning Eufemias gate 4, 0154 Oslo."}
+            </p>
+            <p style={{"fontSize": "1.5em"}}>
+              <FaInstagram style={{"marginRight": "3px"}}/>
+              <FaFacebook/>
+            </p>
+          </div>
         <Header/>
   	  </div>
 	)

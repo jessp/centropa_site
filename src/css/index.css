@@ -94,14 +94,20 @@ html {
 }
 
 .footerHolder {
-	position: absolute;
+	position: relative;
 	bottom: 0px;
-	left: 10px;
-	color: #0d3e32;
+	color: #fff;
 	font-size: 0.7em;
+	height: 100px;
+	background-color: #0d3e32;
+	-webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
+	clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    padding-top: 50px;
+    padding-left: 15px;
 }
 
 .footerHolder p {
+	padding-left: 0px;
 	margin-bottom: 0px;
 }
 

@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout'
 import AuthorGrid from '../components/AuthorGrid'
 import AuthorArchive from '../components/AuthorArchive'
 import "./../css/12x.css"
-import ScrollDown from "../images/home_page/scroll_down.svg";
+import ScrollDown from "../images/scroll_down.svg";
 
 
 
@@ -30,6 +30,7 @@ class TwelveX extends React.Component {
 
       return (
         <Layout pageName={""}>
+          <div className={"bgShapes bgShapeOne"}/>
           <div className={"twelveXWrapper"}>
             <div className={"twelveXIntro"}>
               {"In the 12x project, we bring together a roster of twelve Norwegian authors and encourage them to write about the food culture of a given country. We, in turn, are inspired by their writing to create a special sandwich as part of our rotating sandwich menu. We change one of our authors every few weeks, and change our sandwich feature to match. We hope their wisdom inspires you too."}

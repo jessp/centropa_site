@@ -67,13 +67,13 @@
 
 .authorGrid {
 	grid-area: authorGrid;
-	background-color: #0d3e32;
+	background-color: #114F40;
 	color: #fff;
 }
 
 .scrollIndicator {
 	grid-area: footer;
-	background-color: #0d3e32;
+	background-color: #114F40;
 	text-align: center;
 }
 

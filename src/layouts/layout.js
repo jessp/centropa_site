@@ -30,6 +30,7 @@ const Layout = ({ home, children, pageName }) => (
         >
           <html lang="en" />
         </Helmet>
+        <div className={"bgShapes bgShapeOne"}/>
         <div
           style={{
             margin: '0 auto',
