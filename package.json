@@ -30,6 +30,7 @@
     "slash": "^2.0.0",
     "typography": "^0.16.17",
     "typography-theme-wordpress-2013": "^0.15.10",
+    "victory": "^31.0.1",
     "vivus": "^0.4.4"
   },
   "keywords": [

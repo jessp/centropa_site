@@ -137,9 +137,30 @@ html, body {
 	width: 25px;
 }
 
+.storyBodyHolder {
+	margin-left: calc(25% - 150px);
+	width: calc(75% + 100px);
+	position: relative;
+}
+
 .storyHolder {
 	height: 100%;
-    width: 100%;
+    width: 75%;
     position: relative;
-    padding: 50px 50px 10px 25%;
+    float: right;
+}
+
+.pieHolder {
+	position: sticky;
+	top: 50px;
+	width: 25%;
+	float: left;
+	text-align: center;
+}
+
+.pieHolder p{
+	font-size: 0.65em;
+	margin-top: -10px;
+	font-style: italic;
+	color: #0d3e32;
 }

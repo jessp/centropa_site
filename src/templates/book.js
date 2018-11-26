@@ -5,12 +5,41 @@ import Layout from '../layouts/Layout'
 import Header from '../components/header';
 import '../css/BookLayout.css'
 import GreenScrollDown from "./../images/green_scroll_down.svg";
+import { VictoryPie } from 'victory';
 
 
 class PostTemplate extends Component {
 
   constructor(props){
     super(props);
+
+
+    this.state = {
+      "scrollPercent": 0,
+      "totalRead": this.props.data.wordpressPost.content.split(" ").length/225,
+      "remainingRead": Math.round(this.props.data.wordpressPost.content.split(" ").length/225 * 2)/2
+    }
+    this.handleScroll = this.handleScroll.bind(this);
+  }
+
+  componentDidMount(){
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(event) {
+    let scrollPercent = (window.scrollY - (window.innerHeight))/(document.documentElement.scrollHeight - window.innerHeight * 2) * 100;
+    if (scrollPercent < 0) {
+      scrollPercent = 0;
+    } else if (scrollPercent > 100){
+      scrollPercent = 100;
+    }
+    let remaining = Math.round(this.state.totalRead * (100 - this.state.scrollPercent)/100 * 2)/2;
+    this.setState({scrollPercent: scrollPercent, remainingRead: remaining});
+    
   }
 
 
@@ -39,7 +68,26 @@ class PostTemplate extends Component {
           <div className={"greenScrollIndicator"}>
               <img src={GreenScrollDown}/>
           </div>
-          <div className={"storyHolder"} dangerouslySetInnerHTML={{ __html: post.content }}/>
+          <div className={"storyBodyHolder"}>
+            <div className={"pieHolder"}>
+              <div style={{"width": "80%", "marginLeft": "10%"}}>
+                <VictoryPie animate data={[
+                    { x: "", y: this.state.scrollPercent, fill: "#0d3e32", opacity: 0 },
+                    { x: "", y: 100 - this.state.scrollPercent, fill: "#0d3e32" }
+                  ]}
+                  style={{
+                    data: {
+                      fill: (d) => d.fill,
+                      opacity: (d) => d.opacity
+                    }
+                  }}
+                  labels={() => null}/>
+              </div>
+              <p>{this.state.remainingRead + " mins left to read"}</p>
+            </div>
+            <div className={"storyHolder"} dangerouslySetInnerHTML={{ __html: post.content }}/>
+            <div className={"clearer"}/>
+          </div>
         </div>
     )
   }
