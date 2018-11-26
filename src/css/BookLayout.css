@@ -54,7 +54,7 @@ html, body {
 
 .storyLocationImageHolder {
 	width: 75%;
-	height: calc(100% - 150px);
+	height: calc(100% - 175px);
 	position: absolute;
 	right: 0px;
 	background-position: center;
@@ -116,7 +116,7 @@ html, body {
 	left: calc(25% + 175px);
     color: #000;
     position: absolute;
-    top: calc(70% + 40px);
+    top: calc(70% + 20px);
     width: calc(75% - 200px);
 }
 
@@ -128,7 +128,7 @@ html, body {
 
 .greenScrollIndicator {
 	position: absolute;
-	bottom: 20px;
+	bottom: 15px;
 	width: 100%;
 	text-align: center;
 }
