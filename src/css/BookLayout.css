@@ -43,3 +43,103 @@ html, body {
     display: block;
     max-height: 100%
 }
+
+.storyHeaderHolder {
+	width: 100%;
+	height: calc(100% - 40px);
+	margin-top:40px;
+	position: relative;
+	color: #fff;
+}
+
+.storyLocationImageHolder {
+	width: 75%;
+	height: calc(100% - 150px);
+	position: absolute;
+	right: 0px;
+	background-position: center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.storyLocationImageHolder:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(to bottom right,rgba(239, 100, 49, 0.6),rgba(0, 0, 0, 0.95));
+}
+
+.storyAuthorImageHolder {
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    right: calc(75% - 150px);
+    bottom: 35px;
+    background-position: center;
+    background-size: cover;
+}
+
+.storyNameHolder {
+	z-index: 2;
+    opacity: 1;
+    left: 25%;
+    position: absolute;
+    margin: 35px 175px;
+    width: calc(75% - 200px);
+}
+
+.storyNameHolder h1 {
+	font-size: 1.25em;
+	margin-bottom: 0.2em;
+}
+
+.storyNameHolder h2 {
+	font-size: 0.7em;
+	font-weight: normal;
+	font-style: italic;
+	padding-bottom: 5px;
+	border-bottom: 2px solid;
+}
+
+.storyNameHolder p {
+	font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1.45em;
+}
+
+.authorBio {
+	left: calc(25% + 175px);
+    color: #000;
+    position: absolute;
+    top: calc(70% + 40px);
+    width: calc(75% - 200px);
+}
+
+.authorBio h1 {
+	font-size: 1em;
+	color: #0d3e32;
+	margin-bottom: 0.25em;
+}
+
+.greenScrollIndicator {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+}
+
+.greenScrollIndicator img{
+	width: 25px;
+}
+
+.storyHolder {
+	height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 50px 50px 10px 25%;
+}
