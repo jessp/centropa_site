@@ -41,7 +41,7 @@ class IndexPage extends React.Component {
         <div className = {"indexBg"}/>
         <div className={"container"}>
            <div className={"info_holder"}>
-              <div className={"logo_holder"} style={{"height":"140px"}}>
+              <div className={"logo_holder"} style={{"max-height":"140px"}}>
                 <div id={"globe_img"}/>
                 <img src={text_img} className={"text_img"}/>
                 <div className={"clearer"}/>

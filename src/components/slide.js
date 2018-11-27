@@ -25,10 +25,10 @@ class Slide extends React.Component {
         <div className={"child"}>
         <ScrollAnimation animateIn='fadeIn' duration={2}  animateOnce={true} className={"indexCard"}>
             <div className={"slideImg"}>
-              <div style={{position: "absolute"}} className={"slideSketch"}>
+              <div className={"slideSketch"}>
                 <img src={this.props.photoSrc} style={{"opacity":"0.5"}}/>
               </div>
-              <div style={{position: "absolute"}}>
+              <div style={{position: "absolute", "top": "0px", "width": "100%"}}>
                 <div id={this.props.id}/>
               </div>
             </div>

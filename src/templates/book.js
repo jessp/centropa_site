@@ -47,7 +47,6 @@ class PostTemplate extends Component {
     const post = this.props.data.wordpressPost
     return (
         <div style={{"width": "100%", "height": "100%", "position": "relative"}}>
-          <Header/>
           <div className={"storyHeaderHolder"}>
             <div className={"storyLocationImageHolder"} style={{"backgroundImage": "url(" + post.acf.location_photo.source_url + ")"}}/>
             <div className={"storyAuthorImageHolder"} style={{"backgroundImage": "url(" + post.acf.author_photo.source_url + ")"}}/>
@@ -88,6 +87,7 @@ class PostTemplate extends Component {
             <div className={"storyHolder"} dangerouslySetInnerHTML={{ __html: post.content }}/>
             <div className={"clearer"}/>
           </div>
+          <Header/>
         </div>
     )
   }
