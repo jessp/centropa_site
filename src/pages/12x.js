@@ -39,8 +39,22 @@ class TwelveX extends React.Component {
               </p>
             </div>
             <div className={"authorPhoto"} 
-                  style={{"backgroundImage": "url('" + featuredAuthor.acf.author_photo.source_url + "')"}}/>
-            <div className={"storyInfo"}>
+                  style={{"backgroundImage": "url('" + featuredAuthor.acf.author_photo.source_url + "')"}}>
+                <div className = {"mobileStoryInfo storyInfo"}>
+                  <h3>{featuredAuthor.acf.author_name}</h3>
+                  <h2>{featuredAuthor.title}</h2>
+                  <h4>{"Inspired by " + featuredAuthor.acf.country_name}</h4>
+                  <p>
+                    {"“" + featuredAuthor.acf.story_excerpt + "”"}
+                  </p>
+                  <div className={"underlineLink readMoreButton"}>
+                    <Link to={"/" + featuredAuthor.slug}>
+                      <span>{"Read More"}</span>
+                    </Link>
+                  </div>
+                </div>
+            </div>
+            <div className={"storyInfo nonMobileStoryInfo"}>
               <h3>{featuredAuthor.acf.author_name}</h3>
               <h2>{featuredAuthor.title}</h2>
               <h4>{"Inspired by " + featuredAuthor.acf.country_name}</h4>

@@ -29,6 +29,7 @@
 	grid-area: story;
 	color: #000;
 	padding: 12px;
+	background-image: none;
 }
 
 .storyInfo h3 {
@@ -86,4 +87,53 @@
 	margin-left: 0px;
 	font-family: Lato;
     font-weight: bold;
+}
+
+.mobileStoryInfo {
+	display: none;
+}
+
+@media (max-width: 850px) {
+	.twelveXWrapper {
+		grid-template-columns: 100%;
+	    grid-template-rows: 1fr 6fr 8fr;
+	    grid-template-areas: "header" "photo" "authorGrid";
+	    height: 150%;
+	}
+
+	.mobileStoryInfo {
+		display: initial;
+
+	}
+
+	.mobileStoryInfo p,  .mobileStoryInfo h4, .mobileStoryInfo h3, 
+	.mobileStoryInfo h2, .mobileStoryInfo .underlineLink a  {
+		width: calc(100% - 70px);
+		margin-left: 35px;
+		color: #fff;
+		text-shadow: #444 1px 0 1px;
+	}
+
+	.nonMobileStoryInfo {
+		display: none;
+	}
+
+	.authorGridContainer {
+		grid-template-rows: 33% 33% auto;
+    	grid-template-columns: 25% 25% 25% 25%;
+    	width: calc(100% - 45px);
+	}
+
+	.authorColumns {
+		columns: 3;
+	}
+
+	.authorListHolder h2 {
+		width: calc(67% - 30px);
+	}
+
+	.scrollIndicator {
+		display: none;
+	}
+
 }

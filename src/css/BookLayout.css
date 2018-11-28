@@ -164,3 +164,56 @@ html, body {
 	font-style: italic;
 	color: #0d3e32;
 }
+
+@media (max-width: 850px) {
+	.storyHeaderHolder{
+		font-size: 80%;
+		width: 100%;
+    	height: 60%;
+	}
+
+	.storyLocationImageHolder {
+		width: 100%;
+		height: 75%;
+	}
+
+	.storyAuthorImageHolder {
+		display: none;
+	}
+
+	.storyNameHolder {
+		width: calc(100% - 30px);
+	    left: 15px;
+	    margin: 35px 0px;
+	}
+
+	.authorBio {
+		top: calc(75% + 20px);
+	    width: calc(100% - 30px);
+	    left: 15px;
+	}
+
+	.authorBio p{
+		font-style: italic;
+	}
+
+	.greenScrollIndicator {
+		display: none;
+	}
+
+	.pieHolder {
+		display: none;
+	}
+
+	.storyBodyHolder {
+		margin-left: 0px;
+    	width: 100%;
+	}
+
+	.storyHolder {
+		width: calc(100% - 30px);
+		margin-left: 15px;
+		float: none;
+		margin-top: 50px;
+	}
+}
