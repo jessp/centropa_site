@@ -72,6 +72,18 @@ html{
     margin-left: 5px;
 }
 
+.accompanyingText{
+	font-size: 0.8em;
+    line-height: 1.4em;
+    margin-bottom: 5px;
+    padding-left: 7px;
+    font-weight: bold;
+    border-left: 2px solid #0d3e32;
+}
+
+.accompanyingText a {
+	color: #0d3e32;
+}
 
 
 

@@ -11,10 +11,6 @@ import Vivus from 'vivus';
 
 class Slide extends React.Component {
 
-  constructor(props){
-    super(props);
-  }
-
   componentDidMount() {
     new Vivus(this.props.id, {duration: 200, file: this.props.sketch});
   }
@@ -26,7 +22,7 @@ class Slide extends React.Component {
         <ScrollAnimation animateIn='fadeIn' duration={2}  animateOnce={true} className={"indexCard"}>
             <div className={"slideImg"}>
               <div className={"slideSketch"}>
-                <img src={this.props.photoSrc} style={{"opacity":"0.5"}}/>
+                <img src={this.props.photoSrc} style={{"opacity":"0.5"}} alt={this.props.alt}/>
               </div>
               <div style={{position: "absolute", "top": "0px", "width": "100%"}}>
                 <div id={this.props.id}/>

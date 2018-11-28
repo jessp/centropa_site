@@ -86,3 +86,9 @@
 
 
 }
+
+@media (max-width: 400px) {
+	.indexCardInfo h1 {
+		font-size: 1.4em;
+	}
+	}

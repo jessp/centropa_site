@@ -128,13 +128,13 @@ html {
 
 @media (max-width: 800px) {
 
-	.logo_holder {
-		height:110px;
+	.slide {
+		height: auto;
 	}
 
 	.info_holder {
 		width: 80%;
-		top: 25%;
+		top: 30%;
 	}
 
 	.image_clip {
@@ -151,8 +151,15 @@ html {
 
 	.authorInfoHolder {
 	    bottom: 25%;
-	    width: 90%;
+	    width: 80%;
 	    line-height: 1.2em;
+	}
+
+	.child {
+		top: auto; 
+    	left: auto; 
+    	-webkit-transform: none; 
+    	transform: none; 
 	}
 
 }

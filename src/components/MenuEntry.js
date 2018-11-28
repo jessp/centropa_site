@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import '../css/Menu.css'
 import '../css/MenuItem.css'
-import {FaEye, FaEyeSlash} from "react-icons/fa"
+import {FaEye} from "react-icons/fa"
 
 
 
@@ -16,6 +17,11 @@ class MenuEntry extends React.Component {
 	  			<h3 className={"menuItemPrice"}>{this.props.price + "–"}</h3>
   			</div>
   			<p className={"menuDescription"}>{this.props.description}</p>
+        {this.props.accompanyingText && 
+          <p className = {"accompanyingText"}>
+            <Link to={"/" + this.props.slug}>{this.props.accompanyingText}</Link>
+          </p>
+        }
         <p className={"menuTags"}>{tagString}</p>
         {this.props.image &&
           <div onClick={() => this.props.changeImg({"title": this.props.item_name, "img": this.props.image})}

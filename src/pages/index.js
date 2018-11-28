@@ -1,7 +1,6 @@
 import React from 'react'
 import { graphql, Link } from "gatsby"
 import Vivus from 'vivus';
-import logo from "../images/logo-11.svg"
 import Header from '../components/header'
 import { IoIosPin } from 'react-icons/io'
 import { FaInstagram, FaFacebook } from 'react-icons/fa'
@@ -41,12 +40,13 @@ class IndexPage extends React.Component {
         <div className = {"indexBg"}/>
         <div className={"container"}>
            <div className={"info_holder"}>
-              <div className={"logo_holder"} style={{"max-height":"140px"}}>
+              <div className={"logo_holder"} style={{"maxHeight":"140px"}}>
                 <div id={"globe_img"}/>
-                <img src={text_img} className={"text_img"}/>
+                <img src={text_img} className={"text_img"} alt={"Centropa logo"}/>
                 <div className={"clearer"}/>
               </div>
-              <p>A quick, succint summary of Centropa's charms, likely ending by saying that it's in the Bjorvika Deichman branch.</p>
+              <p>Food inspired by literature inspired by travel inspired by food.<br/>
+                A fresh restaurant concept in the heart of Bjørvika.</p>
            </div>
     	     <div className={"image_clip"} 
             style={{"backgroundImage" : "url('" + featuredData.acf.author_photo.source_url + "')"}}>
@@ -69,43 +69,37 @@ class IndexPage extends React.Component {
           
            <Slide
             id={"sandwich-svg"}
+            alt={"Image of a sandwich"}
             photoSrc={sandwich_photo}
             header={"Simple ingredients, expertly prepared"}
             sketch={sandwich_sketch}
-            body={"Centrally located in the great new city centre. " +
-                  "More text and text, this is text, more text. " +
-                  "This is a lot of text, don't worry about reading it. " + 
-                  "This is some more text, but maybe it will be the same amount of text, who knows."}/>
+            body={"Our chefs use a combination of fresh local ingredients and hard-to-get specialties from around Europe and the world. The result is a unique twist on traditional Scandinavian fare."}/>
           <Slide
             id={"bjor-svg"}
+            alt={"Rendering of new Deichman library"}
             photoSrc={bjor_photo}
             header={"In the heart of Bjørvika"}
             sketch={bjor_sketch}
-            body={"We focus on sourcing the freshest ingredients." +
-                  "More text and text, this is text, more text. " +
-                  "This is a lot of text, don't worry about reading it. " + 
-                  "This is some more text, but maybe it will be the same amount of text, who knows."}/>
+            body={"Centropa is located in the new main branch of Deichman library. Stop by on your way to the Munch museum, the Opera House, or to Oslo Central Station. Book a table now!"}/>
          <Slide
             id={"eating-svg"}
+            alt={"Woman reading a book"}
             photoSrc={eating_photo}
             header={"Inspired by Literature"}
             sketch={eating_sketch}
-            body={"We focus on sourcing the freshest ingredients." +
-                  "More text and text, this is text, more text. " +
-                  "This is a lot of text, don't worry about reading it. " + 
-                  "This is some more text, but maybe it will be the same amount of text, who knows."}/>
+            body={"We are inspired by the work of authors around the world. Their work inspires our cooking. We frequently collaborate with them as part of our 12x project."}/>
           <div style={{"position": "absolute", "bottom":"10px", "textAlign": "center", "zIndex": 3, "width": "100%"}}>
             <div id="scroll_down" style={{"width": "50px", "margin": "0 auto"}}/>
           </div>
           <div className={"bgOverlay"}/>
           <div className={"footerHolder"}>
-            <p>
-              <IoIosPin/>
-              {"Find us at Dronning Eufemias gate 4, 0154 Oslo."}
-            </p>
             <p style={{"fontSize": "1.5em"}}>
               <FaInstagram style={{"marginRight": "3px"}}/>
               <FaFacebook/>
+            </p>
+            <p>
+              <IoIosPin/>
+              {"Find us at Dronning Eufemias gate 4, 0154 Oslo."}
             </p>
           </div>
         <Header/>

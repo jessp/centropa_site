@@ -18,6 +18,7 @@ class TwelveX extends React.Component {
     }
 
     this.setActiveAuthor = this.setActiveAuthor.bind(this);
+
   }
 
   setActiveAuthor(authorNode){
@@ -33,7 +34,9 @@ class TwelveX extends React.Component {
           <div className={"bgShapes bgShapeOne"}/>
           <div className={"twelveXWrapper"}>
             <div className={"twelveXIntro"}>
-              {"In the 12x project, we bring together a roster of twelve Norwegian authors and encourage them to write about the food culture of a given country. We, in turn, are inspired by their writing to create a special sandwich as part of our rotating sandwich menu. We change one of our authors every few weeks, and change our sandwich feature to match. We hope their wisdom inspires you too."}
+              <p>
+                In the <span style={{"fontWeight": "bold"}}>12x project</span>, we bring together a roster of twelve Norwegian authors and encourage them to write about the food culture of a given country. We, in turn, are inspired by their writing to create a special sandwich as part of our rotating sandwich menu. We change one of our authors every few weeks, and change our sandwich feature to match. We hope their wisdom inspires you too.
+              </p>
             </div>
             <div className={"authorPhoto"} 
                   style={{"backgroundImage": "url('" + featuredAuthor.acf.author_photo.source_url + "')"}}/>
@@ -42,7 +45,7 @@ class TwelveX extends React.Component {
               <h2>{featuredAuthor.title}</h2>
               <h4>{"Inspired by " + featuredAuthor.acf.country_name}</h4>
               <p>
-                {"“" + "The customers who come in, settle themselves down, and unfold a newspaper without saying a word, just a jerk of the head in the guise of a hello, and then they receive, in silent ceremony, their first glass." + "”"}
+                {"“" + featuredAuthor.acf.story_excerpt + "”"}
               </p>
               <div className={"underlineLink readMoreButton"}>
                 <Link to={"/" + featuredAuthor.slug}>
@@ -93,6 +96,10 @@ export const contributorQuery = graphql`
               acf{
                 author_name,
                 country_name,
+                story_excerpt,
+                author_thumbnail {
+                  source_url
+                },
                 author_photo {
                   source_url
                 },
@@ -131,6 +138,10 @@ export const contributorQuery = graphql`
               acf{
                 author_name,
                 country_name,
+                story_excerpt,
+                author_thumbnail {
+                  source_url
+                },
                 author_photo {
                   source_url
                 },
@@ -168,6 +179,10 @@ export const contributorQuery = graphql`
               acf{
                 author_name,
                 country_name,
+                story_excerpt,
+                author_thumbnail {
+                  source_url
+                },
                 author_photo {
                   source_url
                 },

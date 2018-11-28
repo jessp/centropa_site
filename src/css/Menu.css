@@ -43,3 +43,35 @@
 	margin-bottom: 0.5em;
 }
 
+.menuWrapper {
+	width: 80%;
+	margin-left:20%; 
+	position:relative;
+}
+
+@media (max-width: 850px) {
+	.controlColumn {
+		display: none;
+	}
+
+	.menuWrapper {
+		width: calc(100% - 35px);
+		margin-left:35px; 
+		position:relative;
+	}
+
+	.mediaColumn {
+		width: calc(100% - 35px);
+    	height: auto;
+    	position: relative;
+    	float: none;
+    	margin-bottom: 50px;
+	}
+
+	.foodColumn {
+		width: 100%;
+		float: none;
+		position: relative;
+	}
+
+}

@@ -80,9 +80,15 @@ class MenuCat extends React.Component {
     let items = this.props.menu_items;
     let changeImg = this.changeImg;
     let currentImage = this.state.currentImage;
+    let contribs = this.props.authors;
 
     return (
         <div className={"menuSection"} ref={"thisSection"}>
+          {this.state.currentImage &&
+            <div className={"mediaColumn"}>
+              <div className={"mediaBg"} style={{"backgroundImage": "url(" + this.state.currentImage.img + ")"}}/>
+            </div>
+          }
           <div  className = {"foodColumn"}> 
             <ScrollableAnchor id={cat_name}>
               <h2>{capitalizeFirstLetter(cat_name)}</h2>
@@ -96,6 +102,7 @@ class MenuCat extends React.Component {
                       return Object.values(e)[0]
                     })
                   }
+
                   return (
                     <MenuEntry
                       key = {index}
@@ -105,7 +112,9 @@ class MenuCat extends React.Component {
                       tags = {tags}
                       image = {item.node.acf.food_photo ? item.node.acf.food_photo.source_url : null}
                       changeImg = {changeImg}
-                      isActive = {currentImage ? currentImage.title == he.decode(item.node.title) : false}
+                      isActive = {currentImage ? currentImage.title === he.decode(item.node.title) : false}
+                      accompanyingText = {item.node.acf.accompanying_text}
+                      slug={item.node.acf.country ? contribs[item.node.acf.country] : null}
                     />
                   )
                 })
@@ -113,11 +122,6 @@ class MenuCat extends React.Component {
             </div>
             
           </div>
-            {this.state.currentImage &&
-            <div className={"mediaColumn"}>
-              <div className={"mediaBg"} style={{"backgroundImage": "url(" + this.state.currentImage.img + ")"}}/>
-            </div>
-            }
             <div className={"clearer"}/>
         </div>
     )

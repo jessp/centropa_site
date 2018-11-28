@@ -14,7 +14,7 @@ class AuthorGrid extends React.Component {
 							<div key={idx} className={"authorButton " + (node.node.acf.author_name === featuredAuthor ? "featuredButton" : "")}
 								onClick={() => switchAuthor(node.node)}>
 								<div className={"authorThumbnail"}
-								style={{"backgroundImage": "url('" + node.node.acf.author_photo.source_url + "')"}}/>
+								style={{"backgroundImage": "url('" + node.node.acf.author_thumbnail.source_url + "')"}}/>
 								<p>{node.node.acf.author_name}</p>
 							</div>
 						)

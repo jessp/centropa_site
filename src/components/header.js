@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import HeaderLink from "./HeaderLink"
 import "./../css/Header.css"
 
