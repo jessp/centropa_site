@@ -116,7 +116,7 @@ html, body {
 	left: calc(25% + 175px);
     color: #000;
     position: absolute;
-    top: calc(70% + 20px);
+    top: calc(70% + 40px);
     width: calc(75% - 200px);
 }
 
