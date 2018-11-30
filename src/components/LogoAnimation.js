@@ -14,9 +14,7 @@ class LogoAnimation extends Component {
    componentDidMount() {
       this.createLogoAnimation()
    }
-   componentDidUpdate() {
-      this.createLogoAnimation()
-   }
+
    createLogoAnimation() {
       const text = " FOOD inspired by STORIES inspired by TRAVEL inspired by FOOD inspired by STORIES inspired by TRAVEL inspired by ".split("");
       const node = select(this.refs.svgNode);
@@ -70,11 +68,16 @@ class LogoAnimation extends Component {
             .style("opacity", 0)
             .remove()
 
+      const completeAnimation = this.props.completeAnimation;
+
       node.select("image")
          .transition()
             .delay(text.length * 25 + 2200 + 1750)
             .duration(1750)
             .style("opacity", 1)
+            .on("end", function(){
+               completeAnimation();
+            })
 
 
 

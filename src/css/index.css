@@ -6,160 +6,71 @@ html {
     background-size: 100% 400%;
 }
 
-.indexBg{
-	background-image: url("../images/home_page/bg.svg");
-	background-repeat: no-repeat;
-    background-origin: content-box;
-    background-position: top;
-    background-size: 100% 100%;
+.svgGroup {
+	width: 100%;
+	text-align: center;
+    height: 100%;
+    float: left;
+}
+
+.svgGroup svg {
+	width: 325px;
+    height: 440px;
+    margin-top: -220px;
     position: absolute;
-    width: 100%;
-    height: 400%;
-    top:0px;
-    left: 0px;
+    top: 50%;
+    margin-left: -162.5px;
 }
 
-.bgOverlay{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top:0px;
-	left: 0px;
-	background-image: url("../images/home_page/bg_overlay.svg");
-	background-repeat: no-repeat;
-    background-origin: content-box;
-    background-position: top;
-    background-size: 100% 108.59375%;
-    pointer-events: none;
-}
-
-.image_clip {
-	margin-left:50%;
-	width: 50%;
-	height: 100%;
-	background-color: #fff;
-	-webkit-clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%);
-	clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%);
-	-webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.image_clip:before{
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-image: linear-gradient(to bottom right,rgba(239, 199, 49, 0.55),rgba(0, 0, 0, 0.8));
-}
-
-.info_holder{
-	position: absolute;
-	width: 50%;
-	color: #0d3e32;
-	top: 40%;
-    transform: translateY(-50%);
-    margin-left: 5%;
-}
-
-.info_holder p {
-	margin-left: 20%;
-	line-height: 1.2em;
-
-}
-
-.authorInfoHolder {
-	position: absolute;
-    z-index: 2;
-    bottom: 15%;
-    right: 10px;
-    width: 45%;
-    text-align: right;
-}
-
-.authorInfoHolder p{
-	margin-bottom: 0px;
-	padding: 0px 10px;
-	color: #fff;
-	font-size: 0.8em;
-}
-
-.authorInfoHolder a {
-	font-weight: bold;
-	color: #efc731;
-	display: inline-block;
-}
-
-.footerHolder {
-	position: relative;
-	bottom: 0px;
-	color: #fff;
-	font-size: 0.7em;
-	height: 100px;
-	background-color: #0d3e32;
-	-webkit-clip-path: polygon(0 0, 0% 100%, 100% 100%);
-	clip-path: polygon(0 0, 0% 100%, 100% 100%);
-    padding-top: 40px;
-    padding-left: 15px;
-}
-
-.footerHolder p {
-	padding-left: 0px;
-	margin-bottom: 0px;
-}
-
-#globe_img {
-	width: 20%;
-	float: left;
-}
-
-#globe_img svg {
-	width: 100%;
-}
-
-.text_img {
+.mondrianHolder {
+	width: 0%;
+    height: 100%;
+    background-color: #0d3e32;
 	float: right;
-	width: 80%;
-	margin-bottom:0px;
+    border-left: 10px solid #0d3e32;
 }
 
-@media (max-width: 800px) {
-
-	.slide {
-		height: auto;
-	}
-
-	.info_holder {
-		width: 80%;
-		top: 30%;
-	}
-
-	.image_clip {
-	    width: 100%;
-	    height: 60%;
-	    -webkit-clip-path: polygon(0% 30%, 100% 0%, 100% 100%, 0 100%);
-	    clip-path: polygon(0% 30%, 100% 0%, 100% 100%, 0 100%);
-	    background-size: cover;
-	    background-position: center;
-	    position: absolute;
-	    bottom: 0px;
-	    margin-left: 0px;
-	}
-
-	.authorInfoHolder {
-	    bottom: 25%;
-	    width: 80%;
-	    line-height: 1.2em;
-	}
-
-	.child {
-		top: auto; 
-    	left: auto; 
-    	-webkit-transform: none; 
-    	transform: none; 
-	}
-
+.afterIntroTransformed {
+    width: 50%;
+    -webkit-transition: width 2s;
+    transition: width 2s;
 }
+
+.grid1{
+    width: 100%;
+    height:100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "grid0 grid1 grid2"
+        "grid3 grid3 grid4"
+        "grid3 grid3 grid5"
+        "grid7 grid8 grid6"
+        "grid7 grid8 grid9";
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.monGrid div {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.gridText {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.gridText p {
+    margin-bottom: 0em;
+    font-family: "Lato";
+    font-weight: bold;
+}
+
+.gridText p:nth-child(2n) {
+    font-style: italic;
+    font-family: "Alegreya";
+    font-weight: normal;
+}
+
