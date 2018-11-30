@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140.94 210"><defs><style>.cls-3,.cls-2{fill:none;stroke:#0e3e32;stroke-miterlimit:10;}.cls-3{stroke-width:4.78px;}.cls-2{stroke-width:5.24px;}</style></defs><title>logo</title><g id="circles"><circle class="cls-3" cx="70.56" cy="95.98" r="67.73"/><ellipse class="cls-2" cx="70.56" cy="95.46" rx="33.57" ry="66.1"/><line class="cls-3" x1="70.56" y1="29.36" x2="70.56" y2="162.69"/><line class="cls-3" x1="137.23" y1="96.02" x2="3.89" y2="96.02"/><path class="cls-3" d="M15.8,135.36c14.93-4.92,34.23-7.89,55.29-7.89,20.65,0,39.6,2.85,54.4,7.6"/><path class="cls-3" d="M14.78,56.47c15.07,5.13,34.77,8.24,56.31,8.24,21.19,0,40.58-3,55.55-8"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140.94 210"><defs><style>.cls-3,.cls-2{fill:none;stroke:#0e3e32;stroke-miterlimit:10;}.cls-3{stroke-width:4.78px;}.cls-2{stroke-width:5.24px;}</style></defs><title>logo</title><g id="circles">
+
+<circle class="cls-3" cx="70.56" cy="95.98" r="67.73"/>
+<ellipse class="cls-2" cx="70.56" cy="95.46" rx="33.57" ry="66.1"/>
+<line class="cls-3" x1="70.56" y1="29.36" x2="70.56" y2="162.69"/>
+<line class="cls-3" x1="137.23" y1="96.02" x2="3.89" y2="96.02"/>
+<path class="cls-3" d="M15.8,135.36c14.93-4.92,34.23-7.89,55.29-7.89,20.65,0,39.6,2.85,54.4,7.6"/>
+<path class="cls-3" d="M14.78,56.47c15.07,5.13,34.77,8.24,56.31,8.24,21.19,0,40.58-3,55.55-8"/>
+
+</g></svg>
