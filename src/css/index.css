@@ -11,79 +11,158 @@ html {
 	text-align: center;
     height: 100%;
     float: left;
+    position: relative;
+    pointer-events: none;
+    max-height: 80vw;
+}
+
+.logoHolder {
+    height: 85%;
+    margin: 0 auto;
+    margin-top: 3%;
+    max-width: 70%;
 }
 
 .svgGroup svg {
-	width: 325px;
-    height: 440px;
-    margin-top: -220px;
-    position: absolute;
-    top: 50%;
-    margin-left: -162.5px;
+	width: 100%;
+    height: 100%;
 }
 
 .mondrianHolder {
-	width: 50%;
+	width: 100%;
     height: 100%;
-    background-color: #0d3e32;
-    border-left: 10px solid #0d3e32;
-    left:100%;
     position: absolute;
+    max-height: 80vw;
 }
 
-.svgGroup.afterIntroTransformed {
-    width:50%;
-    -webkit-transition: width 2s;
-    transition: width 2s;
+.mondrianHolder div {
+    position: absolute;
+    width: 0vw;
+    height: 0vw;
+    top: 50%;
+    left: 50%;
 }
 
-.mondrianHolder.afterIntroTransformed {
-    left:50%;
-    -webkit-transition: left 2s;
-    transition: left 2s;
+/*coloured blocks in the back of the index*/
+.afterIntroTransformed .left1 {
+    width: 14vw;
+    height: 12vw;
+    top: 17%;
+    left: 13.5%;
+    transition: width 2s, height 2s, top 2s, left 2s;
 }
 
-.monGrid {
-    width: 100%;
-    height:100%;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-    -webkit-transition: grid-column-gap 2s, grid-row-gap 2s;
-    transition: grid-column-gap 2s, grid-row-gap 2s;
+.afterIntroTransformed .left2 {
+    width: 12vw;
+    height: 10vw;
+    top: 35px;
+    left: 25%;
+    transition: width 2s, height 2s, top 2s, left 2s;
+
 }
 
-.grid1{
-    grid-template-areas: 
-        "grid0 grid1 grid2"
-        "grid3 grid3 grid4"
-        "grid3 grid3 grid5"
-        "grid7 grid8 grid6"
-        "grid7 grid8 grid9";
+.afterIntroTransformed .left3 {
+    width: 3vw;
+    height: 3vw;
+    top: 45%;
+    left: 5%;
+    transition: width 2s, height 2s, top 2s, left 2s;
+
 }
 
-.monGrid div {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.afterIntroTransformed .left4 {
+    width: 14.5vw;
+    height: 14.5vw;
+    top: 35%;
+    left: 20%;
+    transition: width 2s, height 2s, top 2s, left 2s;
+
 }
 
-.gridText {
-    text-align: center;
-    padding: 10px 0px;
+.afterIntroTransformed .left5 {
+    width: 16vw;
+    height: 10vw;
+    top: 65%;
+    left: 15%;
+    transition: width 2s, height 2s, top 2s, left 2s;
+
 }
 
-.gridText p {
-    margin-bottom: 0em;
-    font-family: "Lato";
-    font-weight: bold;
+.afterIntroTransformed .left6 {
+    width: 8vw;
+    height: 12vw;
+    top: 50%;
+    left: 10%;
+    transition: width 2s, height 2s, top 2s, left 2s;
+
 }
 
-.gridText p:nth-child(2n) {
-    font-style: italic;
-    font-family: "Alegreya";
-    font-weight: normal;
+.afterIntroTransformed .left7 {
+    width: 4vw;
+    height: 4vw;
+    top: 85%;
+    left: 32%;
+    transition: width 2s, height 2s, top 2s, left 2s;
 }
 
+
+/*coloured block on right side of index page*/
+
+.afterIntroTransformed .right1 {
+    width: 4vw;
+    height: 4vw;
+    top: 8%;
+    left: 62%;
+    transition: width 2s, height 2s, top 2s, left 2s;
+}
+
+.afterIntroTransformed .right2 {
+    width: 17vw;
+    height: 22vw;
+    top: 3%;
+    left: 68%;
+    transition: width 2s, height 2s, top 2s, left 2s;
+
+}
+
+.afterIntroTransformed .right3 {
+    width: 14vw;
+    height: 18vw;
+    top: 23%;
+    left: 78%;
+    transition: width 2s, height 2s, top 2s, left 2s;
+}
+
+.afterIntroTransformed .right4 {
+    width: 20vw;
+    height: 14.5vw;
+    left: 77%;
+    top: 57.5%;
+    transition: width 2s, height 2s, top 2s, left 2s;
+
+}
+
+.afterIntroTransformed .right5 {
+    width: 8vw;
+    height: 7vw;
+    top: 28%;
+    left: 72.5%;
+    transition: width 2s, height 2s, top 2s, left 2s;
+}
+
+.afterIntroTransformed .right6 {
+    width: 10vw;
+    height: 8vw;
+    top: 50%;
+    left: 66%;
+    transition: width 2s, height 2s, top 2s, left 2s;
+
+}
+
+.afterIntroTransformed .right7 {
+    width: 7vw;
+    height: 5vw;
+    top: 78%;
+    left: 68%;
+    transition: width 2s, height 2s, top 2s, left 2s;
+}
