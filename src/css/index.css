@@ -23,38 +23,51 @@ html {
 }
 
 .mondrianHolder {
-	width: 0%;
+	width: 50%;
     height: 100%;
     background-color: #0d3e32;
-	float: right;
     border-left: 10px solid #0d3e32;
+    left:100%;
+    position: absolute;
 }
 
-.afterIntroTransformed {
-    width: 50%;
+.svgGroup.afterIntroTransformed {
+    width:50%;
     -webkit-transition: width 2s;
     transition: width 2s;
 }
 
-.grid1{
+.mondrianHolder.afterIntroTransformed {
+    left:50%;
+    -webkit-transition: left 2s;
+    transition: left 2s;
+}
+
+.monGrid {
     width: 100%;
     height:100%;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    -webkit-transition: grid-column-gap 2s, grid-row-gap 2s;
+    transition: grid-column-gap 2s, grid-row-gap 2s;
+}
+
+.grid1{
     grid-template-areas: 
         "grid0 grid1 grid2"
         "grid3 grid3 grid4"
         "grid3 grid3 grid5"
         "grid7 grid8 grid6"
         "grid7 grid8 grid9";
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
 }
 
 .monGrid div {
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .gridText {
