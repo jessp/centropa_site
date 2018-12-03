@@ -50,6 +50,7 @@ html{
 
 .menuDescription {
 	margin-bottom: 0.1rem;
+	display: inline-block;
 }
 
 .menuTags {
@@ -89,7 +90,11 @@ html{
 	color: #2A8FA3;
 }
 
-
+.menuIntro {
+	font-size: 0.8em;
+	font-style: italic;
+	color: #0d3e32;
+}
 
 @media (max-width: 850px) {
 	.menuEntry {

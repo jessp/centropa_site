@@ -4,6 +4,8 @@ import Layout from '../layouts/Layout'
 import MenuCat from '../components/MenuCat'
 import MenuLocation from '../components/MenuLocation'
 import MediaColumn from '../components/MediaColumn'
+import {sectionDescriptions} from '../utils/helpers'
+
 import '../css/Menu.css'
 
 
@@ -59,8 +61,8 @@ class Menu extends React.Component {
 
     //sort based on how the sections are currently ordered
     photos = photos.sort(function(a, b){
-      return categoryOrder[a["category"]] - categoryOrder[b["category"]];
-    });
+      return categoryOrder[b["category"]] - categoryOrder[a["category"]];
+    }).slice();
 
     this.photos = photos;
   }
@@ -89,7 +91,7 @@ class Menu extends React.Component {
   }
 
   updateWindowDimensions() {
-    this.setState({ windowHeight: document.body.scrollHeight });
+    this.setState({ windowHeight: this.refs.menuWrapper.scrollHeight });
   }
 
 
@@ -104,15 +106,21 @@ class Menu extends React.Component {
               <MenuLocation categories={["sandwiches", "snacks", "mains", "desserts"]} active={this.state.activeCat} setActiveCat={this.setActiveCat}/>
               {/*<FilterPanel/>*/}
             </div>
-            <div className={"menuWrapper"}>
+            <div className={"menuWrapper"} ref={"menuWrapper"}>
               <div className={"mediaColumn"} style={{"height": this.state.windowHeight + "px"}}>
                 <MediaColumn photos={this.photos} windowHeight={this.state.windowHeight}/>
               </div>
               <div className={"foodColumn"}>
-                <MenuCat cat_name={"sandwiches"} menu_items={this.filterItems(menu_items, "sandwiches")} setActiveCat={this.setActiveCat} authors={this.contribs}/>
-                <MenuCat cat_name={"snacks"} menu_items={this.filterItems(menu_items, "snacks")} setActiveCat={this.setActiveCat}/>
-                <MenuCat cat_name={"mains"} menu_items={this.filterItems(menu_items, "mains")} setActiveCat={this.setActiveCat}/>
-                <MenuCat cat_name={"desserts"} menu_items={this.filterItems(menu_items, "desserts")} setActiveCat={this.setActiveCat}/>
+                <MenuCat
+                  cat_name={"sandwiches"} menu_items={this.filterItems(menu_items, "sandwiches")}
+                  setActiveCat={this.setActiveCat} authors={this.contribs} description={sectionDescriptions["sandwiches"]}/>
+                <MenuCat 
+                  cat_name={"snacks"} menu_items={this.filterItems(menu_items, "snacks")} 
+                  setActiveCat={this.setActiveCat} description={sectionDescriptions["snacks"]}/>
+                <MenuCat cat_name={"mains"} menu_items={this.filterItems(menu_items, "mains")} 
+                  setActiveCat={this.setActiveCat} description={sectionDescriptions["mains"]}/>
+                <MenuCat cat_name={"desserts"} menu_items={this.filterItems(menu_items, "desserts")} 
+                  setActiveCat={this.setActiveCat} description={sectionDescriptions["desserts"]}/>
               </div>
             </div>
           </div>

@@ -13,6 +13,8 @@ class MenuCat extends React.Component {
   constructor(props){
     super(props);
 
+    configureAnchors({keepLastAnchorHash: true})
+
   }
 
 
@@ -26,6 +28,9 @@ class MenuCat extends React.Component {
             <ScrollableAnchor id={cat_name}>
               <h2>{capitalizeFirstLetter(cat_name)}</h2>
             </ScrollableAnchor>
+            <p className={"menuIntro"}>
+              {this.props.description}
+            </p>
             <div className={"menuItemGroups"}>
               {
                 items.map(function(item, index){

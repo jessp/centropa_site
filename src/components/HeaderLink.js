@@ -5,8 +5,9 @@ import '../css/ButtonLink.css'
 class HeaderLink extends React.Component {
 
   render() {
+  	let theStyle = {"color": this.props.color};
   	return(
-	  		<Link to={this.props.to} activeClassName={"activeUnderlineLink"}>
+	  		<Link to={this.props.to} activeClassName={"activeUnderlineLink"} style={theStyle}>
 	  			<span>
 		  			{this.props.text}
 		  		</span>

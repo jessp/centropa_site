@@ -12,7 +12,7 @@ class PhotoColumn extends React.Component {
 
     let numBg = this.props.numSquares;
     //let's set percentage widths and heights on load so photos don't shift around every time the component is rerendered
-    let tops = Array(numBg).fill().map(function(na, id){ return Math.round((id/numBg) * 100 + Math.random() * 5)/100 });
+    let tops = Array(numBg).fill().map(function(na, id){ return Math.round((id/numBg) * 100)/100 });
     let lefts = Array(numBg).fill().map(() => Math.round(Math.random() * 100)/100);
     let widths = Array(numBg).fill().map(() => Math.round(Math.random() * 10 + 15));
     let heights = widths.map((e) => Math.round(e * (Math.random() * 0.5 + 0.75)));
@@ -36,17 +36,19 @@ class PhotoColumn extends React.Component {
 
 
     return this.squares.map(function(node, id) {
-      console.log(node);
       return <div key={id + node.left}
                 style={
                     {
-                      "right": (node.left * 35) + "%",
+                      "right": (node.left * 30) + "%",
                       "top": (node.top * (windowHeight - 200)) + "px",
                       "width": (node.width) + "vw",
                       "height": (node.height) + "vw",
                       "backgroundImage": "url(" + node.img + ")"
                     }
                   }>
+              <div>
+                <h4>{node.title}</h4>
+              </div>
           </div>
         }
       )

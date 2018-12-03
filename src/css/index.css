@@ -114,8 +114,8 @@ html {
 }
 
 .afterIntroTransformed .left6 {
-    width: 8vw;
-    height: 12vw;
+    width: 12vw;
+    height: 14vw;
     top: 50%;
     left: 10%;
     transition: width 2s, height 2s, top 2s, left 2s;
