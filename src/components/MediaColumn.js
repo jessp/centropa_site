@@ -19,7 +19,9 @@ class MediaColumn extends React.Component {
   	return (
   		<div className={"imageCols"}>
         <BgColumn numSquares={15} windowHeight={this.props.windowHeight}/>
-        <PhotoColumn photos={this.props.photos} numSquares={8} windowHeight={this.props.windowHeight}/>
+        <PhotoColumn photos={this.props.photos} 
+          numSquares={this.props.photos.length >= 8 ? 8 : this.props.photos.length} 
+          windowHeight={this.props.windowHeight}/>
   		</div>
   	)
   }

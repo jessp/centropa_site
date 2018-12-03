@@ -60,11 +60,10 @@ class Menu extends React.Component {
     }
 
     //sort based on how the sections are currently ordered
-    photos = photos.sort(function(a, b){
+    this.photos = photos.sort(function(a, b){
       return categoryOrder[b["category"]] - categoryOrder[a["category"]];
-    }).slice();
+    }).slice().reverse();
 
-    this.photos = photos;
   }
 
 
