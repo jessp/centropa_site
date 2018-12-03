@@ -10,6 +10,7 @@ class MenuLocation extends React.Component {
 
   render() {
   	let theActive = this.props.active;
+    let setActive = this.props.setActiveCat;
 
   	return(
   		<div className={"menuLocationPanel"}>
@@ -17,7 +18,12 @@ class MenuLocation extends React.Component {
   			{
   				this.props.categories.map(function(d, idx){
   					return (
-  						<a href={'#' + d} key={idx} className={theActive === d ? "activeMenu" : ""}>{capitalizeFirstLetter(d)}</a>
+  						<a href={'#' + d}
+                  key={idx} 
+                  className={theActive === d ? "activeMenu" : ""}
+                  onClick={() => setActive(d)}>
+                {capitalizeFirstLetter(d)}
+              </a>
   					)
   				})
   			}

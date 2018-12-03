@@ -13,43 +13,8 @@ class MenuCat extends React.Component {
   constructor(props){
     super(props);
 
-    this.handleScroll = this.handleScroll.bind(this);
-
-    this.state = {
-      "isInView": false
-    }
-
-    configureAnchors({keepLastAnchorHash: true})
-
   }
 
-  componentDidMount(){
-    window.addEventListener('scroll', this.handleScroll);
-
-    if ((this.refs.thisSection.offsetTop - 10) < (window.scrollY + window.innerHeight) && (this.refs.thisSection.offsetTop + 75)  > window.scrollY){
-      this.props.setActiveCat(this.props.cat_name);
-      this.setState({"isInView": true});
-    }
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  handleScroll(event) {
-
-    if ((this.refs.thisSection.offsetTop - 10) < (window.scrollY + window.innerHeight) &&
-       (this.refs.thisSection.offsetTop + 75)  > window.scrollY) {
-      if (this.state.isInView === false) {
-        this.props.setActiveCat(this.props.cat_name);
-        this.setState({"isInView": true});
-      }
-    } else {
-      if (this.state.isInView === true) {
-        this.setState({"isInView": false});
-      }
-    }
-  }
 
   render(){
     let cat_name = this.props.cat_name;

@@ -19,7 +19,7 @@ class Menu extends React.Component {
     this.setActiveCat = this.setActiveCat.bind(this);
 
     this.state ={
-      "activeCat": "snacks",
+      "activeCat": "sandwiches",
       "windowHeight": 0
     }
 
@@ -101,7 +101,7 @@ class Menu extends React.Component {
 
           <div className={"menuColumns"}>
             <div className={"controlColumn menuColumn"}>
-              <MenuLocation categories={["sandwiches", "snacks", "mains", "desserts"]} active={this.state.activeCat}/>
+              <MenuLocation categories={["sandwiches", "snacks", "mains", "desserts"]} active={this.state.activeCat} setActiveCat={this.setActiveCat}/>
               {/*<FilterPanel/>*/}
             </div>
             <div className={"menuWrapper"}>
