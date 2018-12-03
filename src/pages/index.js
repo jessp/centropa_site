@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, Link } from "gatsby"
+import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl"
 import LogoAnimation from "./../components/LogoAnimation"
 import Header from '../components/header'
 import Footer from '../components/Footer'
@@ -19,22 +20,42 @@ class IndexPage extends React.Component {
     }
 
     this.completeAnimation = this.completeAnimation.bind(this);
+
   }
 
   completeAnimation(){
     this.setState({animationCompleted: true});
   }
 
-
   render() {   
-    console.log(this.props.data.about.acf.photo_1.source_url); 
+    //using a temp token, do replace this
+    const Map = ReactMapboxGl({
+      accessToken: "pk.eyJ1IjoiamVzc3BldGVyIiwiYSI6ImNqcDhiY2VycjFzOG0za2xrZjkwbHBtMHIifQ.QSnBZP4o3W8fsN1-SKO3fQ"
+    });
+
     return(
       <div style={{"width":"100%", "height":"100%", "position":"relative", "overflow": "hidden"}}>
         <div className={"mondrianHolder " + (this.state.animationCompleted ? "afterIntroTransformed" : "")}>
           <div className={"left1"} style={{"backgroundColor": "#DA852D"}}/>
           <div className={"left2"} style={{"backgroundColor": "#A4384D"}}/>
           <div className={"left3"} style={{"backgroundColor": "#2A8FA3"}}/>
-          <div className={"left4"} style={{"backgroundColor": "#000"}}/>
+          <div className={"left4"}>
+            <Map
+              style="mapbox://styles/mapbox/streets-v9"
+              center={[10.7957078, 59.894434]}
+              containerStyle={{
+                height: "100%",
+                width: "100%"
+              }}>
+               <Layer
+                type="symbol"
+                id="marker"
+                layout={{ "icon-image": "marker-11",
+                          "icon-size": 1.25 }}>
+                <Feature coordinates={[10.7526379, 59.9086843]}/>
+              </Layer>
+            </Map>
+          </div>
           <div className={"left5"} style={{"backgroundImage": "url(" + this.props.data.about.acf.photo_4.source_url + ")"}}/>
           <div className={"left6"} style={{"backgroundImage": "url(" + this.props.data.about.acf.photo_3.source_url + ")"}}/>
           <div className={"left7"} style={{"backgroundColor": "#EFC835"}}/>

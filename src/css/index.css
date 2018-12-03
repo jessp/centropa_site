@@ -41,7 +41,7 @@ html {
     position: absolute;
 }
 
-.mondrianHolder div {
+.mondrianHolder > div {
     position: absolute;
     width: 0vw;
     height: 0vw;
@@ -49,6 +49,16 @@ html {
     left: 50%;
     background-size: cover;
     background-position: center;
+}
+
+.mondrianHolder div .mapboxgl-map{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.mapboxgl-control-container {
+    display: none;
 }
 
 .svgGroup .underlineLink a {
