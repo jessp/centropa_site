@@ -105,7 +105,6 @@ class Menu extends React.Component {
 
       return (
         <Layout pageName={""}>
-
           <div className={"menuColumns"}>
             <div className={"controlColumn menuColumn"}>
               <MenuLocation categories={["sandwiches", "snacks", "mains", "desserts"]} active={this.state.activeCat} setActiveCat={this.setActiveCat}/>
@@ -129,7 +128,6 @@ class Menu extends React.Component {
               </div>
             </div>
           </div>
-
         </Layout>
       )
   }

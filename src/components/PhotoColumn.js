@@ -1,5 +1,7 @@
 import React from 'react'
 import {shuffle} from '../utils/helpers.js';
+import Rellax from 'rellax'
+
 
 
 
@@ -31,25 +33,36 @@ class PhotoColumn extends React.Component {
 
   }
 
+  componentDidMount(){
+    var rellax = new Rellax('.rellax', {
+      speed: -2,
+      center: false,
+      wrapper: null,
+      round: true,
+      vertical: true,
+      horizontal: false
+    });
+  }
+
   renderPhotoColumns(){
     let windowHeight = this.props.windowHeight;
 
 
     return this.squares.map(function(node, id) {
-      return <div key={id + node.left}
-                style={
-                    {
-                      "right": (node.left * 30) + "%",
-                      "top": (node.top * (windowHeight - 200)) + "px",
-                      "width": (node.width) + "vw",
-                      "height": (node.height) + "vw",
-                      "backgroundImage": "url(" + node.img + ")"
-                    }
-                  }>
-              <div>
-                <h4>{node.title}</h4>
-              </div>
-          </div>
+      return <div key={id + node.left} 
+                  style={
+                      {
+                        "right": (node.left * 30) + "%",
+                        "top": (node.top * (windowHeight - 200) / 1.25) + "px",
+                        "width": (node.width) + "vw",
+                        "height": (node.height) + "vw",
+                        "backgroundImage": "url(" + node.img + ")"
+                      }
+                    } className={"rellax"}>
+                <div>
+                  <h4>{node.title}</h4>
+                </div>
+            </div>
         }
       )
 
@@ -57,9 +70,10 @@ class PhotoColumn extends React.Component {
   }
 
   render() {
+
   	return (
-        <div className={"bgLayers"} style={{"height": this.props.windowHeight + "px"}}>
-    			{this.renderPhotoColumns()}
+        <div className={"bgLayers"} >
+    			   {this.renderPhotoColumns()}
         </div>
   	)
   }

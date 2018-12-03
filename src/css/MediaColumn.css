@@ -10,6 +10,8 @@
 	background-position: center;
 }
 
+
+
 .bgLayers > div > div {
     top: calc(100% - 15px);
     left: 15px;
@@ -54,6 +56,5 @@
     color: #0d3e32;
     font-style: italic;
     text-align: left;
-    font-weight: normal;
     font-family: "Alegreya";
 }

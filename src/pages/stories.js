@@ -30,7 +30,6 @@ class Stories extends React.Component {
 
       return (
         <Layout pageName={""}>
-          <div className={"bgShapes bgShapeOne"}/>
           <div className={"twelveXWrapper"}>
             <div className={"twelveXIntro"}>
               <p>

@@ -7,14 +7,13 @@ import '../css/MediaColumn.css'
 
 
 
-
 class MediaColumn extends React.Component {
 
   constructor(props){
     super(props);
   }
 
-  render() {
+  render() {    
   	return (
   		<div className={"imageCols"}>
           <BgColumn numSquares={15} windowHeight={this.props.windowHeight}/>

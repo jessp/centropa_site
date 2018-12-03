@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import { ParallaxProvider } from 'react-scroll-parallax'
 
 import Header from '../components/header'
 import './main.css'
@@ -31,7 +30,6 @@ const Layout = ({ home, children, pageName }) => (
         >
           <html lang="en" />
         </Helmet>
-        <ParallaxProvider>
           <div
             style={{
               margin: '0 auto',
@@ -42,7 +40,6 @@ const Layout = ({ home, children, pageName }) => (
           >
             {children}
           </div>
-        </ParallaxProvider>
         <div>
           <Header siteTitle={data.site.siteMetadata.title} pageName={pageName}/>
         </div>

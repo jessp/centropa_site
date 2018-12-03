@@ -1,6 +1,6 @@
 import React from 'react'
 import {shuffle} from '../utils/helpers.js';
-
+import Rellax from 'rellax'
 
 
 
@@ -29,24 +29,33 @@ class ExcerptColumn extends React.Component {
 
   }
 
+  componentDidMount(){
+    var rellax = new Rellax('.rellax2', {
+      speed: 2.5,
+      center: false,
+      wrapper: null,
+      round: true,
+      vertical: true,
+      horizontal: false
+    });
+  }
+
   renderExcerptColumns(){
     let windowHeight = this.props.windowHeight;
 
 
     return this.squares.map(function(node, id) {
-      console.log(node);
-
-      return <div key={id + node.left} 
-                style={
-                    {
-                      "right": (node.left * 22) + "%",
-                      "top": (node.top * (windowHeight - 200)) + "px",
-                      "width": (node.width) + "vw"
-                    }
-                  }>
-              <p>{"“" + node.story_excerpt + "”"}</p>
-              <p>{"–" + node.author_name}</p>
-          </div>
+        return <div key={id + node.left} 
+                          style={
+                              {
+                                "right": (node.left * 22) + "%",
+                                "top": (node.top * (windowHeight - 200)) + "px",
+                                "width": (node.width) + "vw"
+                              }
+                            } className={"rellax2"}>
+                        <p>{"“" + node.story_excerpt + "”"}</p>
+                        <p>{"–" + node.author_name}</p>
+                    </div>
         }
       )
 
@@ -54,10 +63,11 @@ class ExcerptColumn extends React.Component {
   }
 
   render() {
+
     // console.log(this.props.photos);
   	return (
         <div className={"bgLayers bgExcerpts"} style={{"height": this.props.windowHeight + "px"}}>
-    			{this.renderExcerptColumns()}
+    			   {this.renderExcerptColumns()}
         </div>
   	)
   }
