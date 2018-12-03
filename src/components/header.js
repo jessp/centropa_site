@@ -6,7 +6,7 @@ const Header = ({ siteTitle, pageName, minimal }) => (
   <div className={"underlineLink headerContainer " + (minimal ? "minimalHeader" : "")}>
       <HeaderLink to={"/"} text={"Home"}/>
       <HeaderLink to={"/menu"} text={"Menu"} color={"#2A8FA3"}/>
-      <HeaderLink to={"/12x"} text={"12x"} color={"#A4384D"}/>
+      <HeaderLink to={"/stories"} text={"Centropa Stories"} color={"#A4384D"}/>
       <h1 className ={"pageName"}>{pageName}</h1>
   </div>
 )

@@ -23,6 +23,10 @@ class IndexPage extends React.Component {
 
   }
 
+  componentWillUnmount(){
+    this.setState({animationCompleted: true});
+  }
+
   completeAnimation(){
     this.setState({animationCompleted: true});
   }

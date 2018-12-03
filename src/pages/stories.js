@@ -8,11 +8,10 @@ import ScrollDown from "../images/scroll_down.svg";
 
 
 
-class TwelveX extends React.Component {
+class Stories extends React.Component {
 
   constructor(props){
     super(props);
-
     this.state = {
       "featuredAuthor": this.props.data.featured.edges[0].node
     }
@@ -84,7 +83,7 @@ class TwelveX extends React.Component {
 
 }
 
-export default TwelveX
+export default Stories
 
 export const contributorQuery = graphql`
   query {

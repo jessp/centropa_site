@@ -26,12 +26,18 @@ class Menu extends React.Component {
     }
 
     //format author data so it's easy to pair with sandwich data
-    let contribs = {};
+    let sandwichContribs = {};
+    let mediaContribs = [];
     for (let author = 0; author < this.props.data.allContributors.edges.length; author++){
-      contribs[this.props.data.allContributors.edges[author]["node"]["acf"]["country_name"]] = this.props.data.allContributors.edges[author]["node"]["slug"];
+      sandwichContribs[this.props.data.allContributors.edges[author]["node"]["acf"]["country_name"]] = this.props.data.allContributors.edges[author]["node"]["slug"];
+      let contribObject = new Object();
+      contribObject["slug"] = this.props.data.allContributors.edges[author]["node"]["slug"];
+      contribObject["author_name"] = this.props.data.allContributors.edges[author]["node"]["acf"]["author_name"];
+      contribObject["story_excerpt"] = this.props.data.allContributors.edges[author]["node"]["acf"]["story_excerpt"];
+      mediaContribs.push(contribObject);
     }
-
-    this.contribs = contribs;
+    this.sandwichContribs = sandwichContribs;
+    this.mediaContribs = mediaContribs;
 
     //format sandwich data so it's easy to display
     let photos = [];
@@ -107,12 +113,12 @@ class Menu extends React.Component {
             </div>
             <div className={"menuWrapper"} ref={"menuWrapper"}>
               <div className={"mediaColumn"} style={{"height": this.state.windowHeight + "px"}}>
-                <MediaColumn photos={this.photos} windowHeight={this.state.windowHeight}/>
+                <MediaColumn photos={this.photos} excerpts = {this.mediaContribs} windowHeight={this.state.windowHeight}/>
               </div>
               <div className={"foodColumn"}>
                 <MenuCat
                   cat_name={"sandwiches"} menu_items={this.filterItems(menu_items, "sandwiches")}
-                  setActiveCat={this.setActiveCat} authors={this.contribs} description={sectionDescriptions["sandwiches"]}/>
+                  setActiveCat={this.setActiveCat} authors={this.sandwichContribs} description={sectionDescriptions["sandwiches"]}/>
                 <MenuCat 
                   cat_name={"snacks"} menu_items={this.filterItems(menu_items, "snacks")} 
                   setActiveCat={this.setActiveCat} description={sectionDescriptions["snacks"]}/>
@@ -176,6 +182,8 @@ query {
               slug
               acf{
                 country_name
+                story_excerpt
+                author_name
               }
             }
           }
