@@ -1,0 +1,22 @@
+.footer {
+	z-index: 3;
+	width: 100%;
+	position: absolute;
+	height: 50px;
+	bottom: 0px;
+	color: #0d3e32;
+}
+
+.footer div{
+	width: 50%;
+}
+
+.social {
+	text-align: right;
+	font-size: 2.5em;
+}
+
+.social svg {
+	margin-right: 5px;
+	cursor: pointer;
+}

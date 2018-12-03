@@ -1,10 +1,8 @@
 html {
 	background-color: #f8f0d6;
-	background-repeat: no-repeat;
-    background-origin: content-box;
-    background-position: top;
-    background-size: 100% 400%;
+    height: 100%;
 }
+
 
 .svgGroup {
 	width: 100%;
@@ -13,14 +11,23 @@ html {
     float: left;
     position: relative;
     pointer-events: none;
-    max-height: 80vw;
+}
+
+.svgGroup svg {
+    pointer-events: none;
 }
 
 .logoHolder {
-    height: 85%;
+    height: 80%;
     margin: 0 auto;
-    margin-top: 3%;
-    max-width: 70%;
+    max-width: 45%;
+}
+
+.logoHolder p {
+    margin-bottom: 0px;
+    font-style: italic;
+    font-weight: bold;
+    color: #0d3e32;
 }
 
 .svgGroup svg {
@@ -32,7 +39,6 @@ html {
 	width: 100%;
     height: 100%;
     position: absolute;
-    max-height: 80vw;
 }
 
 .mondrianHolder div {
@@ -41,6 +47,15 @@ html {
     height: 0vw;
     top: 50%;
     left: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+.svgGroup .underlineLink a {
+    font-family: "Lato";
+    font-style: initial;
+    margin-left: 0px;
+    pointer-events: all;
 }
 
 /*coloured blocks in the back of the index*/
@@ -129,15 +144,15 @@ html {
     width: 14vw;
     height: 18vw;
     top: 23%;
-    left: 78%;
+    left: 83%;
     transition: width 2s, height 2s, top 2s, left 2s;
 }
 
 .afterIntroTransformed .right4 {
     width: 20vw;
     height: 14.5vw;
-    left: 77%;
-    top: 57.5%;
+    top: 55%;
+    left: 72%;
     transition: width 2s, height 2s, top 2s, left 2s;
 
 }
@@ -163,6 +178,17 @@ html {
     width: 7vw;
     height: 5vw;
     top: 78%;
-    left: 68%;
+    left: 68.5%;
     transition: width 2s, height 2s, top 2s, left 2s;
+}
+
+/* Minimum aspect ratio */
+@media (max-aspect-ratio: 3/4) {
+    .logoHolder {
+        max-width: 80%;
+    }
+
+    .logoHolder svg text {
+        font-size: 18px;
+    }
 }

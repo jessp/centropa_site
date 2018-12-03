@@ -13,23 +13,10 @@ class MenuCat extends React.Component {
   constructor(props){
     super(props);
 
-    this.changeImg = this.changeImg.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
 
-    //start image is the initial image shown on section load.
-    //it's set from the first element in the section with an associated element
-    let start_image = this.props.menu_items.find(function(element) {
-      return element.node.acf.food_photo;
-    });
-
-    if (start_image){
-      start_image = {"title": start_image.node.title, "img": start_image.node.acf.food_photo.source_url}
-    }
-
     this.state = {
-      "currentImage": start_image,
-      "isInView": false,
-      "windowHeight": 0
+      "isInView": false
     }
 
     configureAnchors({keepLastAnchorHash: true})
@@ -37,9 +24,7 @@ class MenuCat extends React.Component {
   }
 
   componentDidMount(){
-    this.updateWindowDimensions();
     window.addEventListener('scroll', this.handleScroll);
-    window.addEventListener('resize', this.updateWindowDimensions);
 
     if ((this.refs.thisSection.offsetTop - 10) < (window.scrollY + window.innerHeight) && (this.refs.thisSection.offsetTop + 75)  > window.scrollY){
       this.props.setActiveCat(this.props.cat_name);
@@ -49,7 +34,6 @@ class MenuCat extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
-    window.removeEventListener('resize', this.updateWindowDimensions);
   }
 
   handleScroll(event) {
@@ -67,29 +51,13 @@ class MenuCat extends React.Component {
     }
   }
 
-  changeImg(item){
-    this.setState({"currentImage": item});
-  }
-
-  updateWindowDimensions() {
-    this.setState({ windowHeight: window.innerHeight });
-  }
-
   render(){
     let cat_name = this.props.cat_name;
     let items = this.props.menu_items;
-    let changeImg = this.changeImg;
-    let currentImage = this.state.currentImage;
     let contribs = this.props.authors;
 
     return (
         <div className={"menuSection"} ref={"thisSection"}>
-          {this.state.currentImage &&
-            <div className={"mediaColumn"}>
-              <div className={"mediaBg"} style={{"backgroundImage": "url(" + this.state.currentImage.img + ")"}}/>
-            </div>
-          }
-          <div  className = {"foodColumn"}> 
             <ScrollableAnchor id={cat_name}>
               <h2>{capitalizeFirstLetter(cat_name)}</h2>
             </ScrollableAnchor>
@@ -110,9 +78,6 @@ class MenuCat extends React.Component {
                       price = {item.node.acf.price}
                       description = {he.decode(item.node.acf.description)}
                       tags = {tags}
-                      image = {item.node.acf.food_photo ? item.node.acf.food_photo.source_url : null}
-                      changeImg = {changeImg}
-                      isActive = {currentImage ? currentImage.title === he.decode(item.node.title) : false}
                       accompanyingText = {item.node.acf.accompanying_text}
                       slug={item.node.acf.country ? contribs[item.node.acf.country] : null}
                     />
@@ -120,9 +85,6 @@ class MenuCat extends React.Component {
                 })
               }
             </div>
-            
-          </div>
-            <div className={"clearer"}/>
         </div>
     )
 

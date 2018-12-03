@@ -92,7 +92,7 @@ class LogoAnimation extends Component {
 
 render() {
       return (
-      <svg ref={"svgNode"} viewBox="0 0 325 440">
+      <svg ref={"svgNode"} viewBox="0 0 325 400">
          <defs>
             <path id={"textPath"}
                d = {this.getStartingPath(162.5, 175, 151)}/>

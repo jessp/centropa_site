@@ -1,3 +1,7 @@
+.menuColumns {
+	height: auto;
+}
+
 .controlColumn {
 	width:20%;
 	position: fixed;
@@ -14,10 +18,9 @@
 
 .mediaColumn {
 	width:40%;
-	height: 100%;
-	position: sticky;
 	top:35px;
 	float: right;
+	overflow: hidden;
 }
 
 .mediaColumn img{
