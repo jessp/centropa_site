@@ -59,7 +59,7 @@ class Menu extends React.Component {
 
     //sort based on how the sections are currently ordered
     photos = photos.sort(function(a, b){
-      return categoryOrder[b["category"]] - categoryOrder[a["category"]];
+      return categoryOrder[a["category"]] - categoryOrder[b["category"]];
     });
 
     this.photos = photos;
@@ -105,14 +105,14 @@ class Menu extends React.Component {
               {/*<FilterPanel/>*/}
             </div>
             <div className={"menuWrapper"}>
+              <div className={"mediaColumn"} style={{"height": this.state.windowHeight + "px"}}>
+                <MediaColumn photos={this.photos} windowHeight={this.state.windowHeight}/>
+              </div>
               <div className={"foodColumn"}>
                 <MenuCat cat_name={"sandwiches"} menu_items={this.filterItems(menu_items, "sandwiches")} setActiveCat={this.setActiveCat} authors={this.contribs}/>
                 <MenuCat cat_name={"snacks"} menu_items={this.filterItems(menu_items, "snacks")} setActiveCat={this.setActiveCat}/>
                 <MenuCat cat_name={"mains"} menu_items={this.filterItems(menu_items, "mains")} setActiveCat={this.setActiveCat}/>
                 <MenuCat cat_name={"desserts"} menu_items={this.filterItems(menu_items, "desserts")} setActiveCat={this.setActiveCat}/>
-              </div>
-              <div className={"mediaColumn"}>
-                <MediaColumn photos={this.photos} windowHeight={this.state.windowHeight}/>
               </div>
             </div>
           </div>

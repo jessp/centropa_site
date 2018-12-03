@@ -3,9 +3,6 @@ import {capitalizeFirstLetter} from "../utils/helpers"
 import '../css/menuLocationPanel.css'
 
 
-
-
-
 class MenuLocation extends React.Component {
 
   render() {

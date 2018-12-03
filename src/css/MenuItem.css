@@ -31,6 +31,10 @@ html{
 	margin-top: 50px;
 }
 
+.menuSection:first-child {
+	margin-top: 0px;
+}
+
 .menuSection .menuEntry:last-of-type {
 	content: "";
 	display: table;
@@ -78,11 +82,11 @@ html{
     margin-bottom: 5px;
     padding-left: 7px;
     font-weight: bold;
-    border-left: 2px solid #0d3e32;
+    border-left: 2px solid #2A8FA3;
 }
 
 .accompanyingText a {
-	color: #0d3e32;
+	color: #2A8FA3;
 }
 
 

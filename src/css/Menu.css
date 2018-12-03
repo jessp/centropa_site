@@ -20,7 +20,7 @@
 	width:40%;
 	top:35px;
 	float: right;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 .mediaColumn img{
@@ -36,7 +36,7 @@
 }
 
 .menuColumns h2 {
-	border-bottom: 3px solid #0d3e32;
+	border-bottom: 3px solid #2A8FA3;
 	color: #0d3e32;
 }
 

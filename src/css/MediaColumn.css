@@ -1,5 +1,5 @@
 .bgLayers {
-	position: relative;
+	position: absolute;
 	width: 100%;
 
 }
@@ -8,5 +8,14 @@
 	position: absolute;
 	width: 50px;
 	height: 50px;
-	background-color: orange;
+	background-size: cover;
+	background-position: center;
+}
+
+.imageCols{
+	position: relative;
+}
+
+.bgSquares div{
+	background-color: #2A8FA3;
 }
