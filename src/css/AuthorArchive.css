@@ -1,4 +1,4 @@
-.authorListHolder{
+.authorListHolder {
 	max-height: 50%;
 	width: 60%;
 }
@@ -43,4 +43,21 @@
 
 .activeAuthorSpan {
 	font-weight: bold;
+}
+
+@media (max-width: 800px) {
+	.authorListHolder {
+		width: calc(100% - 30px);
+	}
+
+	.authorListHolder h2 {
+		width: 50%;
+	}	
+
+}
+@media (max-width: 450px) {
+
+	.authorListHolder h2 {
+		width: 100%;
+	}
 }

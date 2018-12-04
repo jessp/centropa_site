@@ -33,6 +33,7 @@
 	top:0px;
 	width: 600px;
 	height: 100%;
+	pointer-events: none;
 }
 
 .storiesImageWrapper > div {
@@ -120,6 +121,7 @@
 	background-color: #A4384D;
    	right: 43%;
     top: 16%;
+    pointer-events: all;
 
 }
 
@@ -127,7 +129,7 @@
 	width: 30%;
     height:35%;
     right: 1%;
-    bottom: 2%;
+    top: 50%;
 }
 
 .bgSquare1 {
@@ -154,10 +156,24 @@
 	top:38%;
 }
 
-@media (max-width: 850px) {
-	.storiesIntroWrapper p{
-		font-size: 0.85em;
-    	line-height: 1.6em;
+@media (max-width: 800px) {
+	.storiesImageWrapper {
+		display: none;
+	}
+
+	.authorGridContainer {
+		width: 100%;
+	}
+
+	.storiesIntroWrapper {
+		width: 50%;
 	}
 
 }
+
+@media (max-width: 450px) {
+
+		.storiesIntroWrapper {
+		width: 100%;
+	}
+	}

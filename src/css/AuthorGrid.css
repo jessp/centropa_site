@@ -53,3 +53,17 @@
 	cursor: pointer;
 }
 
+@media (max-width: 450px) {
+	.authorGridContainer {
+		grid-template-columns: calc(33% - 10px) calc(33% - 10px) auto;
+  		grid-template-rows: 25% 25% 25% 25%;
+	}
+
+	.authorGrid {
+		height: 500px;
+		margin-bottom: 25px;
+	}
+
+
+
+}
