@@ -63,18 +63,15 @@
 		position:relative;
 	}
 
+}
+
+
+@media (max-width: 550px) {
 	.mediaColumn {
-		width: calc(100% - 35px);
-    	height: auto;
-    	position: relative;
-    	float: none;
-    	margin-bottom: 50px;
+		display: none;
 	}
 
 	.foodColumn {
-		width: 100%;
-		float: none;
-		position: relative;
+		width: calc(100% - 15px);
 	}
-
 }

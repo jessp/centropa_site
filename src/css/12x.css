@@ -15,6 +15,7 @@
 }
 
 .storiesIntroWrapper h3 {
+	color: #0d3e32;
 	font-size: 1.25em;
     line-height: 1.45em;
     margin-bottom: 0.5em;
@@ -24,4 +25,132 @@
 .storiesIntroWrapper a {
 	font-weight: bold;
 	color: #0d3e32;
+}
+
+.storiesImageWrapper {
+	position: absolute;
+	right: 0px;
+	top:0px;
+	width: 60%;
+}
+
+.storiesImageWrapper > div {
+	position: absolute;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color:#fff;
+}
+
+.inspirationBox {
+	text-align: center;
+	padding: 15px;
+    background-color: #0d3e32;
+    right: 20%;
+    top: 225px;
+}
+
+.inspirationBox p, .readNowBox p {
+	margin-bottom: 0px;
+}
+
+.inspirationBox p:nth-child(2n){
+	font-style: italic;
+}
+
+.inspirationBox p:nth-child(2n - 1){
+	font-weight: bold;
+	font-family: "Lato";
+}
+
+.readNowBox {
+	padding: 15px;
+}
+
+.readNowBox p:first-child{
+	font-size: 0.7em;
+	line-height: 1em;
+}
+
+.readNowBox.underlineLink a {
+	color: #fff;
+	margin: 0px;
+	font-family: "Lato";
+	font-weight: bold;
+}
+
+.excerptBox {
+	padding: 15px;
+    background-color:rgba(255, 255, 255, 0.8);
+    width: 23vw;
+    right: 0%;
+    top: 15px;
+    min-width: 250px;
+}
+
+.excerptBox p {
+	color: #0d3e32;
+    font-style: italic;
+    text-align: left;
+    font-family: "Alegreya";
+    margin-bottom: 0px;
+    font-size: 0.7em;
+    font-weight: bold;
+    line-height: 1.5em;
+}
+
+.locationBg {
+	width: 17vw;
+    height:23vw;
+    right: 4.5%;
+    top: -25px;
+    min-width: 200px;
+    min-height: 200px;
+}
+
+.foodBg {
+	background-color: #aaa;
+    width: 18vw;
+    height:19vw;
+    right: 22%;
+    top: 85px;
+}
+
+.readNowBox {
+	background-color: #A4384D;
+    min-width: 175px;
+    max-width: 30vw;
+   	right: 43%;
+    top: 150px;
+}
+
+.authorBox {
+	width: 18vw;
+    height:24vw;
+    right: 1%;
+    top: 320px
+}
+
+.bgSquare1 {
+	width: 4vw;
+	height:3.7vw;
+	right: 50%;
+	background-color: #0d3e32;
+	top:35px;
+}
+
+.bgSquare2 {
+	width: 2.8vw;
+	height:2.6vw;
+	right: 12%;
+	background-color: #A4384D;
+	top:265px;
+}
+
+.bgSquare3 {
+	width: 4.2vw;
+	height:4vw;
+	right: 2%;
+	background-color: #A4384D;
+	top:210px;
 }
