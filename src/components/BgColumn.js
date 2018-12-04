@@ -39,7 +39,7 @@ class BgColumn extends React.Component {
       return <div key={id + node.left} 
                 style={
                     {
-                      "right": (node.left * 35) + "%",
+                      "right": (node.left * 55) + "%",
                       "top": (node.top * (windowHeight - 200)) + "px",
                       "width": (node.width) + "vw",
                       "height": (node.width) + "vw"

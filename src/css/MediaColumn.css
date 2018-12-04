@@ -8,6 +8,8 @@
 	position: absolute;
 	background-size: cover;
 	background-position: center;
+    max-width: 300px;
+    max-height: 400px;
 }
 
 

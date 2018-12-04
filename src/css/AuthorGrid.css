@@ -40,11 +40,7 @@
 	margin: 3px 0px 0px 0px;
 }
 
-.authorSorting {
-	background-color: #114F40;
-}
-
 .authorSorting a {
-	color: #fff;
+	color: #0d3e32;
 	cursor: pointer;
 }

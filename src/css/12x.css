@@ -6,7 +6,7 @@
 }
 
 .storiesIntroWrapper {
-	width: 40%;
+	width: calc(100% - 450px);
 }
 
 .storiesIntroWrapper h2 {
@@ -31,7 +31,8 @@
 	position: absolute;
 	right: 0px;
 	top:0px;
-	width: 60%;
+	width: 600px;
+	height: 100%;
 }
 
 .storiesImageWrapper > div {
@@ -46,8 +47,10 @@
 	text-align: center;
 	padding: 15px;
     background-color: #0d3e32;
-    right: 20%;
-    top: 225px;
+    right: 16%;
+    top: 31%;
+	line-height: 130%;
+    font-size: 70%;
 }
 
 .inspirationBox p, .readNowBox p {
@@ -61,10 +64,6 @@
 .inspirationBox p:nth-child(2n - 1){
 	font-weight: bold;
 	font-family: "Lato";
-}
-
-.readNowBox {
-	padding: 15px;
 }
 
 .readNowBox p:first-child{
@@ -82,9 +81,9 @@
 .excerptBox {
 	padding: 15px;
     background-color:rgba(255, 255, 255, 0.8);
-    width: 23vw;
+    width: 20%;
     right: 0%;
-    top: 15px;
+    top: 0%;
     min-width: 250px;
 }
 
@@ -100,57 +99,56 @@
 }
 
 .locationBg {
-	width: 17vw;
-    height:23vw;
+	width: 30%;
+    height:42%;
     right: 4.5%;
-    top: -25px;
-    min-width: 200px;
-    min-height: 200px;
+    top: -5%;
+/*    min-width: 200px;
+    min-height: 200px;*/
 }
 
 .foodBg {
 	background-color: #aaa;
-    width: 18vw;
-    height:19vw;
-    right: 22%;
-    top: 85px;
+	width: 25%;
+    height: 35%;
+    top: 35%;
+    right: 23%;
 }
 
 .readNowBox {
+	padding: 15px;
 	background-color: #A4384D;
-    min-width: 175px;
-    max-width: 30vw;
    	right: 43%;
-    top: 150px;
+    top: 16%;
 }
 
 .authorBox {
-	width: 18vw;
-    height:24vw;
+	width: 30%;
+    height:35%;
     right: 1%;
-    top: 320px
+    bottom: 2%;
 }
 
 .bgSquare1 {
-	width: 4vw;
-	height:3.7vw;
-	right: 50%;
+	width: 5%;
+	height:5%;
+	right: 62%;
 	background-color: #0d3e32;
-	top:35px;
+	top:-5%;
 }
 
 .bgSquare2 {
-	width: 2.8vw;
-	height:2.6vw;
-	right: 12%;
+	width: 3.5%;
+	height:3.3%;
+	right: 9%;
 	background-color: #A4384D;
-	top:265px;
+	top:53%;
 }
 
 .bgSquare3 {
-	width: 4.2vw;
-	height:4vw;
+	width: 7%;
+	height:6%;
 	right: 2%;
 	background-color: #A4384D;
-	top:210px;
+	top:38%;
 }

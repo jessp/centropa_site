@@ -33,25 +33,9 @@ class Stories extends React.Component {
     });
     let featuredSandwichImage = featuredSandwich["node"]["acf"]["food_photo"];
       return (
-        <Layout pageName={""}>
+        <Layout pageName={""} style={{"height": "100%"}}>
           <div className={"twelveXWrapper"}>
-            <div className={"storiesIntroWrapper"}>
-              <h2>{"Centropa Stories"}</h2>
-              <p>
-                  <span>{"In Centropa stories, we bring together some of Norway’s brightest writers and invite them to write about food culture around the world. " +
-                  "You can experience their work here online, pick up a copy of Centropa magazine at Deichman, or order something off our "}</span>
-                  <Link to={"/menu#sandwiches"}>
-                    <span>{"sandwich menu"}</span>
-                  </Link>
-                  <span>{" to see how they’ve inspired us."}</span>
-              </p>
-              <h3>{"Current Line-up"}</h3>
-            </div>
-            <div className={"authorGrid"}>
-              <AuthorGrid authors={gridAuthors} setAuthor={this.setActiveAuthor} featuredAuthor={featuredAuthor.acf.author_name}/>
-            </div>
-          </div>
-          <div className={"storiesImageWrapper"}>
+                      <div className={"storiesImageWrapper"}>
             <div className= {"bgSquare1"}/>
             <div className= {"bgSquare2"}/>
             <div className = {"locationBg"} 
@@ -83,6 +67,22 @@ class Stories extends React.Component {
               <Link to={"/" + featuredAuthor.slug}>
                 <span>{featuredAuthor.title}</span>
               </Link>
+            </div>
+          </div>
+            <div className={"storiesIntroWrapper"}>
+              <h2>{"Centropa Stories"}</h2>
+              <p>
+                  <span>{"In Centropa stories, we bring together some of Norway’s brightest writers and invite them to write about food culture around the world. " +
+                  "You can experience their work here online, pick up a copy of Centropa magazine at Deichman, or order something off our "}</span>
+                  <Link to={"/menu#sandwiches"}>
+                    <span>{"sandwich menu"}</span>
+                  </Link>
+                  <span>{" to see how they’ve inspired us."}</span>
+              </p>
+              <h3>{"Current Line-up"}</h3>
+            </div>
+            <div className={"authorGrid"}>
+              <AuthorGrid authors={gridAuthors} setAuthor={this.setActiveAuthor} featuredAuthor={featuredAuthor.acf.author_name}/>
             </div>
           </div>
           <AuthorArchive 
