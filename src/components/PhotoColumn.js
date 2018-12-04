@@ -34,7 +34,7 @@ class PhotoColumn extends React.Component {
   }
 
   componentDidMount(){
-    var rellax = new Rellax('.rellax', {
+    this.rellax = new Rellax('.rellax', {
       speed: -2,
       center: false,
       wrapper: null,
@@ -42,18 +42,24 @@ class PhotoColumn extends React.Component {
       vertical: true,
       horizontal: false
     });
+
   }
+
+
 
   renderPhotoColumns(){
     let windowHeight = this.props.windowHeight;
 
 
     return this.squares.map(function(node, id) {
+      let top = (node.top * (windowHeight - 200) / 1.25);
+
+
       return <div key={id + node.left} 
                   style={
                       {
                         "right": (node.left * 30) + "%",
-                        "top": (node.top * (windowHeight - 200) / 1.25) + "px",
+                        "top": top + "px",
                         "width": (node.width) + "vw",
                         "height": (node.height) + "vw",
                         "backgroundImage": "url(" + node.img + ")"
@@ -70,7 +76,6 @@ class PhotoColumn extends React.Component {
   }
 
   render() {
-
   	return (
         <div className={"bgLayers"} >
     			   {this.renderPhotoColumns()}

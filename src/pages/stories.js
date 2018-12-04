@@ -34,8 +34,7 @@ class Stories extends React.Component {
     let featuredSandwichImage = featuredSandwich["node"]["acf"]["food_photo"];
       return (
         <Layout pageName={""} style={{"height": "100%"}}>
-          <div className={"twelveXWrapper"}>
-                      <div className={"storiesImageWrapper"}>
+          <div className={"storiesImageWrapper"}>
             <div className= {"bgSquare1"}/>
             <div className= {"bgSquare2"}/>
             <div className = {"locationBg"} 
@@ -69,6 +68,7 @@ class Stories extends React.Component {
               </Link>
             </div>
           </div>
+          <div className={"twelveXWrapper"}>
             <div className={"storiesIntroWrapper"}>
               <h2>{"Centropa Stories"}</h2>
               <p>

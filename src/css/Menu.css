@@ -20,7 +20,7 @@
 	width:40%;
 	top:35px;
 	float: right;
-	/*overflow: hidden;*/
+	overflow: visible;
 }
 
 .mediaColumn img{

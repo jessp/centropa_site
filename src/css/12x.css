@@ -1,7 +1,7 @@
 .twelveXWrapper{
 	width: 100%;
 	position: relative;
-	height: 100%;
+	height: auto;
 	padding: 15px;
 }
 
@@ -49,7 +49,7 @@
     background-color: #0d3e32;
     right: 16%;
     top: 31%;
-	line-height: 130%;
+	line-height: 140%;
     font-size: 70%;
 }
 
@@ -116,10 +116,11 @@
 }
 
 .readNowBox {
-	padding: 15px;
+	padding: 15px 15px 5px 15px;
 	background-color: #A4384D;
    	right: 43%;
     top: 16%;
+
 }
 
 .authorBox {
@@ -151,4 +152,12 @@
 	right: 2%;
 	background-color: #A4384D;
 	top:38%;
+}
+
+@media (max-width: 850px) {
+	.storiesIntroWrapper p{
+		font-size: 0.85em;
+    	line-height: 1.6em;
+	}
+
 }

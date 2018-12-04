@@ -1,12 +1,12 @@
 .authorGrid {
-	height: 300px;
+	height: 350px;
 }
 
 .authorGridContainer{
 	padding: 0px;
 	display: grid;
 	grid-gap: 0px 15px;
-	grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 17%;
+	grid-template-columns: calc(16.6% - 12px) calc(16.6% - 12px) calc(16.6% - 12px) calc(16.6% - 12px) calc(16.6% - 12px) auto;
   	grid-template-rows: 50% 50%;
   	width: 60%;
   	height: 100%;
@@ -17,12 +17,13 @@
 	background-repeat: no-repeat;
 	background-position: center;
 	width: 100%;
-    height: 70%;
+    height: 65%;
     overflow: hidden;
 }
 
 .featuredButton .authorThumbnail {
-	border:2px solid #fff;	
+	border:3px solid #A4384D;
+	background-color: #A4384D;
 }
 
 .authorButton {
@@ -40,7 +41,15 @@
 	margin: 3px 0px 0px 0px;
 }
 
+.authorButton p:first-of-type {
+		font-family: "Lato";
+	font-weight: bold;	
+	color: #A4384D;
+}
+
+
 .authorSorting a {
 	color: #0d3e32;
 	cursor: pointer;
 }
+

@@ -16,6 +16,8 @@ class AuthorGrid extends React.Component {
 								<div className={"authorThumbnail"}
 								style={{"backgroundImage": "url('" + node.node.acf.author_thumbnail.source_url + "')"}}/>
 								<p>{node.node.acf.author_name}</p>
+								<p>{node.node.acf.country_name}</p>
+
 							</div>
 						)
 					})

@@ -1,20 +1,23 @@
 .authorListHolder{
 	max-height: 50%;
+	width: 60%;
 }
 
 .authorListHolder h2 {
 	margin-left: 15px;
     margin-bottom: 35px;
     margin-top: 15px;
-    border-bottom: 3px solid #0d3e32;
     width: calc(50% - 20px);
     color: #0d3e32;
+	font-size: 1.25em;
+    line-height: 1.45em;
+    border-bottom: 3px solid #A4384D;
 }
 
 .authorColumns {
-	-webkit-columns: 4;
-	columns: 4;
-	margin: 10px 15px 30px;
+	-webkit-columns: 3;
+	columns: 3;
+	margin: 10px 0px 50px 15px;
 }
 
 .authorListHolder h3 {

@@ -19,6 +19,7 @@ class Menu extends React.Component {
 
     this.filterItems = this.filterItems.bind(this);
     this.setActiveCat = this.setActiveCat.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
     this.state ={
       "activeCat": "sandwiches",
@@ -96,7 +97,9 @@ class Menu extends React.Component {
   }
 
   updateWindowDimensions() {
-    this.setState({ windowHeight: this.refs.menuWrapper.scrollHeight });
+    if (this.refs && this.refs.menuWrapper){
+      this.setState({ windowHeight: this.refs.menuWrapper.scrollHeight });
+    }
   }
 
 
