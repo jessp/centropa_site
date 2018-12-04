@@ -39,17 +39,18 @@ class IndexPage extends React.Component {
 
     return(
       <div style={{"width":"100%", "height":"100%", "position":"relative", "overflow": "hidden"}}>
-        <div className={"mondrianHolder " + (this.state.animationCompleted ? "afterIntroTransformed" : "")}>
+        <div className={"mondrianHolder " + (this.state.animationCompleted ? "afterIntroTransformed" : "")} ref={el => this.scene = el}>
           <div className={"left1"} style={{"backgroundColor": "#DA852D"}}/>
           <div className={"left2"} style={{"backgroundColor": "#A4384D"}}/>
           <div className={"left3"} style={{"backgroundColor": "#2A8FA3"}}/>
-          <div className={"left4"}>
+          <div className={"left4"} style={{"backgroundColor": "#37b8de"}}>
             <Map
-              style="mapbox://styles/mapbox/streets-v9"
+              style="mapbox://styles/mapbox/streets-v9?optimize=true"
               center={[10.7957078, 59.894434]}
               containerStyle={{
                 height: "100%",
-                width: "100%"
+                width: "100%",
+                backgroundColor: "#37b8de"
               }}>
                <Layer
                 type="symbol"

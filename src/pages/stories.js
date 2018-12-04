@@ -8,6 +8,7 @@ import ScrollDown from "../images/scroll_down.svg";
 
 
 
+
 class Stories extends React.Component {
 
   constructor(props){
@@ -31,45 +32,20 @@ class Stories extends React.Component {
       return (
         <Layout pageName={""}>
           <div className={"twelveXWrapper"}>
-            <div className={"twelveXIntro"}>
+            <div className={"storiesIntroWrapper"}>
+              <h2>{"Centropa Stories"}</h2>
               <p>
-                In the <span style={{"fontWeight": "bold"}}>12x project</span>, we bring together a roster of twelve Norwegian authors and encourage them to write about the food culture of a given country. We, in turn, are inspired by their writing to create a special sandwich as part of our rotating sandwich menu. We change one of our authors every few weeks, and change our sandwich feature to match. We hope their wisdom inspires you too.
+                  <span>{"In Centropa stories, we bring together some of Norway’s brightest writers and invite them to write about food culture around the world. " +
+                  "You can experience their work here online, pick up a copy of Centropa magazine at Deichman, or order something off our "}</span>
+                  <Link to={"/menu#sandwiches"}>
+                    <span>{"sandwich menu"}</span>
+                  </Link>
+                  <span>{" to see how they’ve inspired us."}</span>
               </p>
-            </div>
-            <div className={"authorPhoto"} 
-                  style={{"backgroundImage": "url('" + featuredAuthor.acf.author_photo.source_url + "')"}}>
-                <div className = {"mobileStoryInfo storyInfo"}>
-                  <h3>{featuredAuthor.acf.author_name}</h3>
-                  <h2>{featuredAuthor.title}</h2>
-                  <h4>{"Inspired by " + featuredAuthor.acf.country_name}</h4>
-                  <p>
-                    {"“" + featuredAuthor.acf.story_excerpt + "”"}
-                  </p>
-                  <div className={"underlineLink readMoreButton"}>
-                    <Link to={"/" + featuredAuthor.slug}>
-                      <span>{"Read More"}</span>
-                    </Link>
-                  </div>
-                </div>
-            </div>
-            <div className={"storyInfo nonMobileStoryInfo"}>
-              <h3>{featuredAuthor.acf.author_name}</h3>
-              <h2>{featuredAuthor.title}</h2>
-              <h4>{"Inspired by " + featuredAuthor.acf.country_name}</h4>
-              <p>
-                {"“" + featuredAuthor.acf.story_excerpt + "”"}
-              </p>
-              <div className={"underlineLink readMoreButton"}>
-                <Link to={"/" + featuredAuthor.slug}>
-                  <span>{"Read More"}</span>
-                </Link>
-              </div>
+              <h3>{"Current Line-up"}</h3>
             </div>
             <div className={"authorGrid"}>
               <AuthorGrid authors={gridAuthors} setAuthor={this.setActiveAuthor} featuredAuthor={featuredAuthor.acf.author_name}/>
-            </div>
-            <div className={"scrollIndicator"}>
-              <img src={ScrollDown}/>
             </div>
           </div>
           <AuthorArchive 

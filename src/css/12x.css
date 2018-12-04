@@ -2,138 +2,26 @@
 	width: 100%;
 	position: relative;
 	height: 100%;
-	display: grid;
-	grid-template-columns: 33% 33% auto;
-	grid-template-rows: 1fr 5fr 50px;
-	grid-template-areas: 
-	    "header header ."
-	    "photo story authorGrid"
-	    "footer footer footer";
+	padding: 15px;
 }
 
-.twelveXIntro {
-	margin-left: 15px;
-	font-size: 0.8em;
-	line-height: 1.5em;
-	grid-area: header;
-	color: #0d3e32;
+.storiesIntroWrapper {
+	width: 40%;
 }
 
-.authorPhoto {
-	grid-area: photo;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.storyInfo {
-	grid-area: story;
-	color: #000;
-	padding: 12px;
-	background-image: none;
-}
-
-.storyInfo h3 {
-	margin-bottom: 5px;
-    font-size: 0.8em;
-    font-weight: normal;
-}
-
-.storyInfo h2 {
-	font-size: 1.4em;
-    margin-bottom: 5px;
-}
-
-.storyInfo h4 {
-	font-weight: normal;
-    font-style: italic;
-    font-size: 0.75em;
-    display: inline-block;
-    border-bottom: 2.5px solid;
-    width: 100%;
-    padding-bottom: 10px;
-}
-
-.storyInfo p {
-    font-size: 1.1em;
-    line-height: 1.65em;
-    font-weight: bold;
-}
-
-.storyInfo h5 {
-	margin-top: 50px;
-    margin-bottom: 0px;
-    cursor: pointer;
+.storiesIntroWrapper h2 {
+	border-bottom: 3px solid #A4384D;
     color: #0d3e32;
 }
 
-.authorGrid {
-	grid-area: authorGrid;
-	background-color: #114F40;
-	color: #fff;
+.storiesIntroWrapper h3 {
+	font-size: 1.25em;
+    line-height: 1.45em;
+    margin-bottom: 0.5em;
+    border-bottom: 3px solid #A4384D;
 }
 
-.scrollIndicator {
-	grid-area: footer;
-	background-color: #114F40;
-	text-align: center;
-}
-
-.scrollIndicator img{
-	margin-top: -5px;
-    width: 45px;
-}
-
-.readMoreButton a{
-	margin-left: 0px;
-	font-family: Lato;
-    font-weight: bold;
-}
-
-.mobileStoryInfo {
-	display: none;
-}
-
-@media (max-width: 850px) {
-	.twelveXWrapper {
-		grid-template-columns: 100%;
-	    grid-template-rows: 1fr 6fr 8fr;
-	    grid-template-areas: "header" "photo" "authorGrid";
-	    height: 150%;
-	}
-
-	.mobileStoryInfo {
-		display: initial;
-
-	}
-
-	.mobileStoryInfo p,  .mobileStoryInfo h4, .mobileStoryInfo h3, 
-	.mobileStoryInfo h2, .mobileStoryInfo .underlineLink a  {
-		width: calc(100% - 70px);
-		margin-left: 35px;
-		color: #fff;
-		text-shadow: #444 1px 0 1px;
-	}
-
-	.nonMobileStoryInfo {
-		display: none;
-	}
-
-	.authorGridContainer {
-		grid-template-rows: 33% 33% auto;
-    	grid-template-columns: 25% 25% 25% 25%;
-    	width: calc(100% - 45px);
-	}
-
-	.authorColumns {
-		columns: 3;
-	}
-
-	.authorListHolder h2 {
-		width: calc(67% - 30px);
-	}
-
-	.scrollIndicator {
-		display: none;
-	}
-
+.storiesIntroWrapper a {
+	font-weight: bold;
+	color: #0d3e32;
 }
