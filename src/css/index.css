@@ -79,7 +79,7 @@ html {
 .afterIntroTransformed .left2 {
     width: 12vw;
     height: 10vw;
-    top: 35px;
+    top: 50px;
     left: 25%;
     transition: width 2s, height 2s, top 2s, left 2s;
 

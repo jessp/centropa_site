@@ -1,5 +1,28 @@
 .twelveXWrapper{
 	width: 100%;
 	position: relative;
-	height: auto;
+	height: 100%;
+}
+
+.readNow {
+	padding: 15px 15px 10px;
+	color:#fff;
+	border:#f8f0d6 5px solid;
+}
+
+.readNow p {
+	margin-bottom: 0px;
+}
+
+.readNow.underlineLink a {
+	color:#fff;
+	margin: 0px;
+	font-family: "Lato";
+	font-weight: bold;
+	font-size: 120%;
+
+}
+
+.redRect {
+	background-color: #a4384d;
 }
