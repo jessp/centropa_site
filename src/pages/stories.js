@@ -100,8 +100,22 @@ class Stories extends React.Component {
                     </div> 
                   </div>
                 </div>
-                <div className={"foodColumn"}>
-                  <h2>{"Centropa Stories"}</h2>
+                <div className={"foodColumn"} style={{"display": "flex", "flexDirection":"column", "height": "100%"}}>
+                  <div>
+                    <h2>{"Centropa Stories"}</h2>
+                    <p>
+                      <span>{"In Centropa stories, we bring together some of Norway’s brightest writers and invite them to write about food culture around the world. " +
+                      "You can experience their work here online, pick up a copy of Centropa magazine at Deichman, or order something off our "}</span>
+                      <Link to={"/menu#sandwiches"}>
+                        <span>{"sandwich menu"}</span>
+                      </Link>
+                      <span>{" to see how they’ve inspired us."}</span>
+                    </p>
+                  </div>
+                  <div>
+                    <h2>{"Archive"}</h2>
+                      
+                  </div>
                 </div>
               </div>
             </div>
