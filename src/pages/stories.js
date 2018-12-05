@@ -17,7 +17,8 @@ class Stories extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      "featuredAuthor": this.props.data.featured.edges[0].node
+      "featuredAuthor": this.props.data.featured.edges[0].node,
+      "origFeature": this.props.data.featured.edges[0].node
     }
 
     this.setActiveAuthor = this.setActiveAuthor.bind(this);
@@ -35,12 +36,17 @@ class Stories extends React.Component {
       return node.node.title === featuredAuthor.title;
     });
     let featuredSandwichImage = featuredSandwich["node"]["acf"]["food_photo"];
+    // console.log(this.state.origFeature);
       return (
         <Layout pageName={""} style={{"height": "100%"}}>
           <div className={"menuColumns twelveXWrapper"}>
               <div className={"controlColumn menuColumn"}>
                 <h2>{"This Issue"}</h2>
-                <AuthorList/>
+                <AuthorList 
+                  authors={gridAuthors}
+                  setAuthor={this.setActiveAuthor} 
+                  featuredAuthor={featuredAuthor.acf.author_name}
+                  origFeature={this.state.origFeature}/>
               </div>
               <div className={"menuWrapper"}  style={{"height": "100%"}}>
                 <div className={"mediaColumn"} style={{"height": "100%"}}>

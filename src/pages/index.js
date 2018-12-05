@@ -41,7 +41,16 @@ class IndexPage extends React.Component {
       <div style={{"width":"100%", "height":"100%", "position":"relative", "overflow": "hidden"}}>
         <div className={"mondrianHolder " + (this.state.animationCompleted ? "afterIntroTransformed" : "")} ref={el => this.scene = el}>
           <div className={"left1"} style={{"backgroundColor": "#DA852D"}}/>
-          <div className={"left2"} style={{"backgroundColor": "#A4384D"}}/>
+          <div className={"left2"} style={{"backgroundColor": "#A4384D"}}>
+            <svg viewBox="0 0 310 300" style={{"width": "100%", "height": "100%"}}>
+              <text y={"45"} fontSize={"40"} fontWeight={"bold"}>{"Hours"}</text>
+
+              <text y={"105"} fontSize={"35"} fontWeight={"bold"}>{"Monday - Friday"}</text>
+              <text y={"145"} fontSize={"30"}>{"9 - 22"}</text>
+              <text y={"195"} fontSize={"35"} fontWeight={"bold"}>{"Saturday - Sunday"}</text>
+              <text y={"235"} fontSize={"30"}>{"12 - 22"}</text>
+            </svg>
+          </div>
           <div className={"left3"} style={{"backgroundColor": "#2A8FA3"}}/>
           <div className={"left4"} style={{"backgroundColor": "#37b8de"}}>
             <Map

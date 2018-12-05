@@ -3,10 +3,10 @@
 }
 
 .controlColumn {
-	width: calc(20% - 30px);
+	width: calc(20% - 10px);
 	position: fixed;
 	padding-left: 15px;
-	padding-right: 15px;
+	padding-right: 0px;
 }
 
 .foodColumn {

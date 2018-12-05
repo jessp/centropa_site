@@ -2,7 +2,7 @@
 	margin-bottom: 25px;
 }
 
-.menuLocationPanel a {
+.menuLocationPanel a, .menuLocationPanel div {
 	width: 100%;
 	display: inline-block;
 	padding-left: 25px;
@@ -10,14 +10,14 @@
 	transition: padding-left 0.5s;
 }
 
-.menuLocationPanel a:hover{
+.menuLocationPanel a:hover, .menuLocationPanel div:hover {
 	text-decoration: none;
 	color: #0d3e32;
 	padding-left: 30px;
 	transition: padding-left 0.5s;
 }
 
-.menuLocationPanel a:before{
+.menuLocationPanel a:before, .menuLocationPanel div:before {
 	content: "";
 	width: 20px;
 	border-bottom: 2px solid;
@@ -27,18 +27,18 @@
 	transition: width 0.5s, margin-left 0.5s;
 }
 
-.menuLocationPanel a:hover:before{
+.menuLocationPanel a:hover:before, .menuLocationPanel div:hover:before {
 	width: 25px;
 	margin-left: -30px;
 	transition: width 0.5s, margin-left 0.5s;
 }
 
-.menuLocationPanel a.activeMenu {
+.menuLocationPanel a.activeMenu, .menuLocationPanel div.activeMenu {
 	font-weight: bold;
 	padding-left: 35px;
 }
 
-.menuLocationPanel a.activeMenu:before{
+.menuLocationPanel a.activeMenu:before, .menuLocationPanel div.activeMenu:before{
 	content: "";
 	border-bottom: 3px solid;
 	margin-left: -35px;

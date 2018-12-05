@@ -1,0 +1,22 @@
+.authorGridContainer.menuLocationPanel p {
+	font-size: 0.85em;
+	line-height: 1.1em;
+	margin-bottom: 0px;
+}
+
+.authorButton {
+	margin-bottom: 8px;
+	cursor: pointer;
+}
+
+.authorGridContainer.menuLocationPanel p:nth-child(2){
+	font-size: 0.7em;
+}
+
+.authorGridContainer.menuLocationPanel .isFeaturedAuthor p {
+	color: #A4384D;
+}
+
+.authorGridContainer.menuLocationPanel .isFeaturedAuthor:before {
+	color: #A4384D;
+}

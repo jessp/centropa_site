@@ -73,6 +73,7 @@ class AuthorArchive extends React.Component {
 						sorting.map(function(sort, idx){
 							return (
 								<a key={idx} className={sort === active ? "activeUnderlineLink" : ""}
+									style={{"cursor": "pointer"}}
 									onClick={() => setAct(sort)}>
 									<span>{sort}</span>
 								</a>
