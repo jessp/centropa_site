@@ -52,6 +52,11 @@
 	position:relative;
 }
 
+.storyColumn h2 {
+	border-bottom: none;
+	color: #A4384D;
+}
+
 @media (max-width: 850px) {
 	.controlColumn {
 		display: none;
@@ -73,5 +78,11 @@
 
 	.foodColumn {
 		width: calc(100% - 15px);
+	}
+}
+
+@media (min-width: 1800px){
+	.controlColumn {
+		width: 350px;
 	}
 }

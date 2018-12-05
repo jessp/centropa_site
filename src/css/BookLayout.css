@@ -55,6 +55,7 @@ html, body {
 .storyLocationImageHolder {
 	width: 85%;
 	height: calc(100% - 175px);
+	max-height: 525px;
 	opacity: 1;
 	position: absolute;
 	right: 0px;
@@ -81,7 +82,7 @@ html, body {
     height: 325px;
     position: absolute;
     right: 4%;
-    bottom: 35px;
+    bottom: 100px;
     background-position: center;
     background-size: cover;
 }
@@ -119,7 +120,7 @@ html, body {
     color: #000;
     position: absolute;
     margin-left: 35px;
-    top: calc(70% + 25px);
+    top: calc(70% + 40px);
     width: calc(75% - 250px);
     font-size: 80%;
     line-height: 120%;
@@ -179,6 +180,10 @@ html, body {
 	color: #0d3e32;
 }
 
+.redSquares .bgSquares div {
+	background-color: #A4384D;
+}
+
 @media (max-width: 850px) {
 	.storyHeaderHolder{
 		font-size: 80%;
@@ -203,7 +208,7 @@ html, body {
 
 	.authorBio {
 		top: calc(75% + 20px);
-	    width: calc(100% - 30px);
+	    width: calc(100% - 300px);
 	    left: 15px;
 	}
 

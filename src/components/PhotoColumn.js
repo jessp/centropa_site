@@ -56,9 +56,11 @@ class PhotoColumn extends React.Component {
                         "backgroundImage": "url(" + node.img + ")"
                       }
                     } className={"rellax"}>
-                <div>
+                {node.title &&
+                  <div>
                   <h4>{node.title}</h4>
                 </div>
+                }
             </div>
           </Parallax>
         }

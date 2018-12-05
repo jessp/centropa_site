@@ -42,9 +42,9 @@ class StoriesBg extends React.Component {
         {this.props.featuredSandwichImage &&
           <div style={{
           "width": "16vw", 
-          "height":"18vw", 
+          "height":"20vw", 
           "left": "calc(50% - 1vw)", 
-          "top": "calc(35% + 15vw)", 
+          "top": "calc(35% + 10vw)", 
           "backgroundImage":"url(" + (this.props.featuredSandwichImage.source_url) + ")"}}/>
         }
         <div style={{

@@ -3,8 +3,10 @@ import { graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 import Header from '../components/header';
 import '../css/BookLayout.css'
-import GreenScrollDown from "./../images/green_scroll_down.svg";
 import { VictoryPie } from 'victory';
+import BgColumn from '../components/BgColumn'
+import PhotoColumn from '../components/PhotoColumn'
+
 
 
 class PostTemplate extends Component {
@@ -12,21 +14,48 @@ class PostTemplate extends Component {
   constructor(props){
     super(props);
 
-
     this.state = {
       "scrollPercent": 0,
       "totalRead": this.props.data.wordpressPost.content.split(" ").length/225,
       "remainingRead": Math.round(this.props.data.wordpressPost.content.split(" ").length/225 * 2)/2
     }
     this.handleScroll = this.handleScroll.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    
+    //check if there are images to display
+    this.images = [];
+    let images = this.images;
+
+    let shortHand = this.props.data.wordpressPost.acf;
+
+    let checkForImages = this.checkForImages;
+
+
+    [shortHand.image_one, shortHand.image_two, 
+    shortHand.image_three, shortHand.image_four, 
+    shortHand.image_five].forEach(function(e){
+      if (e && e["source_url"]){
+        images.push({"img": e.source_url});
+      }
+    })
   }
 
+ 
   componentDidMount(){
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
     window.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
     window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  updateWindowDimensions() {
+    if (this.refs && this.refs.menuWrapper){
+      this.setState({ windowHeight: this.refs.menuWrapper.scrollHeight });
+    }
   }
 
   handleScroll(event) {
@@ -45,10 +74,9 @@ class PostTemplate extends Component {
   render() {
     const post = this.props.data.wordpressPost
     return (
-        <div style={{"width": "100%", "height": "100%", "position": "relative"}}>
+        <div style={{"width": "100%", "height": "100%", "position": "relative"}} ref={"menuWrapper"}>
           <div className={"storyHeaderHolder"}>
             <div className={"storyLocationImageHolder"} style={{"backgroundImage": "url(" + post.acf.location_photo.source_url + ")"}}/>
-            <div className={"storyAuthorImageHolder"} style={{"backgroundImage": "url(" + post.acf.author_photo.source_url + ")"}}/>
             <div className={"storyNameHolder"}>
               <div className={"storyMetaText"}>
                 <h1>{post.title}</h1>
@@ -90,12 +118,23 @@ class PostTemplate extends Component {
               <p>{this.state.remainingRead + " mins left to read"}</p>
             </div>
             <div className={"menuWrapper"}>
-              <div className={"foodColumn"} dangerouslySetInnerHTML={{ __html: post.content }}/>
+              <div className={"foodColumn storyColumn"} dangerouslySetInnerHTML={{ __html: post.content }}/>
+              <div className={"mediaColumn"} style={{"height": (this.state.windowHeight - 200) + "px", "marginTop": "-100%"}}>
+                <div className={"imageCols redSquares"} style={{"height": "calc(" + this.state.windowHeight + " - 100%)"}}>
+                  <BgColumn numSquares={Math.floor(this.state.remainingRead) + 10} windowHeight={this.state.windowHeight}/>
+                </div>
+              </div>
+              {this.images.length > 0 &&
+                    <div style={{"height": "calc(" + this.state.windowHeight + " - 100%)", "position": "absolute", "top": "100%", "right": "0px", "width":"40%"}}>
+                      <PhotoColumn photos={this.images} 
+                                  numSquares={this.images.length} 
+                                  windowHeight={this.state.windowHeight}/>
+                    </div>
+                  }
             </div>
             <div className={"clearer"}/>
           </div>
-
-
+          <div className={"storyAuthorImageHolder"} style={{"backgroundImage": "url(" + post.acf.author_photo.source_url + ")"}}/>
           <Header/>
         </div>
     )
@@ -123,6 +162,21 @@ export const pageQuery = graphql`
           source_url
         }
         location_photo {
+          source_url
+        }
+        image_one {
+          source_url
+        }
+        image_two {
+          source_url
+        }
+        image_three {
+          source_url
+        }
+        image_four {
+          source_url
+        }
+        image_five {
           source_url
         }
       }
