@@ -114,7 +114,10 @@ class Stories extends React.Component {
                   </div>
                   <div>
                     <h2>{"Archive"}</h2>
-                      
+                    <AuthorArchive 
+                      allAuthors={this.props.data.allContributors.edges} 
+                      setAuthor={this.setActiveAuthor}
+                      featuredAuthor={featuredAuthor.acf.author_name} />
                   </div>
                 </div>
               </div>

@@ -68,6 +68,7 @@ class AuthorArchive extends React.Component {
 		return (
 			<div className={"authorListHolder"}>
 				<div className={"authorSorting underlineLink"} style={{"position": "relative", "width": "100%"}}>
+				<p><span style={{"float": "left", "paddingTop": "5px", "display": "inline-block"}}>{"Sort by: "}</span>
 					{
 						sorting.map(function(sort, idx){
 							return (
@@ -78,8 +79,8 @@ class AuthorArchive extends React.Component {
 							)
 						})
 					}
+					</p>
 				</div>
-				<h2>{"Archive of All Authors"}</h2>
 					<div className={"authorColumns"}>
 
 							<div>
