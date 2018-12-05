@@ -43,7 +43,7 @@ class ExcerptColumn extends React.Component {
                                 "top": (node.top * (windowHeight)) + "px",
                                 "width": (node.width) + "vw"
                               }
-                            } className={"rellax2"}>
+                            }>
                         <p>{"“" + node.story_excerpt + "”"}</p>
                         <p>{"–" + node.author_name}</p>
                     </div>

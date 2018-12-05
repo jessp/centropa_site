@@ -5,6 +5,8 @@ import AuthorGrid from '../components/AuthorGrid'
 import AuthorArchive from '../components/AuthorArchive'
 import "./../css/12x.css"
 import ScrollDown from "../images/scroll_down.svg";
+import Parallax from 'react-rellax'
+
 
 
 
@@ -42,17 +44,29 @@ class Stories extends React.Component {
               <div className={"menuWrapper"}  style={{"height": "100%"}}>
                 <div className={"mediaColumn"} style={{"height": "100%"}}>
                   <div className={"bgLayers"} style={
-                      {"height":"calc(100% + 50px)", "position": "relative", "overflow": "hidden", "marginTop": "-50px"}
+                      {"height":"calc(100% + 50px)", "position": "relative", "overflowX": "hidden", "overflowY": "visible", "marginTop": "-50px"}
                     }>
-                    <div className={"redRect"}
+                    <Parallax>
+                        <div className={"redRect"}
                         style={{"left":"2vw","top":"1.2vw", "width": "4.3vw", "height": "4.2vw"}}/>
-                    <div className={"redRect"}
+                    </Parallax>
+                    <Parallax>
+                        <div className={"redRect"}
                         style={{"left":"12.4vw","top":"6.5vw", "width": "2.3vw", "height": "2.2vw"}}/>
-                     <div className={"redRect"}
-                        style={{"left":"0vw", "top":"calc(50% + 15.5vw)", "width": "7.3vw", "height": "7.2vw"}}/>
-                     <div className={"redRect"}
-                        style={{"right":"0vw", "top":"calc(50% - 1vw)", "width": "9vw", "height": "9vw"}}/>
-                    <div style={{
+                    </Parallax>
+                     <Parallax>
+                        <div className={"redRect"}
+                        style={{"left":"1vw", "top":"9vw", "width": "7.3vw", "height": "7.2vw"}}/>
+                    </Parallax>
+                     <Parallax>
+                        <div className={"redRect"}
+                        style={{"left":"20vw", "top":"11vw", "width": "6vw", "height": "6vw"}}/>
+                     <Parallax>
+                        <div className={"redRect"}
+                        style={{"left":"25.5vw", "top":"31vw", "width": "4.5vw", "height": "4.6vw"}}/>
+                    </Parallax>
+                    </Parallax>
+                        <div style={{
                       "width": "16vw", 
                       "height":"22vw", 
                       "left": "calc(50% - 15vw)", 
@@ -60,7 +74,7 @@ class Stories extends React.Component {
                       "backgroundImage":"url(" + (featuredAuthor.acf.location_photo.source_url) + ")"}}/>
                     {featuredSandwichImage &&
                       <div style={{
-                      "width": "12vw", 
+                      "width": "16vw", 
                       "height":"18vw", 
                       "left": "calc(50% - 1vw)", 
                       "top": "calc(35% + 15vw)", 
@@ -74,7 +88,7 @@ class Stories extends React.Component {
                       "backgroundImage":"url(" + (featuredAuthor.acf.author_photo.source_url) + ")"}}/>
                     <div style={{
                       "minWidth": "20vw", 
-                      "minHeight":"8vw", 
+                      "minHeight":"110px", 
                       "left": "calc(50% - 10vw)", 
                       "top": "35%", 
                       "backgroundColor":"#0d3e32"}} className={"underlineLink readNow"}> 
@@ -86,18 +100,18 @@ class Stories extends React.Component {
                       </div>
 
                     </div>
-                    <div className={"bgExcerpts"} style={{
-                      "width": "20vw", 
-                      "right": "0px", 
-                      "top": "calc(35% + 16vw)"}}>
-                      <div style={{"width": "100%"}}>
-                        <div>
-                          <p>
-                            {featuredAuthor.acf.story_excerpt}
-                          </p>
-                          </div>
-                      </div>
-                    </div> 
+                      <div className={"bgExcerpts"} style={{
+                        "width": "20vw", 
+                        "right": "0px", 
+                        "top": "calc(35% + 16vw)"}}>
+                        <div style={{"width": "100%"}}>
+                          <div>
+                            <p>
+                              {featuredAuthor.acf.story_excerpt}
+                            </p>
+                            </div>
+                        </div>
+                      </div> 
                   </div>
                 </div>
                 <div className={"foodColumn"} style={{"display": "flex", "flexDirection":"column", "height": "100%"}}>
