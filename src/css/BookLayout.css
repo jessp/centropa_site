@@ -55,6 +55,7 @@ html, body {
 .storyLocationImageHolder {
 	width: 75%;
 	height: calc(100% - 175px);
+	opacity: 0.7;
 	position: absolute;
 	right: 0px;
 	background-position: center;
@@ -64,21 +65,12 @@ html, body {
 	background-size: cover;
 }
 
-.storyLocationImageHolder:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	background-image: linear-gradient(to bottom right,rgba(239, 100, 49, 0.6),rgba(0, 0, 0, 0.95));
-}
 
 .storyAuthorImageHolder {
-    width: 300px;
-    height: 400px;
+    width: 250px;
+    height: 325px;
     position: absolute;
-    right: calc(75% - 150px);
+    right: 4%;
     bottom: 35px;
     background-position: center;
     background-size: cover;
@@ -89,8 +81,8 @@ html, body {
     opacity: 1;
     left: 25%;
     position: absolute;
-    margin: 35px 175px;
-    width: calc(75% - 200px);
+    width: calc(71% - 275px);
+    margin: 35px 15px;
 }
 
 .storyNameHolder h1 {

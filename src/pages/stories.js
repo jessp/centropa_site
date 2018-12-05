@@ -36,7 +36,6 @@ class Stories extends React.Component {
       return node.node.title === featuredAuthor.title;
     });
     let featuredSandwichImage = featuredSandwich["node"]["acf"]["food_photo"];
-    // console.log(this.state.origFeature);
       return (
         <Layout pageName={""} style={{"height": "100%"}}>
           <div className={"menuColumns twelveXWrapper"}>
