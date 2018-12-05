@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, Link} from "gatsby"
 import Layout from '../layouts/Layout'
-import AuthorGrid from '../components/AuthorGrid'
+import AuthorList from '../components/AuthorList'
 import AuthorArchive from '../components/AuthorArchive'
 import StoriesBg from '../components/StoriesBg'
 import "./../css/12x.css"
@@ -40,6 +40,7 @@ class Stories extends React.Component {
           <div className={"menuColumns twelveXWrapper"}>
               <div className={"controlColumn menuColumn"}>
                 <h2>{"This Issue"}</h2>
+                <AuthorList/>
               </div>
               <div className={"menuWrapper"}  style={{"height": "100%"}}>
                 <div className={"mediaColumn"} style={{"height": "100%"}}>
