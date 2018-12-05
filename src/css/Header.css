@@ -1,10 +1,6 @@
 .headerContainer {
-	/*height: 150px;*/
   height:50px;
 	padding-top: 3px;
-/*  -webkit-clip-path: polygon(0 0, 0 100%, 100% 0);
-  clip-path: polygon(0 0, 0 100%, 100% 0);
-  background-color: #0d3e32;*/
   position: fixed;
   top:0px;
   width: 100%;
@@ -23,4 +19,13 @@
 .pageName {
   color: #fff;
   margin-left: 10%;
+}
+
+@media (min-width: 1800px) {
+  .headerContainer {
+    width: 1800px;
+    width: 1800px;
+    left: 50%;
+    margin-left: -900px;
+  }
 }

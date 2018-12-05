@@ -6,8 +6,6 @@
 
 .bgLayers > div{
 	position: absolute;
-	background-size: cover;
-	background-position: center;
     max-width: 300px;
     max-height: 400px;
 }
@@ -15,11 +13,20 @@
 
 
 .bgLayers > div > div {
+    background-size: cover;
+    background-position: center;
     top: calc(100% - 15px);
     left: 15px;
     position: absolute;
     font-size: 1em;
 }
+
+.bgLayers > div > div > div{
+top: calc(100% - 15px);
+    left: 15px;
+    position: absolute;
+    font-size: 1em;
+    }
 
 .bgLayers > div > div h4 {
 	background-color: #EFC835;
@@ -39,7 +46,7 @@
 	background-color: #2A8FA3;
 }
 
-.bgExcerpts div {
+.bgExcerpts div > div {
     background-color: rgba(255, 255, 255, 0.75);
     padding: 10px 15px;
 }

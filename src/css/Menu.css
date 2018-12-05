@@ -3,7 +3,7 @@
 }
 
 .controlColumn {
-	width:20%;
+	width: calc(20% - 30px);
 	position: fixed;
 	padding-left: 15px;
 	padding-right: 15px;

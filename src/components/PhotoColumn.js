@@ -1,6 +1,7 @@
 import React from 'react'
 import {shuffle} from '../utils/helpers.js';
-import Rellax from 'rellax'
+import Parallax from 'react-rellax'
+
 
 
 
@@ -33,17 +34,6 @@ class PhotoColumn extends React.Component {
 
   }
 
-  componentDidMount(){
-    this.rellax = new Rellax('.rellax', {
-      speed: -2,
-      center: false,
-      wrapper: null,
-      round: true,
-      vertical: true,
-      horizontal: false
-    });
-
-  }
 
 
 
@@ -55,7 +45,8 @@ class PhotoColumn extends React.Component {
       let top = (node.top * (windowHeight - 200) / 1.25);
 
 
-      return <div key={id + node.left} 
+      return <Parallax  key={id + node.left} speed={-2}>
+              <div  
                   style={
                       {
                         "right": (node.left * 30) + "%",
@@ -69,6 +60,7 @@ class PhotoColumn extends React.Component {
                   <h4>{node.title}</h4>
                 </div>
             </div>
+          </Parallax>
         }
       )
 
