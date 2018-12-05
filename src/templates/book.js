@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 import Header from '../components/header';
 import '../css/BookLayout.css'
@@ -61,10 +61,14 @@ class PostTemplate extends Component {
               <p>
                 {post.acf.author_bio}
               </p>
+              <p className = {"commissionText"}>
+                {"This piece was commissioned as part of "}
+                <Link to={"/stories"}>{"Centropa Stories"}</Link>
+                {". We recommend accompanying it with the "}
+                <Link to={"/menu#sandwiches"}>{"smørbrod we created"}</Link>
+                {" inspired by it."}
+              </p>
             </div>
-          </div>
-          <div className={"greenScrollIndicator"}>
-              <img src={GreenScrollDown} alt={"Image to scroll down"}/>
           </div>
           <div className={"storyBodyHolder"}>
             <div className={"pieHolder"}>

@@ -53,9 +53,9 @@ html, body {
 }
 
 .storyLocationImageHolder {
-	width: 75%;
+	width: 85%;
 	height: calc(100% - 175px);
-	opacity: 0.7;
+	opacity: 1;
 	position: absolute;
 	right: 0px;
 	background-position: center;
@@ -63,6 +63,16 @@ html, body {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+}
+
+.storyLocationImageHolder:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-image: linear-gradient(to bottom right,rgba(13, 62, 50, 0.4),rgba(0, 0, 0, 0.95));
 }
 
 
@@ -79,10 +89,10 @@ html, body {
 .storyNameHolder {
 	z-index: 2;
     opacity: 1;
-    left: 25%;
+    left: 15%;
     position: absolute;
-    width: calc(71% - 275px);
-    margin: 35px 15px;
+    width: calc(81% - 285px);
+    margin: 35px 30px;
 }
 
 .storyNameHolder h1 {
@@ -105,13 +115,24 @@ html, body {
 }
 
 .authorBio {
-	left: calc(25% + 175px);
+	left: 15%;
     color: #000;
     position: absolute;
-    top: calc(70% + 40px);
-    width: calc(75% - 200px);
+    margin-left: 35px;
+    top: calc(70% + 25px);
+    width: calc(75% - 250px);
+    font-size: 80%;
+    line-height: 120%;
 }
 
+.commissionText a {
+	color: #0d3e32;
+	font-weight: bold;
+}
+
+.authorBio p {
+	margin-bottom: 0.75em;
+}
 .authorBio h1 {
 	font-size: 1em;
 	color: #0d3e32;
