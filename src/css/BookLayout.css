@@ -136,7 +136,7 @@ html, body {
 .authorBio h1 {
 	font-size: 1em;
 	color: #0d3e32;
-	margin-bottom: 0.25em;
+	margin-bottom: 0.5em;
 }
 
 .greenScrollIndicator {
@@ -166,7 +166,8 @@ html, body {
 .pieHolder {
 	position: sticky;
 	top: 50px;
-	width: 25%;
+	width: calc(20% - 10px);
+	padding-left: 15px;
 	float: left;
 	text-align: center;
 }

@@ -70,7 +70,9 @@ class PostTemplate extends Component {
               </p>
             </div>
           </div>
-          <div className={"storyBodyHolder"}>
+
+
+          <div className={"menuColumns"}>
             <div className={"pieHolder"}>
               <div style={{"width": "80%", "marginLeft": "10%"}}>
                 <VictoryPie animate data={[
@@ -87,9 +89,13 @@ class PostTemplate extends Component {
               </div>
               <p>{this.state.remainingRead + " mins left to read"}</p>
             </div>
-            <div className={"storyHolder"} dangerouslySetInnerHTML={{ __html: post.content }}/>
+            <div className={"menuWrapper"}>
+              <div className={"foodColumn"} dangerouslySetInnerHTML={{ __html: post.content }}/>
+            </div>
             <div className={"clearer"}/>
           </div>
+
+
           <Header/>
         </div>
     )
