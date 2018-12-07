@@ -100,7 +100,7 @@ class PostTemplate extends Component {
           </div>
 
 
-          <div className={"menuColumns"}>
+          <div className={"menuColumns storyHolder"}>
             <div className={"pieHolder"}>
               <div style={{"width": "80%", "marginLeft": "10%"}}>
                 <VictoryPie animate data={[
@@ -120,12 +120,12 @@ class PostTemplate extends Component {
             <div className={"menuWrapper"}>
               <div className={"foodColumn storyColumn"} dangerouslySetInnerHTML={{ __html: post.content }}/>
               <div className={"mediaColumn"} style={{"height": (this.state.windowHeight - 200) + "px", "marginTop": "-100%"}}>
-                <div className={"imageCols redSquares"} style={{"height": "calc(" + this.state.windowHeight + " - 100%)"}}>
+                <div className={"imageCols redSquares"} style={{"height": "calc(" + this.state.windowHeight + " - 100% - 200px)"}}>
                   <BgColumn numSquares={Math.floor(this.state.remainingRead) + 10} windowHeight={this.state.windowHeight}/>
                 </div>
               </div>
               {this.images.length > 0 &&
-                    <div style={{"height": "calc(" + this.state.windowHeight + " - 100%)", "position": "absolute", "top": "100%", "right": "0px", "width":"40%"}}>
+                    <div className={"storyPhotoColumn"} style={{"height": "calc(" + this.state.windowHeight + " - 100%)"}}>
                       <PhotoColumn photos={this.images} 
                                   numSquares={this.images.length} 
                                   windowHeight={this.state.windowHeight}/>

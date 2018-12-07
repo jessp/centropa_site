@@ -116,10 +116,10 @@ html, body {
 }
 
 .authorBio {
-	left: 15%;
+    left: calc(20% - 10px);
     color: #000;
     position: absolute;
-    margin-left: 35px;
+    margin-left: 12px;
     top: calc(70% + 40px);
     width: calc(75% - 250px);
     font-size: 80%;
@@ -158,10 +158,7 @@ html, body {
 }
 
 .storyHolder {
-	height: 100%;
-    width: 75%;
-    position: relative;
-    float: right;
+	margin-top: 50px;
 }
 
 .pieHolder {
@@ -184,31 +181,39 @@ html, body {
 	background-color: #A4384D;
 }
 
+.storyPhotoColumn {
+	position: absolute;
+	top: 100%;
+	right: 0px;
+	width: 40%;
+}
+
 @media (max-width: 850px) {
 	.storyHeaderHolder{
 		font-size: 80%;
 		width: 100%;
-    	height: 60%;
+    	height: 390px;
 	}
 
 	.storyLocationImageHolder {
 		width: 100%;
-		height: 75%;
-	}
-
-	.storyAuthorImageHolder {
-		display: none;
+		height: 275px;
 	}
 
 	.storyNameHolder {
-		width: calc(100% - 30px);
-	    left: 15px;
+		width: calc(100% - 270px);
+	    left: 28px;
 	    margin: 35px 0px;
 	}
 
+	.storyNameHolder p {
+		font-size: 110%;
+
+	}
+
 	.authorBio {
-		top: calc(75% + 20px);
-	    width: calc(100% - 300px);
+		top: 295px;
+	    width: calc(100% - 270px);
 	    left: 15px;
 	}
 
@@ -229,10 +234,43 @@ html, body {
     	width: 100%;
 	}
 
-	.storyHolder {
-		width: calc(100% - 30px);
-		margin-left: 15px;
-		float: none;
-		margin-top: 50px;
+	.storyHolder .menuWrapper {
+		width: calc(100% - 28px);
+		margin-left: 28px;
+	}
+
+	.storyAuthorImageHolder {
+		width: 200px;
+    	height: 275px;
+    	bottom: auto;
+    	top: 10%;
+	}
+
+}
+
+@media (max-width: 450px) {
+	.storyAuthorImageHolder {
+		display: none;
+	}
+
+	.storyHolder .mediaColumn {
+		display: none;
+	}
+
+	.storyPhotoColumn {
+		display: none;
+	}
+
+	.foodColumn.storyColumn {
+		width: 100%;
+	}
+
+	.authorBio {
+		width: calc(100% - 56px);
+		font-size: 100%;
+	}
+
+	.storyNameHolder {
+		width: calc(100% - 56px);
 	}
 }
