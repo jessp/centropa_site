@@ -109,15 +109,15 @@ class Menu extends React.Component {
       return (
         <Layout pageName={""}>
           <div className={"menuColumns"}>
-            <div className={"controlColumn menuColumn"}>
+            <div className={"controlColumn menuColumn restMenu"}>
               <MenuLocation categories={["sandwiches", "snacks", "mains", "desserts"]} active={this.state.activeCat} setActiveCat={this.setActiveCat}/>
               {/*<FilterPanel/>*/}
             </div>
-            <div className={"menuWrapper"} ref={"menuWrapper"}>
-              <div className={"mediaColumn"} style={{"height": this.state.windowHeight + "px"}}>
+            <div className={"menuWrapper restMenu"} ref={"menuWrapper"}>
+              <div className={"mediaColumn restMenu"} style={{"height": this.state.windowHeight + "px"}}>
                 <MediaColumn photos={this.photos} excerpts = {this.mediaContribs} windowHeight={this.state.windowHeight}/>
               </div>
-              <div className={"foodColumn"}>
+              <div className={"foodColumn restMenu"}>
                 <MenuCat
                   cat_name={"sandwiches"} menu_items={this.filterItems(menu_items, "sandwiches")}
                   setActiveCat={this.setActiveCat} authors={this.sandwichContribs} description={sectionDescriptions["sandwiches"]}/>

@@ -1,5 +1,7 @@
 import React from 'react'
 import "../css/AuthorArchive.css"
+import { Link } from 'gatsby'
+
 
 class AuthorArchive extends React.Component {
 
@@ -82,59 +84,114 @@ class AuthorArchive extends React.Component {
 					}
 					</p>
 				</div>
-					<div className={"authorColumns"}>
-
-							<div>
-								{active === "Date" &&
-									Object.keys(cats).sort().map(function(cat){
-										return (
-											<div key={cat}>
-												<h3>
-													{months[new Date(cat).getMonth()] + " " + new Date(cat).getFullYear()}
-												</h3>
-												<ul>
-													{cats[cat].sort(function(a, b){
-														return new Date(b.node.date) - new Date(a.node.date);
-													}).map(function(author, idx){
-														return (
-															<li key={author.node.acf.author_name}
-																onClick={() => setAuthor(author.node)}>
-																<span className={author.node.acf.author_name === activeAuthor ? "activeAuthorSpan" : ""}>
-																	{author.node.acf.author_name}
-																</span>
-															</li>
-														)
-													})}
-												</ul>
-											</div>
-										)
-									})
-								}
-								{active !== "Date" &&
-									Object.keys(cats).sort().map(function(cat){
-										return (
-											<div key={cat}>
-												<h3>
-													{cat}
-												</h3>
-												<ul>
-													{cats[cat].sort().map(function(author, idx){
-														return (
-															<li key={author.node.acf.author_name}
-																onClick={() => setAuthor(author.node)}>
-																<span className={author.node.acf.author_name === activeAuthor ? "activeAuthorSpan" : ""}>
-																	{author.node.acf.author_name}
-																</span>
-															</li>
-														)
-													})}
-												</ul>
-											</div>
-										)
-									})
-								}
-							</div>
+				<div className={"authorColumns"}>
+					<div>
+						{active === "Date" &&
+							Object.keys(cats).sort().map(function(cat){
+								return (
+									<div key={cat}>
+										<h3>
+											{months[new Date(cat).getMonth()] + " " + new Date(cat).getFullYear()}
+										</h3>
+										<ul>
+											{cats[cat].sort(function(a, b){
+												return new Date(b.node.date) - new Date(a.node.date);
+											}).map(function(author, idx){
+												return (
+													<li key={author.node.acf.author_name}
+														onClick={() => setAuthor(author.node)}>
+														<span className={author.node.acf.author_name === activeAuthor ? "activeAuthorSpan" : ""}>
+															{author.node.acf.author_name}
+														</span>
+													</li>
+												)
+											})}
+										</ul>
+									</div>
+								)
+							})
+						}
+						{active !== "Date" &&
+							Object.keys(cats).sort().map(function(cat){
+								return (
+									<div key={cat}>
+										<h3>
+											{cat}
+										</h3>
+										<ul>
+											{cats[cat].sort().map(function(author, idx){
+												return (
+													<li key={author.node.acf.author_name}
+														onClick={() => setAuthor(author.node)}>
+														<span className={author.node.acf.author_name === activeAuthor ? "activeAuthorSpan" : ""}>
+															{author.node.acf.author_name}
+														</span>
+													</li>
+												)
+											})}
+										</ul>
+									</div>
+								)
+							})
+						}
 					</div>
+				</div>
+				<div className={"authorColumns showOnSmall"}>
+					<div>
+						{active === "Date" &&
+							Object.keys(cats).sort().map(function(cat){
+								return (
+									<div key={cat}>
+										<h3>
+											{months[new Date(cat).getMonth()] + " " + new Date(cat).getFullYear()}
+										</h3>
+										<ul>
+											{cats[cat].sort(function(a, b){
+												return new Date(b.node.date) - new Date(a.node.date);
+											}).map(function(author, idx){
+												return (
+												<li key={author.node.acf.author_name}>
+													<Link
+														to={"/" + author.node.slug}>
+														<span className={author.node.acf.author_name === activeAuthor ? "activeAuthorSpan" : ""}>
+															{author.node.acf.author_name}
+														</span>
+													</Link>
+												</li>
+												)
+											})}
+										</ul>
+									</div>
+								)
+							})
+						}
+						{active !== "Date" &&
+							Object.keys(cats).sort().map(function(cat){
+								return (
+									<div key={cat}>
+										<h3>
+											{cat}
+										</h3>
+										<ul>
+											{cats[cat].sort().map(function(author, idx){
+												return (
+													<li key={author.node.acf.author_name}>
+														<Link
+															to={"/" + author.node.slug}>
+															<span className={author.node.acf.author_name === activeAuthor ? "activeAuthorSpan" : ""}>
+																{author.node.acf.author_name}
+															</span>
+														</Link>
+													</li>
+												)
+											})}
+										</ul>
+									</div>
+								)
+							})
+						}
+					</div>
+				</div>
 
 
 			</div>

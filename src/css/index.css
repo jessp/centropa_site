@@ -198,6 +198,11 @@ html {
     transition: width 2s, height 2s, top 2s, left 2s;
 }
 
+.hideExceptMobile {
+    display: none;
+    width: 100%;
+}
+
 /* Minimum aspect ratio */
 @media (max-aspect-ratio: 3/4) {
     .logoHolder {
@@ -206,5 +211,19 @@ html {
 
     .logoHolder svg text {
         font-size: 18px;
+    }
+
+    .logoHolder .underlineLink {
+        margin-top:-75px;
+    }
+
+    .mondrianHolder {
+        display: none;
+    }
+
+    .hideExceptMobile {
+        display: block;
+        font-style: normal !important;
+        font-size: 80%;
     }
 }

@@ -87,6 +87,8 @@ class IndexPage extends React.Component {
             <LogoAnimation completeAnimation={this.completeAnimation}/>
             <div className={"underlineLink"}>
               <p>{this.props.data.about.acf.homepage_text}</p>
+              <p className={"hideExceptMobile"}>{"Monday - Friday: 9 - 22"}</p>
+              <p className={"hideExceptMobile"}>{"Saturday - Sunday: 12 - 22"}</p>
               <p>
                 <a href={"#"}>
                   <span>{"Book a table now"}</span>

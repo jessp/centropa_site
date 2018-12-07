@@ -58,11 +58,11 @@
 }
 
 @media (max-width: 850px) {
-	.controlColumn {
+	.controlColumn.restMenu {
 		display: none;
 	}
 
-	.menuWrapper {
+	.menuWrapper.restMenu {
 		width: calc(100% - 35px);
 		margin-left:35px; 
 		position:relative;
@@ -72,11 +72,11 @@
 
 
 @media (max-width: 550px) {
-	.mediaColumn {
+	.mediaColumn.restMenu {
 		display: none;
 	}
 
-	.foodColumn {
+	.foodColumn.restMenu {
 		width: calc(100% - 15px);
 	}
 }

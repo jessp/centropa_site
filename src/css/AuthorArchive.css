@@ -22,6 +22,10 @@
 	margin-bottom: 50px;
 }
 
+.showOnSmall {
+	display: none;
+}
+
 .authorListHolder h3 {
 	font-size: 1.25em;
 	margin-bottom: 5px;
@@ -43,6 +47,11 @@
 	text-decoration: underline;
 }
 
+.authorColumns li a {
+	font-weight: normal;
+	color: #000;
+}
+
 .activeAuthorSpan {
 	font-weight: bold;
 }
@@ -57,9 +66,31 @@
 	}	
 
 }
+
+
+@media (max-width: 600px) {
+
+	.authorColumns {
+		-webkit-columns: 1;
+		columns: 1;
+	}
+
+	.authorSorting {
+		font-size: 70%;
+	}
+}
+
 @media (max-width: 450px) {
 
 	.authorListHolder h2 {
 		width: 100%;
+	}
+
+	.authorColumns {
+		display: none;
+	}
+
+	.showOnSmall {
+		display: initial;
 	}
 }

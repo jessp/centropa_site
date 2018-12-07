@@ -8,6 +8,7 @@
 	padding: 15px 15px 10px;
 	color:#fff;
 	border:#f8f0d6 5px solid;
+	background-color: #0d3e32;
 }
 
 .readNow p {
@@ -25,6 +26,7 @@
 
 .redRect {
 	background-color: #a4384d;
+	position: absolute;
 }
 
 .menuColumns.twelveXWrapper h2 {
@@ -35,4 +37,72 @@
 .twelveXWrapper a {
 	color: #0d3e32;
 	font-weight: bold;
+}
+
+.midReadNow {
+	width:100%;
+	height:250px;
+	position: relative;
+	margin-bottom:20px;
+	display: none;
+}
+
+.midReadNow .readNow {
+	width: 50%;
+	height: auto;
+	position: absolute;
+	left: 25%;
+	bottom: 50px;
+	min-width:250px;
+}
+
+.midReadNow img {
+	height: 100%;
+	position: absolute;
+	width: auto;
+}
+
+
+@media (max-width: 850px) {
+	.storiesCol.mediaColumn {
+		display: none;
+	}
+
+	.storiesCol.foodColumn {
+		width: calc(100% - 15px);
+	}
+
+	.storiesCol.menuWrapper{
+		width: 70%;
+		margin-left: 30%;
+	}
+
+	.storiesCol.controlColumn {
+		width: calc(30% - 10px);
+	}
+
+	.introPara {
+		font-size: 75%;
+		line-height: 130%;
+	}
+
+	.midReadNow {
+		display: block;
+	}
+}
+
+@media (max-width: 450px) {
+
+	.midReadNow {
+		display: none;
+	}
+
+	.storiesCol.controlColumn {
+		display: none;
+	}
+
+	.storiesCol.menuWrapper{
+		width: calc(100% - 15px);
+		margin-left: 15px;
+	}
 }

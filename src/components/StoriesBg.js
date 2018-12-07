@@ -57,8 +57,7 @@ class StoriesBg extends React.Component {
           "minWidth": "20vw", 
           "minHeight":"110px", 
           "left": "calc(50% - 10vw)", 
-          "top": "35%", 
-          "backgroundColor":"#0d3e32"}} className={"underlineLink readNow"}> 
+          "top": "35%"}} className={"underlineLink readNow"}> 
           <div style={{"top": "50%", "transform": "translateY(-50%)"}}>
             <p style={{"fontSize":"0.85em"}}>{"Read " + this.props.featuredAuthor.acf.author_name + "'s"}</p>
             <Link to={"/" + this.props.featuredAuthor.slug}>

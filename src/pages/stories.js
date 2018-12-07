@@ -39,7 +39,7 @@ class Stories extends React.Component {
       return (
         <Layout pageName={""} style={{"height": "100%"}}>
           <div className={"menuColumns twelveXWrapper"}>
-              <div className={"controlColumn menuColumn"}>
+              <div className={"controlColumn menuColumn storiesCol"}>
                 <h2>{"This Issue"}</h2>
                 <AuthorList 
                   authors={gridAuthors}
@@ -47,17 +47,17 @@ class Stories extends React.Component {
                   featuredAuthor={featuredAuthor.acf.author_name}
                   origFeature={this.state.origFeature}/>
               </div>
-              <div className={"menuWrapper"}  style={{"height": "100%"}}>
-                <div className={"mediaColumn"} style={{"height": "100%"}}>
+              <div className={"menuWrapper storiesCol"}  style={{"height": "100%"}}>
+                <div className={"mediaColumn storiesCol"} style={{"height": "100%"}}>
                   <StoriesBg
                     featuredAuthor = {featuredAuthor}
                     featuredSandwich = {featuredSandwich}
                     featuredSandwichImage = {featuredSandwichImage}/>
                 </div>
-                <div className={"foodColumn"} style={{"display": "flex", "flexDirection":"column", "height": "100%"}}>
+                <div className={"foodColumn storiesCol"} style={{"display": "flex", "flexDirection":"column", "height": "100%"}}>
                   <div>
                     <h2>{"Centropa Stories"}</h2>
-                    <p>
+                    <p className={"introPara"}>
                       <span>{"In Centropa stories, we bring together some of Norway’s brightest writers and invite them to write about food culture around the world. " +
                       "You can experience their work here online, pick up a copy of Centropa magazine at Deichman, or order something off our "}</span>
                       <Link to={"/menu#sandwiches"}>
@@ -65,6 +65,21 @@ class Stories extends React.Component {
                       </Link>
                       <span>{" to see how they’ve inspired us."}</span>
                     </p>
+
+                    <div className={"midReadNow"}>
+                      <img src={featuredAuthor.acf.author_photo.source_url}/>
+                      <div className={"redRect"} style={{"top":"75%", "left": "21%", "width": "4vw", "height": "4.2vw"}}/>
+                      <div className={"redRect"} style={{"top":"12.5%", "left": "40%", "width": "9vw", "height": "8.7vw"}}/>
+                      <div className={"redRect"} style={{"top":"55%", "left": "65%", "width": "10vw", "height": "10.8vw"}}/>
+                      <div className={"redRect"} style={{"top":"2%", "left": "83%", "width": "3.4vw", "height": "3.2vw"}}/>
+
+                      <div className={"readNow underlineLink"}>
+                        <p style={{"fontSize":"0.85em"}}>{"Read " + featuredAuthor.acf.author_name + "'s"}</p>
+                        <Link to={"/" + featuredAuthor.slug}>
+                          <span>{featuredAuthor.title}</span>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
                   <div>
                     <h2>{"Archive"}</h2>
