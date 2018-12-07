@@ -1,6 +1,5 @@
 import React from 'react'
-import { graphql, Link } from "gatsby"
-import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl"
+import { graphql} from "gatsby"
 import LogoAnimation from "./../components/LogoAnimation"
 import Header from '../components/header'
 import Footer from '../components/Footer'
@@ -32,10 +31,6 @@ class IndexPage extends React.Component {
   }
 
   render() {   
-    //using a temp token, do replace this
-    const Map = ReactMapboxGl({
-      accessToken: "pk.eyJ1IjoiamVzc3BldGVyIiwiYSI6ImNqcDhiY2VycjFzOG0za2xrZjkwbHBtMHIifQ.QSnBZP4o3W8fsN1-SKO3fQ"
-    });
 
     return(
       <div style={{"width":"100%", "height":"100%", "position":"relative", "overflow": "hidden"}}>
@@ -52,24 +47,7 @@ class IndexPage extends React.Component {
             </svg>
           </div>
           <div className={"left3"} style={{"backgroundColor": "#2A8FA3"}}/>
-          <div className={"left4"} style={{"backgroundColor": "#37b8de"}}>
-            <Map
-              style="mapbox://styles/mapbox/streets-v9?optimize=true"
-              center={[10.7957078, 59.894434]}
-              containerStyle={{
-                height: "100%",
-                width: "100%",
-                backgroundColor: "#37b8de"
-              }}>
-               <Layer
-                type="symbol"
-                id="marker"
-                layout={{ "icon-image": "marker-11",
-                          "icon-size": 1.25 }}>
-                <Feature coordinates={[10.7526379, 59.9086843]}/>
-              </Layer>
-            </Map>
-          </div>
+          <div className={"left4"} style={{"backgroundColor": "#A4384D"}}/>
           <div className={"left5"} style={{"backgroundImage": "url(" + this.props.data.about.acf.photo_4.source_url + ")"}}/>
           <div className={"left6"} style={{"backgroundImage": "url(" + this.props.data.about.acf.photo_3.source_url + ")"}}/>
           <div className={"left7"} style={{"backgroundColor": "#EFC835"}}/>
