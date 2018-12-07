@@ -23,7 +23,14 @@ exports.createPages = ({ graphql, actions }) => {
         graphql(
           `
             {
-              allWordpressPost {
+              allWordpressPost(filter:{
+                categories:
+                  {elemMatch: 
+                    {name:
+                      {eq: "contributor"}
+                    }
+                  }
+              }) {
                 edges {
                   node {
                     id
@@ -38,7 +45,6 @@ exports.createPages = ({ graphql, actions }) => {
           `
         ).then(result => {
           if (result.errors) {
-            console.log(result.errors)
             reject(result.errors)
           }
           const postTemplate = path.resolve(`./src/templates/book.js`)
