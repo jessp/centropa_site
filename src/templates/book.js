@@ -5,6 +5,8 @@ import PropTypes from "prop-types"
 import './../layouts/main.css'
 import '../css/LayoutColumns.css'
 import '../css/BookLayout.css'
+import '../css/MediaColumn.css'
+
 
 import Header from '../components/header';
 import { VictoryPie } from 'victory';

@@ -4,6 +4,8 @@ import { graphql, Link} from "gatsby"
 import '../layouts/main.css'
 import "./../css/12x.css"
 import '../css/LayoutColumns.css'
+import '../css/MediaColumn.css'
+
 
 
 import Layout from '../layouts/Layout'
