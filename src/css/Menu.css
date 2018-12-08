@@ -1,33 +1,3 @@
-.menuColumns {
-	height: auto;
-}
-
-.controlColumn {
-	width: calc(20% - 10px);
-	position: fixed;
-	padding-left: 15px;
-	padding-right: 0px;
-}
-
-.foodColumn {
-	width:60%;
-	margin-left: 0%;
-	padding-right: 15px;
-	float: left;
-}
-
-.mediaColumn {
-	width:40%;
-	top:35px;
-	float: right;
-	overflow: visible;
-}
-
-.mediaColumn img{
-	height: auto;
-	width: 100%;
-}
-
 .mediaBg {
 	width: 100%;
 	height: 500px;
@@ -35,21 +5,10 @@
 	background-repeat: no-repeat;
 }
 
-.menuColumns h2 {
-	border-bottom: 3px solid #2A8FA3;
-	color: #0d3e32;
-}
-
 .controlColumn h2 {
 	font-size: 1.25em;
 	line-height: 1.45em;
 	margin-bottom: 0.5em;
-}
-
-.menuWrapper {
-	width: 80%;
-	margin-left:20%; 
-	position:relative;
 }
 
 .storyColumn h2 {
@@ -62,7 +21,7 @@
 		display: none;
 	}
 
-	.menuWrapper.restMenu {
+	.multiColumnWrapper.restMenu {
 		width: calc(100% - 35px);
 		margin-left:35px; 
 		position:relative;
@@ -76,13 +35,7 @@
 		display: none;
 	}
 
-	.foodColumn.restMenu {
+	.contentColumn.restMenu {
 		width: calc(100% - 15px);
-	}
-}
-
-@media (min-width: 1800px){
-	.controlColumn {
-		width: 350px;
 	}
 }

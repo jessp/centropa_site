@@ -29,12 +29,12 @@
 	position: absolute;
 }
 
-.menuColumns.twelveXWrapper h2 {
+.layoutColumns.twelveXWrapper h2 {
     border-bottom: 3px solid #A4384D;
     color: #0d3e32;
 }
 
-.menuColumns.twelveXWrapper {
+.layoutColumns.twelveXWrapper {
 	height: 100%;
 }
 
@@ -72,11 +72,11 @@
 		display: none;
 	}
 
-	.storiesCol.foodColumn {
+	.storiesCol.contentColumn {
 		width: calc(100% - 15px);
 	}
 
-	.storiesCol.menuWrapper{
+	.storiesCol.multiColumnWrapper{
 		width: 70%;
 		margin-left: 30%;
 	}
@@ -105,7 +105,7 @@
 		display: none;
 	}
 
-	.storiesCol.menuWrapper{
+	.storiesCol.multiColumnWrapper{
 		width: calc(100% - 15px);
 		margin-left: 15px;
 	}

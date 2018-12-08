@@ -1,8 +1,10 @@
 import React from 'react'
 import { graphql } from "gatsby"
+
 import '../layouts/main.css'
-import '../css/index.css'
+import '../css/LayoutColumns.css'
 import '../css/Menu.css'
+
 import Layout from '../layouts/Layout'
 import MenuCat from '../components/MenuCat'
 import MenuLocation from '../components/MenuLocation'
@@ -98,8 +100,8 @@ class Menu extends React.Component {
   }
 
   updateWindowDimensions() {
-    if (this.refs && this.refs.menuWrapper){
-      this.setState({ windowHeight: this.refs.menuWrapper.scrollHeight });
+    if (this.refs && this.refs.multiColumnWrapper){
+      this.setState({ windowHeight: this.refs.multiColumnWrapper.scrollHeight });
     }
   }
 
@@ -109,16 +111,16 @@ class Menu extends React.Component {
 
       return (
         <Layout pageName={""}>
-          <div className={"menuColumns"}>
-            <div className={"controlColumn menuColumn restMenu"}>
+          <div className={"layoutColumns"}>
+            <div className={"controlColumn layoutColumn restMenu"}>
               <MenuLocation categories={["sandwiches", "snacks", "mains", "desserts"]} active={this.state.activeCat} setActiveCat={this.setActiveCat}/>
               {/*<FilterPanel/>*/}
             </div>
-            <div className={"menuWrapper restMenu"} ref={"menuWrapper"}>
+            <div className={"multiColumnWrapper restMenu"} ref={"multiColumnWrapper"}>
               <div className={"mediaColumn restMenu"} style={{"height": this.state.windowHeight + "px"}}>
                 <MediaColumn photos={this.photos} excerpts = {this.mediaContribs} windowHeight={this.state.windowHeight}/>
               </div>
-              <div className={"foodColumn restMenu"}>
+              <div className={"contentColumn restMenu"}>
                 <MenuCat
                   cat_name={"sandwiches"} menu_items={this.filterItems(menu_items, "sandwiches")}
                   setActiveCat={this.setActiveCat} authors={this.sandwichContribs} description={sectionDescriptions["sandwiches"]}/>

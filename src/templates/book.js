@@ -2,6 +2,8 @@ import React, { Component } from "react"
 import { graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 
+import './../layouts/main.css'
+import '../css/LayoutColumns.css'
 import '../css/BookLayout.css'
 
 import Header from '../components/header';
@@ -55,8 +57,8 @@ class PostTemplate extends Component {
   }
 
   updateWindowDimensions() {
-    if (this.refs && this.refs.menuWrapper){
-      this.setState({ windowHeight: this.refs.menuWrapper.scrollHeight });
+    if (this.refs && this.refs.multiColumnWrapper){
+      this.setState({ windowHeight: this.refs.multiColumnWrapper.scrollHeight });
     }
   }
 
@@ -76,7 +78,7 @@ class PostTemplate extends Component {
   render() {
     const post = this.props.data.wordpressPost
     return (
-        <div style={{"width": "100%", "height": "100%", "position": "relative"}} ref={"menuWrapper"}>
+        <div style={{"width": "100%", "height": "100%", "position": "relative"}} ref={"multiColumnWrapper"}>
           <div className={"storyHeaderHolder"}>
             <div className={"storyLocationImageHolder"} style={{"backgroundImage": "url(" + post.acf.location_photo.source_url + ")"}}/>
             <div className={"storyNameHolder"}>
@@ -102,7 +104,7 @@ class PostTemplate extends Component {
           </div>
 
 
-          <div className={"menuColumns storyHolder"}>
+          <div className={"layoutColumns storyHolder"}>
             <div className={"pieHolder"}>
               <div style={{"width": "80%", "marginLeft": "10%"}}>
                 <VictoryPie animate data={[
@@ -119,8 +121,8 @@ class PostTemplate extends Component {
               </div>
               <p>{this.state.remainingRead + " mins left to read"}</p>
             </div>
-            <div className={"menuWrapper"}>
-              <div className={"foodColumn storyColumn"} dangerouslySetInnerHTML={{ __html: post.content }}/>
+            <div className={"multiColumnWrapper"}>
+              <div className={"contentColumn storyColumn"} dangerouslySetInnerHTML={{ __html: post.content }}/>
               <div className={"mediaColumn"} style={{"height": (this.state.windowHeight - 200) + "px", "marginTop": "-100%"}}>
                 <div className={"imageCols redSquares"} style={{"height": "calc(" + this.state.windowHeight + " - 100% - 200px)"}}>
                   <BgColumn numSquares={Math.floor(this.state.remainingRead) + 10} windowHeight={this.state.windowHeight}/>

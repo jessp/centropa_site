@@ -3,6 +3,8 @@ import { graphql, Link} from "gatsby"
 
 import '../layouts/main.css'
 import "./../css/12x.css"
+import '../css/LayoutColumns.css'
+
 
 import Layout from '../layouts/Layout'
 import AuthorList from '../components/AuthorList'
@@ -41,8 +43,8 @@ class Stories extends React.Component {
     let featuredSandwichImage = featuredSandwich["node"]["acf"]["food_photo"];
       return (
         <Layout pageName={""} style={{"height": "100%"}}>
-          <div className={"menuColumns twelveXWrapper"}>
-              <div className={"controlColumn menuColumn storiesCol"}>
+          <div className={"layoutColumns twelveXWrapper"}>
+              <div className={"controlColumn layoutColumn storiesCol"}>
                 <h2>{"This Issue"}</h2>
                 <AuthorList 
                   authors={gridAuthors}
@@ -50,14 +52,14 @@ class Stories extends React.Component {
                   featuredAuthor={featuredAuthor.acf.author_name}
                   origFeature={this.state.origFeature}/>
               </div>
-              <div className={"menuWrapper storiesCol"}  style={{"height": "100%"}}>
+              <div className={"multiColumnWrapper storiesCol"}  style={{"height": "100%"}}>
                 <div className={"mediaColumn storiesCol"} style={{"height": "100%"}}>
                   <StoriesBg
                     featuredAuthor = {featuredAuthor}
                     featuredSandwich = {featuredSandwich}
                     featuredSandwichImage = {featuredSandwichImage}/>
                 </div>
-                <div className={"foodColumn storiesCol"} style={{"display": "flex", "flexDirection":"column", "height": "100%"}}>
+                <div className={"contentColumn storiesCol"} style={{"display": "flex", "flexDirection":"column", "height": "100%"}}>
                   <div>
                     <h2>{"Centropa Stories"}</h2>
                     <p className={"introPara"}>

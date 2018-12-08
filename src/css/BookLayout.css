@@ -212,7 +212,7 @@
     	width: 100%;
 	}
 
-	.storyHolder .menuWrapper {
+	.storyHolder .multiColumnWrapper {
 		width: calc(100% - 28px);
 		margin-left: 28px;
 	}
@@ -239,7 +239,7 @@
 		display: none;
 	}
 
-	.foodColumn.storyColumn {
+	.contentColumn.storyColumn {
 		width: 100%;
 	}
 
