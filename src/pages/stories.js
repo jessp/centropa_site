@@ -4,6 +4,10 @@ import Layout from '../layouts/Layout'
 import AuthorList from '../components/AuthorList'
 import AuthorArchive from '../components/AuthorArchive'
 import StoriesBg from '../components/StoriesBg'
+import '../layouts/main.css'
+import '../css/index.css'
+import '../css/Header.css'
+import '../css/Menu.css'
 import "./../css/12x.css"
 import ScrollDown from "../images/scroll_down.svg";
 

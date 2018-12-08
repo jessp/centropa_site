@@ -3,7 +3,9 @@ import { graphql} from "gatsby"
 import LogoAnimation from "./../components/LogoAnimation"
 import Header from '../components/header'
 import Footer from '../components/Footer'
+import '../layouts/main.css'
 import '../css/index.css'
+import '../css/Header.css'
 import {shuffle} from '../utils/helpers.js';
 
 
