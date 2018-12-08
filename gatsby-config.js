@@ -3,6 +3,7 @@ module.exports = {
     title: `Centropa`,
     subtitle: `Centropa Restaurant in Bjørvika`,
   },
+  pathPrefix: "/centropa",
   plugins: [
     // https://public-api.wordpress.com/wp/v2/sites/gatsbyjsexamplewordpress.wordpress.com/pages/
     /*
