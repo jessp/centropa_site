@@ -1,12 +1,12 @@
 import React from 'react'
 import { graphql} from "gatsby"
+
+import '../layouts/main.css'
+import '../css/index.css'
+
 import LogoAnimation from "./../components/LogoAnimation"
 import Header from '../components/header'
 import Footer from '../components/Footer'
-import '../layouts/main.css'
-import '../css/index.css'
-import '../css/Header.css'
-import {shuffle} from '../utils/helpers.js';
 
 
 class IndexPage extends React.Component {
@@ -16,7 +16,6 @@ class IndexPage extends React.Component {
 
     this.state ={
       "animationCompleted": false,
-      "colours": shuffle(["#da852d", "#a4384d", "#2a8fa3", "#efc835", "#fff", "#da852d", "#a4384d", "#2a8fa3", "#efc835", "#fff"]),
       "contributorIndex": 0
     }
 
@@ -70,7 +69,7 @@ class IndexPage extends React.Component {
               <p className={"hideExceptMobile"}>{"Monday - Friday: 9 - 22"}</p>
               <p className={"hideExceptMobile"}>{"Saturday - Sunday: 12 - 22"}</p>
               <p>
-                <a href={"#"}>
+                <a href={"/"}>
                   <span>{"Book a table now"}</span>
                 </a>
               </p>

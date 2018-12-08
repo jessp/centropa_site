@@ -8,6 +8,7 @@
 	padding-left: 25px;
 	color: #0d3e32;
 	transition: padding-left 0.5s;
+	text-decoration: none;
 }
 
 .menuLocationPanel a:hover, .menuLocationPanel div:hover {

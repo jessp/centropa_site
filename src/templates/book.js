@@ -1,8 +1,10 @@
 import React, { Component } from "react"
 import { graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
-import Header from '../components/header';
+
 import '../css/BookLayout.css'
+
+import Header from '../components/header';
 import { VictoryPie } from 'victory';
 import BgColumn from '../components/BgColumn'
 import PhotoColumn from '../components/PhotoColumn'

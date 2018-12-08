@@ -1,14 +1,13 @@
 import React from 'react'
 import { graphql } from "gatsby"
+import '../layouts/main.css'
+import '../css/index.css'
+import '../css/Menu.css'
 import Layout from '../layouts/Layout'
 import MenuCat from '../components/MenuCat'
 import MenuLocation from '../components/MenuLocation'
 import MediaColumn from '../components/MediaColumn'
 import {sectionDescriptions} from '../utils/helpers'
-import '../layouts/main.css'
-import '../css/index.css'
-import '../css/Header.css'
-import '../css/Menu.css'
 
 
 
