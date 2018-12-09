@@ -6,8 +6,6 @@ import "./../css/12x.css"
 import '../css/LayoutColumns.css'
 import '../css/MediaColumn.css'
 
-
-
 import Layout from '../layouts/Layout'
 import AuthorList from '../components/AuthorList'
 import AuthorArchive from '../components/AuthorArchive'

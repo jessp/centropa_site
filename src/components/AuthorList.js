@@ -1,5 +1,7 @@
 import React from 'react'
 import "../css/AuthorList.css"
+import "../css/MenuLocationPanel.css"
+
 
 class AuthorList extends React.Component {
 

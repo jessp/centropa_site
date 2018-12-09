@@ -1,6 +1,6 @@
 import React from 'react'
 import {capitalizeFirstLetter} from "../utils/helpers"
-import '../css/menuLocationPanel.css'
+import '../css/MenuLocationPanel.css'
 
 
 class MenuLocation extends React.Component {

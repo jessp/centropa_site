@@ -1,9 +1,9 @@
 import React from 'react'
 import { graphql } from "gatsby"
 
-import '../layouts/main.css'
 import '../css/LayoutColumns.css'
 import '../css/Menu.css'
+import '../layouts/main.css'
 
 import Layout from '../layouts/Layout'
 import MenuCat from '../components/MenuCat'
