@@ -110,7 +110,7 @@ class Menu extends React.Component {
       let menu_items = this.props.data.food.edges;
 
       return (
-        <Layout pageName={""}>
+        <Layout pageName={"Menu"}>
           <div className={"layoutColumns"}>
             <div className={"controlColumn layoutColumn restMenu"}>
               <MenuLocation categories={["sandwiches", "snacks", "mains", "desserts"]} active={this.state.activeCat} setActiveCat={this.setActiveCat}/>

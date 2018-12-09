@@ -2,13 +2,18 @@ import React from 'react'
 import HeaderLink from "./HeaderLink"
 import "./../css/Header.css"
 
-const Header = ({ siteTitle, pageName, minimal }) => (
-  <div className={"underlineLink headerContainer " + (minimal ? "minimalHeader" : "")}>
-      <HeaderLink to={"/"} text={"Home"}/>
-      <HeaderLink to={"/menu"} text={"Menu"} color={"#2A8FA3"}/>
-      <HeaderLink to={"/stories"} text={"Centropa Stories"} color={"#A4384D"}/>
-      <h1 className ={"pageName"}>{pageName}</h1>
-  </div>
-)
+
+class Header extends React.Component {
+
+	render(){
+		return (
+		  <div className={"underlineLink headerContainer"}>
+		      <HeaderLink to={"/"} pageName={this.props.page} text={"Home"}/>
+		      <HeaderLink to={"/menu"} pageName={this.props.page} text={"Menu"} color={"#2A8FA3"}/>
+		      <HeaderLink to={"/stories"} pageName={this.props.page} text={"Centropa Stories"} color={"#A4384D"}/>
+		  </div>
+		)
+	}
+}
 
 export default Header

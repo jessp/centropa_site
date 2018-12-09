@@ -5,6 +5,7 @@ import MenuEntry from '../components/MenuEntry'
 import ScrollableAnchor from 'react-scrollable-anchor'
 import { configureAnchors } from 'react-scrollable-anchor'
 
+import '../layouts/main.css'
 
 
 

@@ -8,14 +8,6 @@
   z-index: 0;
 }
 
-.headerContainer.minimalHeader {
-  -webkit-clip-path: none;
-  clip-path: none;
-  height:40px;
-  position: relative;
-  width:100%;
-}
-
 .pageName {
   color: #fff;
   margin-left: 10%;

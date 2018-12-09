@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import './main.css'
 
-import Header from '../components/header'
+import Header from '../components/Header'
 
 
 const Layout = ({ home, children, pageName }) => (
@@ -46,7 +46,7 @@ const Layout = ({ home, children, pageName }) => (
             {children}
           </div>
         <div>
-          <Header siteTitle={data.site.siteMetadata.title} pageName={pageName}/>
+          <Header page={pageName}/>
         </div>
       </>
     )}

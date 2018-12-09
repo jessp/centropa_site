@@ -8,7 +8,7 @@ import '../css/BookLayout.css'
 import '../css/MediaColumn.css'
 
 
-import Header from '../components/header';
+import Header from '../components/Header';
 import { VictoryPie } from 'victory';
 import BgColumn from '../components/BgColumn'
 import PhotoColumn from '../components/PhotoColumn'

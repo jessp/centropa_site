@@ -7,7 +7,7 @@ class HeaderLink extends React.Component {
   render() {
   	let theStyle = {"color": this.props.color};
   	return(
-	  		<Link to={this.props.to} activeClassName={"activeUnderlineLink"} style={theStyle}>
+	  		<Link to={this.props.to} activeClassName={"activeUnderlineLink"} style={theStyle} className={this.props.pageName === this.props.text ? "activeUnderlineLink" : ""}>
 	  			<span>
 		  			{this.props.text}
 		  		</span>

@@ -5,7 +5,7 @@ import '../layouts/main.css'
 import '../css/index.css'
 
 import LogoAnimation from "./../components/LogoAnimation"
-import Header from '../components/header'
+import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 
@@ -76,7 +76,7 @@ class IndexPage extends React.Component {
             </div>
           </div>
         </div>
-        <Header/>
+        <Header page={"Home"}/>
         <Footer/>
       </div>
   )

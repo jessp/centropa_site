@@ -20,6 +20,12 @@
 	padding-right: 0px;
 }
 
+.controlColumn h2 {
+	font-size: 1.25em;
+	line-height: 1.45em;
+	margin-bottom: 0.5em;
+}
+
 .contentColumn {
 	width:60%;
 	margin-left: 0%;

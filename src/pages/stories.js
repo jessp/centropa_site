@@ -42,7 +42,7 @@ class Stories extends React.Component {
     });
     let featuredSandwichImage = featuredSandwich["node"]["acf"]["food_photo"];
       return (
-        <Layout pageName={""} style={{"height": "100%"}}>
+        <Layout pageName={"Centropa Stories"} style={{"height": "100%"}}>
           <div className={"layoutColumns twelveXWrapper"}>
               <div className={"controlColumn layoutColumn storiesCol"}>
                 <h2>{"This Issue"}</h2>
