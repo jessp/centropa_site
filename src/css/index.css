@@ -209,7 +209,7 @@
     }
 
     .logoHolder .underlineLink {
-        margin-top:-75px;
+        margin-top:-20px;
     }
 
     .mondrianHolder {
@@ -221,4 +221,12 @@
         font-style: normal !important;
         font-size: 80%;
     }
+}
+
+@media only screen and (max-width: 480px) {
+    .logoHolder .underlineLink {
+        margin-top:-70px;
+        font-size: 0.9em;
+    }
+
 }
