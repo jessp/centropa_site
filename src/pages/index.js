@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql} from "gatsby"
 
 import L from 'leaflet';
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet-universal'
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 
 
 import 'leaflet/dist/leaflet.css'
@@ -62,16 +62,10 @@ class IndexPage extends React.Component {
           <div className={"left5"} style={{"backgroundImage": "url(" + this.props.data.about.acf.photo_3.source_url + ")"}}/>
           <div className={"left6"}>
               <Map center={position} zoom={this.state.zoom} style={{"width": "14.5vw", "height": "14.5vw"}}>
-                {() => {
-                  return (
-                    <div>
-                      <TileLayer
-                        url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png"
-                      />
-                      <Marker position={position} icon={MapIcon}/>
-                    </div>
-                  );
-                }}
+                <TileLayer
+                  url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png"
+                />
+                <Marker position={position} icon={MapIcon}/>
               </Map>
           </div>
           <div className={"left7"} style={{"backgroundColor": "#EFC835"}}/>
