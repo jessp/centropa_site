@@ -10,7 +10,6 @@ import Layout from '../layouts/Layout'
 import AuthorList from '../components/AuthorList'
 import AuthorArchive from '../components/AuthorArchive'
 import StoriesBg from '../components/StoriesBg'
-import ScrollDown from "../images/scroll_down.svg";
 
 
 

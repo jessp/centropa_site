@@ -1,12 +1,16 @@
 import React from 'react'
 import { graphql} from "gatsby"
+import L from 'leaflet';
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 
+import 'leaflet/dist/leaflet.css'
 import '../layouts/main.css'
 import '../css/index.css'
 
 import LogoAnimation from "./../components/LogoAnimation"
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import {MapIcon} from '../components/MapIcon'
 
 
 class IndexPage extends React.Component {
@@ -16,7 +20,10 @@ class IndexPage extends React.Component {
 
     this.state ={
       "animationCompleted": false,
-      "contributorIndex": 0
+      "contributorIndex": 0,
+      "lat": 59.909272,
+      "lng": 10.753171,
+      "zoom": 14
     }
 
     this.completeAnimation = this.completeAnimation.bind(this);
@@ -32,6 +39,8 @@ class IndexPage extends React.Component {
   }
 
   render() {   
+              const position = [this.state.lat, this.state.lng]
+
 
     return(
       <div style={{"width":"100%", "height":"100%", "position":"relative", "overflow": "hidden"}}>
@@ -48,9 +57,16 @@ class IndexPage extends React.Component {
             </svg>
           </div>
           <div className={"left3"} style={{"backgroundColor": "#2A8FA3"}}/>
-          <div className={"left4"} style={{"backgroundColor": "#A4384D"}}/>
-          <div className={"left5"} style={{"backgroundImage": "url(" + this.props.data.about.acf.photo_4.source_url + ")"}}/>
-          <div className={"left6"} style={{"backgroundImage": "url(" + this.props.data.about.acf.photo_3.source_url + ")"}}/>
+          <div className={"left4"} style={{"backgroundImage": "url(" + this.props.data.about.acf.photo_4.source_url + ")"}}/>
+          <div className={"left5"} style={{"backgroundImage": "url(" + this.props.data.about.acf.photo_3.source_url + ")"}}/>
+          <div className={"left6"}>
+            <Map center={position} zoom={this.state.zoom} style={{"width": "14.5vw", "height": "14.5vw"}}>
+              <TileLayer
+                url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png"
+              />
+              <Marker position={position} icon={MapIcon}/>
+            </Map>
+          </div>
           <div className={"left7"} style={{"backgroundColor": "#EFC835"}}/>
 
           <div className={"right1"} style={{"backgroundColor": "#2A8FA3"}}/>
