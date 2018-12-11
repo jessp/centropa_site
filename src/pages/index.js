@@ -1,7 +1,9 @@
 import React from 'react'
 import { graphql} from "gatsby"
+
 import L from 'leaflet';
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet-universal'
+
 
 import 'leaflet/dist/leaflet.css'
 import '../layouts/main.css'
@@ -23,7 +25,7 @@ class IndexPage extends React.Component {
       "contributorIndex": 0,
       "lat": 59.909272,
       "lng": 10.753171,
-      "zoom": 14
+      "zoom": 14,
     }
 
     this.completeAnimation = this.completeAnimation.bind(this);
@@ -39,8 +41,7 @@ class IndexPage extends React.Component {
   }
 
   render() {   
-              const position = [this.state.lat, this.state.lng]
-
+   const position = [this.state.lat, this.state.lng]
 
     return(
       <div style={{"width":"100%", "height":"100%", "position":"relative", "overflow": "hidden"}}>
@@ -60,12 +61,18 @@ class IndexPage extends React.Component {
           <div className={"left4"} style={{"backgroundImage": "url(" + this.props.data.about.acf.photo_4.source_url + ")"}}/>
           <div className={"left5"} style={{"backgroundImage": "url(" + this.props.data.about.acf.photo_3.source_url + ")"}}/>
           <div className={"left6"}>
-            <Map center={position} zoom={this.state.zoom} style={{"width": "14.5vw", "height": "14.5vw"}}>
-              <TileLayer
-                url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png"
-              />
-              <Marker position={position} icon={MapIcon}/>
-            </Map>
+              <Map center={position} zoom={this.state.zoom} style={{"width": "14.5vw", "height": "14.5vw"}}>
+                {() => {
+                  return (
+                    <div>
+                      <TileLayer
+                        url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.png"
+                      />
+                      <Marker position={position} icon={MapIcon}/>
+                    </div>
+                  );
+                }}
+              </Map>
           </div>
           <div className={"left7"} style={{"backgroundColor": "#EFC835"}}/>
 

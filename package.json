@@ -30,6 +30,7 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^3.2.2",
     "react-leaflet": "^2.1.2",
+    "react-leaflet-universal": "github:jessp/react-leaflet-universal",
     "react-mapbox-gl": "^4.0.2",
     "react-rellax": "^1.0.2",
     "react-scrollable-anchor": "^0.6.1",

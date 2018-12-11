@@ -1,3 +1,4 @@
+
 import L from 'leaflet';
 
 const MapIcon = new L.Icon({
